@@ -1,51 +1,19 @@
-<div fxLayout="row wrap" class="borderradius" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true">
-  <div fxLayout="column " class="fullheight lightcolor leftsidecolHome" fxFlex="25" fxLayoutAlign="start center" [fxShow]="true">
-    <div fxLayout="row wrap" class="profileimage" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="column wrap" class="fullwidth" fxLayoutAlign="start center" [fxShow]="true"><img [src]="&apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg&apos;" class="borderradius50" artImgSrc>
-        <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
-          <p>
-            Oboikanyego Radipabe</p>
-        </div>
-        <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
-          <p>
-            {{page.curDate | date:&apos;mediumDate&apos;}}
-          </p>
-        </div>
+<div fxLayout="column wrap" class="fullheight" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="headingSize" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h1 class="marginbotzero">
+          News Portal</h1>
       </div>
-    </div>
-    <div fxLayout="row wrap" class="fullwidth sideNavcatergory" fxLayoutAlign="space-around center" [fxShow]="true" (click)="sendCategory(item.category)" *ngFor="let item of page.navigation">
-      <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="start center" [fxShow]="true">
-        <mat-icon style="background-color:white;">{{item.icon}}</mat-icon>
-      </div>
-      <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="start stretch" [fxShow]="true">
-        <h4>
-          {{item.name}}
-        </h4>
-      </div>
-      <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true">
-        <mat-icon>fiber_manual_record</mat-icon>
-      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><label class="label">
+          Your Daily News</label></div>
     </div>
   </div>
-  <div fxLayout="column wrap" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="page.isViewNews">
-    <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true" (click)="back()">
-      <mat-icon>arrow_back</mat-icon><button mat-button>Back</button>
-    </div>
-    <bh-newsRead [news]="page.sentData"></bh-newsRead>
-  </div>
-  <div fxLayout="column wrap" style="overflow-y:auto;" class="lightbackground fullheight" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="!page.isViewNews">
-    <div fxLayout="row wrap" style="height:80px;padding:15px" class="width94" fxLayoutAlign="space-between center" [fxShow]="true">
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div>
-          Good morning,Bk</div>
-      </div>
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput placeholder="Search" [required]="false">
-          <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
+  <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div fxLayout="column wrap" style="padding: 8px 30px" class="darkgreytop" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.navigation" (click)="sendCategory(item.catergory)">
+      <div>
+        {{item.name}}
       </div>
     </div>
-    <bh-dynamicData [data]="page.data"></bh-dynamicData>
   </div>
 </div>

@@ -10,10 +10,16 @@ bh-home{
     height: 100%;
 }
 .borderbody{
-    border: solid 1px purple;
+    // border: solid 1px purple;
+    background-image: url('https://images.pexels.com/photos/2130166/pexels-photo-2130166.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .borderradius{
     border-radius: 5px;
+}
+body{
+    overflow-y: auto;
 }
 .height98{
     height: 99.8%;
@@ -30,6 +36,25 @@ bh-home{
 }
 .width94{
     width: 94%;
+}
+.headingSize{
+    font-size: 30px;
+    font-weight: 700;
+    // font-family: 'Roboto Condensed';
+    color: #ED1C24;
+    letter-spacing: -0.01em;
+    line-height: 1;
+}
+.label{
+    font-size: 18px;
+    color: #b0b0b0;
+    font-weight: 300;
+}
+.darkgreytop{
+    border-top: solid 3px darkgrey;
+}
+.marginbotzero{
+        margin-bottom: 0;
 }
 .width90{
     width:90%

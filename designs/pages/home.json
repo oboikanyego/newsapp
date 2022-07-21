@@ -135,7 +135,8 @@
         "wires": [
             [
                 "sd_CsPwwoVrTeWHy68I",
-                "sd_RSZFKAMWbBRbRwWr"
+                "sd_RSZFKAMWbBRbRwWr",
+                "sd_VGnTvZK7hRUTfbsE"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -192,8 +193,8 @@
         "accept_csd": true,
         "functionName": "sd_CsPwwoVrTeWHy68I",
         "category": "General",
-        "x": 305,
-        "y": 200,
+        "x": 365,
+        "y": 220,
         "wires": [
             []
         ],
@@ -534,7 +535,26 @@
         "accept_csd": false,
         "functionName": "sd_RSZFKAMWbBRbRwWr",
         "category": "General",
-        "x": 320,
+        "x": 365,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_VGnTvZK7hRUTfbsE",
+        "type": "Script",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.navigation=[\n    {\n    name:\"Home\",\n    category:\"all\",\n    icon:\"home\"\n},{\n    name:\"Business\",\n    category:\"business\",\n    icon:\"work_outline\"\n},{\n    name:\"Entertainment\",\n    category:\"entertainment\",\n    icon:\"sports_esports\"\n},{\n    name:\"General\",\n    category:\"general\",\n    icon:\"people\"\n},{\n    name:\"Health\",\n    category:\"health\",\n    icon:\"home\"\n},{\n    name:\"Science\",\n    category:\"science\",\n    icon:\"home\"\n},{\n    name:\"Sports\",\n    category:\"sports\",\n    icon:\"sports_gymnastics\"\n},{\n    name:\"Technology\",\n    category:\"technology\",\n    icon:\"devices\"\n}\n]\n",
+        "functionName": "sd_VGnTvZK7hRUTfbsE",
+        "category": "Function",
+        "x": 245,
         "y": 320,
         "wires": [
             []

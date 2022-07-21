@@ -18,7 +18,6 @@ import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { NgxPaginationModule } from 'ngx-pagination'; //_splitter_
 import { getnews } from 'app/sd-services/getnews'; //_splitter_
-import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -37,7 +36,6 @@ export class homeComponent implements DoCheck {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
-    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -77,6 +75,7 @@ export class homeComponent implements DoCheck {
       bh.local = {};
       bh = this.sd_CsPwwoVrTeWHy68I(bh);
       bh = this.sd_RSZFKAMWbBRbRwWr(bh);
+      bh = this.sd_VGnTvZK7hRUTfbsE(bh);
       //appendnew_next_sendCategory
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_EBXWXYbK1Uc9wNvD');
@@ -243,6 +242,59 @@ export class homeComponent implements DoCheck {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_RSZFKAMWbBRbRwWr');
+    }
+  }
+
+  sd_VGnTvZK7hRUTfbsE(bh) {
+    try {
+      const page = this.page;
+      page.navigation = [
+        {
+          name: 'Home',
+          category: 'all',
+          icon: 'home',
+        },
+        {
+          name: 'Business',
+          category: 'business',
+          icon: 'work_outline',
+        },
+        {
+          name: 'Entertainment',
+          category: 'entertainment',
+          icon: 'sports_esports',
+        },
+        {
+          name: 'General',
+          category: 'general',
+          icon: 'people',
+        },
+        {
+          name: 'Health',
+          category: 'health',
+          icon: 'home',
+        },
+        {
+          name: 'Science',
+          category: 'science',
+          icon: 'home',
+        },
+        {
+          name: 'Sports',
+          category: 'sports',
+          icon: 'sports_gymnastics',
+        },
+        {
+          name: 'Technology',
+          category: 'technology',
+          icon: 'devices',
+        },
+      ];
+
+      //appendnew_next_sd_VGnTvZK7hRUTfbsE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_VGnTvZK7hRUTfbsE');
     }
   }
 
