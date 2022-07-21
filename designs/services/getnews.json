@@ -23,7 +23,7 @@
             {
                 "key": "catergory",
                 "defaultValue": {
-                    "type": "any",
+                    "type": "str",
                     "value": ""
                 },
                 "output": false
@@ -94,7 +94,7 @@
         "y": 80,
         "wires": [
             [
-                "sd_hr5G0b8TNUXUBZdd"
+                "sd_2OylmBQR4X80edFZ"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -108,7 +108,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.input.caterigory='entertainment'\nbh.url='https://newsapi.org/v2/everything?q=' + bh.input.caterigory + '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';",
+        "script": "bh.url='https://newsapi.org/v2/everything?q=' + bh.input.catergory + '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';",
         "functionName": "sd_upW4opq2b0X5k3Bf",
         "category": "Function",
         "x": 260,
@@ -118,31 +118,6 @@
                 "sd_QcoR8Z8fyceffDBp"
             ]
         ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_hbS2SknAIr2coBdh",
-        "type": "Log",
-        "z": "sd_Yp5ppCJw8dBJIphW",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "bh.local.result",
-        "functionName": "sd_hbS2SknAIr2coBdh",
-        "category": "General",
-        "x": 705,
-        "y": 80,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "bh.local",
-                "value": "result",
-                "constant": false
-            }
-        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
@@ -170,7 +145,7 @@
         "functionName": "getBycountry",
         "category": "General",
         "x": 105,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "sd_C1KAn0CsclpRCNtV"
@@ -217,11 +192,11 @@
         "paramMappingObj": {},
         "functionName": "sd_2ywxV9Cope4Iox2k",
         "category": "HTTP",
-        "x": 430,
-        "y": 220,
+        "x": 365,
+        "y": 200,
         "wires": [
             [
-                "sd_v9AbQE8u2eskjIYJ"
+                "sd_gSxqTGXFrzgkWV0y"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -235,11 +210,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.input.country='us'\nbh.url='https://newsapi.org/v2/top-headlines?country=' + bh.input.country + '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';\n",
+        "script": "bh.input.country='us';\nbh.url='https://newsapi.org/v2/top-headlines?country=' + bh.input.country + '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';\n",
         "functionName": "sd_C1KAn0CsclpRCNtV",
         "category": "Function",
         "x": 245,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "sd_2ywxV9Cope4Iox2k"
@@ -250,52 +225,37 @@
         "generated": true
     },
     {
-        "id": "sd_v9AbQE8u2eskjIYJ",
-        "type": "Navigation",
+        "id": "sd_2OylmBQR4X80edFZ",
+        "type": "Log",
         "z": "sd_Yp5ppCJw8dBJIphW",
         "viewType": "client-pages",
         "nodeType": "flow",
         "name": "",
-        "path": "/home/cards",
-        "functionName": "sd_v9AbQE8u2eskjIYJ",
-        "category": "Navigation",
-        "x": 705,
-        "y": 220,
-        "wires": [
-            []
-        ],
+        "outputs": 0,
+        "logObject": "bh",
+        "functionName": "sd_2OylmBQR4X80edFZ",
+        "category": "General",
+        "x": 565,
+        "y": 80,
+        "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
     },
     {
-        "id": "sd_hr5G0b8TNUXUBZdd",
-        "type": "ServiceVariables",
+        "id": "sd_gSxqTGXFrzgkWV0y",
+        "type": "Log",
         "z": "sd_Yp5ppCJw8dBJIphW",
-        "viewType": "client-server",
+        "viewType": "client-pages",
         "nodeType": "flow",
-        "name": "shared data",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "set",
-        "globalVariables": [
-            {
-                "textIp": "clientdata",
-                "typedIpValue": {
-                    "type": "bh.local",
-                    "value": "result"
-                }
-            }
-        ],
-        "functionName": "sharedData",
-        "category": "Function",
-        "x": 565,
-        "y": 80,
-        "wires": [
-            [
-                "sd_hbS2SknAIr2coBdh"
-            ]
-        ],
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh",
+        "functionName": "sd_gSxqTGXFrzgkWV0y",
+        "category": "General",
+        "x": 525,
+        "y": 200,
+        "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true

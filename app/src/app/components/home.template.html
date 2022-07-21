@@ -27,7 +27,25 @@
       </div>
     </div>
   </div>
-  <div fxLayout="column wrap" style="overflow-y:auto;" class="lightbackground fullheight" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true">
-    <router-outlet></router-outlet>
+  <div fxLayout="column wrap" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="page.isViewNews">
+    <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true" (click)="back()">
+      <mat-icon>arrow_back</mat-icon><button mat-button>Back</button>
+    </div>
+    <bh-newsRead [news]="page.sentData"></bh-newsRead>
+  </div>
+  <div fxLayout="column wrap" style="overflow-y:auto;" class="lightbackground fullheight" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="!page.isViewNews">
+    <div fxLayout="row wrap" style="height:80px;padding:15px" class="width94" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div>
+          Good morning,Bk</div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput placeholder="Search" [required]="false">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <bh-dynamicData [data]="page.data"></bh-dynamicData>
   </div>
 </div>

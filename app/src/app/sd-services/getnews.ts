@@ -21,8 +21,6 @@ declare const cordova: any;
   providedIn: 'root',
 })
 export class getnews {
-  public clientdata: any;
-
   constructor(
     private sdService: SDBaseService,
     private router: Router,
@@ -39,7 +37,7 @@ export class getnews {
 
   //   service flows_getnews
 
-  async getNewsCatergory(catergory: any = undefined, ...others) {
+  async getNewsCatergory(catergory = '', ...others) {
     try {
       var bh: any = {
         input: {
@@ -95,10 +93,9 @@ export class getnews {
 
   async sd_upW4opq2b0X5k3Bf(bh) {
     try {
-      bh.input.caterigory = 'entertainment';
       bh.url =
         'https://newsapi.org/v2/everything?q=' +
-        bh.input.caterigory +
+        bh.input.catergory +
         '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';
       bh = await this.sd_QcoR8Z8fyceffDBp(bh);
       //appendnew_next_sd_upW4opq2b0X5k3Bf
@@ -119,7 +116,7 @@ export class getnews {
         body: undefined,
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      bh = await this.sharedData(bh);
+      this.sd_2OylmBQR4X80edFZ(bh);
       //appendnew_next_sd_QcoR8Z8fyceffDBp
       return bh;
     } catch (e) {
@@ -127,24 +124,13 @@ export class getnews {
     }
   }
 
-  async sharedData(bh) {
+  async sd_2OylmBQR4X80edFZ(bh) {
     try {
-      this.clientdata = bh.local.result;
-      this.sd_hbS2SknAIr2coBdh(bh);
-      //appendnew_next_sharedData
+      console.log(new Date().toLocaleTimeString(), bh);
+      //appendnew_next_sd_2OylmBQR4X80edFZ
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_hr5G0b8TNUXUBZdd');
-    }
-  }
-
-  async sd_hbS2SknAIr2coBdh(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.local.result);
-      //appendnew_next_sd_hbS2SknAIr2coBdh
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_hbS2SknAIr2coBdh');
+      return await this.errorHandler(bh, e, 'sd_2OylmBQR4X80edFZ');
     }
   }
 
@@ -175,7 +161,7 @@ export class getnews {
         body: undefined,
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      bh = await this.sd_v9AbQE8u2eskjIYJ(bh);
+      this.sd_gSxqTGXFrzgkWV0y(bh);
       //appendnew_next_sd_2ywxV9Cope4Iox2k
       return bh;
     } catch (e) {
@@ -183,17 +169,13 @@ export class getnews {
     }
   }
 
-  async sd_v9AbQE8u2eskjIYJ(bh) {
+  async sd_gSxqTGXFrzgkWV0y(bh) {
     try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/home/cards');
-      await this.router.navigate([
-        this.sdService.formatPathWithParams(path, undefined),
-      ]);
-      //appendnew_next_sd_v9AbQE8u2eskjIYJ
+      console.log(new Date().toLocaleTimeString(), bh);
+      //appendnew_next_sd_gSxqTGXFrzgkWV0y
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_v9AbQE8u2eskjIYJ');
+      return await this.errorHandler(bh, e, 'sd_gSxqTGXFrzgkWV0y');
     }
   }
 

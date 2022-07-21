@@ -24,6 +24,10 @@ bh-home{
 .mainContainer{
     background-color: #d9dbe2
 }
+.mat-button {
+    color: #ffff !important;
+    background-color: purple !important;
+}
 .width94{
     width: 94%;
 }
@@ -36,6 +40,13 @@ bh-home{
  text-overflow: ellipsis;
      width: 270px;
 }
+.elipsisParagraph{
+    white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+     width: 60em;
+}
+
 .padding5px{
     padding: 7px;
 }

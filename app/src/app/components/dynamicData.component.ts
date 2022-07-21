@@ -10,13 +10,13 @@ import {
   EventEmitter,
   AfterViewInit,
   DoCheck,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { NgxPaginationModule } from 'ngx-pagination'; //_splitter_
-import { getnews } from 'app/sd-services/getnews'; //_splitter_
-import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -26,7 +26,9 @@ import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitt
     //appendnew_element_providers
   ],
 })
-export class dynamicDataComponent implements DoCheck {
+export class dynamicDataComponent implements OnChanges {
+  @Input('data')
+  public data: any = undefined;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -35,7 +37,6 @@ export class dynamicDataComponent implements DoCheck {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
-    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -66,15 +67,30 @@ export class dynamicDataComponent implements DoCheck {
     }
   }
 
-  ngDoCheck() {
+  ngOnChanges(changes: SimpleChanges) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh = this.sd_ZvoBUamBHz29Uq2z(bh);
-      //appendnew_next_ngDoCheck
+      bh.changes = changes;
+      bh = this.sd_HUAcT45XpTTaPeG7(bh);
+      //appendnew_next_ngOnChanges
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_vmKwVKlblg2cSKui');
+      return this.errorHandler(bh, e, 'sd_DrwvltqBH1RlPSHs');
+    }
+  }
+
+  sendDatatNews(news: any = undefined, ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { news: news };
+      bh.local = {};
+      bh = this.sd_Ikd3xfE2DVjhNeuP(bh);
+      //appendnew_next_sendDatatNews
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cSt2brPaeleihhW1');
     }
   }
 
@@ -104,59 +120,24 @@ export class dynamicDataComponent implements DoCheck {
     }
   }
 
-  sd_ZvoBUamBHz29Uq2z(bh) {
-    try {
-      const getnewsInstance: getnews = this.__page_injector__.get(getnews);
-      this.page.client = getnewsInstance['clientdata'];
-      bh = this.sd_9Z69UmsyjZV2LNN5(bh);
-      //appendnew_next_sd_ZvoBUamBHz29Uq2z
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ZvoBUamBHz29Uq2z');
-    }
-  }
-
-  sd_9Z69UmsyjZV2LNN5(bh) {
+  sd_HUAcT45XpTTaPeG7(bh) {
     try {
       const page = this.page;
-      console.log('client data :', page.client);
-      bh = this.sd_R3ToJJCmJDUBIUtu(bh);
-      //appendnew_next_sd_9Z69UmsyjZV2LNN5
+      page.cardArr = bh.changes.data.currentValue.articles;
+      //appendnew_next_sd_HUAcT45XpTTaPeG7
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_9Z69UmsyjZV2LNN5');
+      return this.errorHandler(bh, e, 'sd_HUAcT45XpTTaPeG7');
     }
   }
 
-  sd_R3ToJJCmJDUBIUtu(bh) {
+  sd_Ikd3xfE2DVjhNeuP(bh) {
     try {
-      if (
-        this.sdService.operators['nnull'](
-          this.page.client,
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_NUNaiuZXP96owFsF(bh);
-      }
-
+      sessionStorage.setItem('news', JSON.stringify(bh.input.news));
+      //appendnew_next_sd_Ikd3xfE2DVjhNeuP
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_R3ToJJCmJDUBIUtu');
-    }
-  }
-
-  sd_NUNaiuZXP96owFsF(bh) {
-    try {
-      const page = this.page;
-      page.cardArr = page.client;
-      console.log('data of catergory:', page.cardArr);
-
-      //appendnew_next_sd_NUNaiuZXP96owFsF
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_NUNaiuZXP96owFsF');
+      return this.errorHandler(bh, e, 'sd_Ikd3xfE2DVjhNeuP');
     }
   }
 

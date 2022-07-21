@@ -1,0 +1,28 @@
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <h2>
+        {{page.news?.title}}
+      </h2>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page.news?.urlToImage || &apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg &apos;" style="height:410px"></div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <p>
+        {{page.news?.description }}
+      </p>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+        {{page.news?.author ? page.news?.author :&apos;Author not know&apos; }}</label></div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <p>
+        {{page.content}}<a href="{{page.news?.url}}" target="_blank">Read Full Article</a>
+      </p>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>

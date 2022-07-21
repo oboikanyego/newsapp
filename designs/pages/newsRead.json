@@ -1,0 +1,169 @@
+[
+    {
+        "id": "sd_ka7752zqgJZQGNw8",
+        "type": "tab",
+        "createdDate": "2022-07-21T12:46:11.259Z",
+        "label": "newsRead",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "newsReadComponent"
+    },
+    {
+        "id": "sd_uaWAnkSZqahEOFcA",
+        "type": "OnInit",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "news",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [],
+        "functionName": "sd_uaWAnkSZqahEOFcA",
+        "category": "Lifecycle Events",
+        "x": 85,
+        "y": 40,
+        "wires": [
+            [
+                "sd_SFk3cjIOLpt0URts"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "newsReadComponent"
+    },
+    {
+        "id": "sd_SFk3cjIOLpt0URts",
+        "type": "PageVariables",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "news",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_SFk3cjIOLpt0URts",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_YKlFt3MaidGNY3RT",
+        "type": "Log",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.news",
+        "functionName": "sd_YKlFt3MaidGNY3RT",
+        "category": "General",
+        "x": 505,
+        "y": 200,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "news",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    },
+    {
+        "id": "sd_U4dsFMJQUzQAW5tL",
+        "type": "Storage",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "news"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "news"
+        },
+        "functionName": "sd_U4dsFMJQUzQAW5tL",
+        "category": "Storage",
+        "x": 245,
+        "y": 200,
+        "wires": [
+            [
+                "sd_Br4GT3JnyA703Oge"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Pi5HfcYKh4tcZ5xw",
+        "type": "DoCheck",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "checkData",
+        "functionName": "ngDoCheck",
+        "category": "Lifecycle Events",
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [
+                "sd_U4dsFMJQUzQAW5tL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "newsReadComponent"
+    },
+    {
+        "id": "sd_Br4GT3JnyA703Oge",
+        "type": "Script",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.content=page.news?.content.replace(/ \\[[\\s\\S]*?\\]/g, '');\nconsole.log(page.news?.content.replace(/ \\[[\\s\\S]*?\\]/g, ''))",
+        "functionName": "sd_Br4GT3JnyA703Oge",
+        "category": "Function",
+        "x": 360,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

@@ -17,6 +17,9 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
         "functionName": "sd_EZ7XKtmJgMfQfV4I",
         "category": "Lifecycle Events",
         "x": 145,
@@ -59,7 +62,7 @@
                 "textIp": "data",
                 "typedIpValue": {
                     "type": "literal",
-                    "value": ""
+                    "value": "[]"
                 }
             },
             {
@@ -71,6 +74,20 @@
             },
             {
                 "textIp": "navigation",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "isViewNews",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "sentData",
                 "typedIpValue": {
                     "type": "literal",
                     "value": ""
@@ -88,7 +105,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_EBXWXYbK1Uc9wNvD",
@@ -116,7 +134,8 @@
         "y": 220,
         "wires": [
             [
-                "sd_CsPwwoVrTeWHy68I"
+                "sd_CsPwwoVrTeWHy68I",
+                "sd_RSZFKAMWbBRbRwWr"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -159,8 +178,9 @@
                 "mapVarType": "local",
                 "key": "result",
                 "valueType": "this.page",
-                "value": "",
-                "mapVarName": "result"
+                "value": "data",
+                "mapVarName": "result",
+                "localVar": "this.page.data"
             }
         ],
         "serviceImportPath": "app/sd-services/getnews",
@@ -172,8 +192,8 @@
         "accept_csd": true,
         "functionName": "sd_CsPwwoVrTeWHy68I",
         "category": "General",
-        "x": 245,
-        "y": 220,
+        "x": 305,
+        "y": 200,
         "wires": [
             []
         ],
@@ -227,7 +247,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.navigation=[\n    {\n    name:\"Home\",\n    category:\"all\",\n    icon:\"home\"\n},{\n    name:\"Business\",\n    category:\"business\",\n    icon:\"work_outline\"\n},{\n    name:\"Entertainment\",\n    category:\"entertainment\",\n    icon:\"sports_esports\"\n},{\n    name:\"General\",\n    category:\"general\",\n    icon:\"people\"\n},{\n    name:\"Health\",\n    category:\"health\",\n    icon:\"medical_information\"\n},{\n    name:\"Science\",\n    category:\"science\",\n    icon:\"science\"\n},{\n    name:\"Sports\",\n    category:\"sports\",\n    icon:\"sports_gymnastics\"\n},{\n    name:\"Technology\",\n    category:\"technology\",\n    icon:\"biotech\"\n}\n]\n",
+        "script": "page.navigation=[\n    {\n    name:\"Home\",\n    category:\"all\",\n    icon:\"home\"\n},{\n    name:\"Business\",\n    category:\"business\",\n    icon:\"work_outline\"\n},{\n    name:\"Entertainment\",\n    category:\"entertainment\",\n    icon:\"sports_esports\"\n},{\n    name:\"General\",\n    category:\"general\",\n    icon:\"people\"\n},{\n    name:\"Health\",\n    category:\"health\",\n    icon:\"home\"\n},{\n    name:\"Science\",\n    category:\"science\",\n    icon:\"home\"\n},{\n    name:\"Sports\",\n    category:\"sports\",\n    icon:\"sports_gymnastics\"\n},{\n    name:\"Technology\",\n    category:\"technology\",\n    icon:\"devices\"\n}\n]\n",
         "functionName": "sd_nSLC9GkujHSkJEuk",
         "category": "Function",
         "x": 485,
@@ -284,6 +304,238 @@
         "category": "General",
         "x": 605,
         "y": 120,
+        "wires": [
+            [
+                "sd_nm1GYm6l6cGfGvzy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Q5VbyPtW6o1Nh2j9",
+        "type": "Storage",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "news"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "sentData"
+        },
+        "functionName": "sd_Q5VbyPtW6o1Nh2j9",
+        "category": "Storage",
+        "x": 205,
+        "y": 400,
+        "wires": [
+            [
+                "sd_M3w2QdkpKCIvehqi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_M3w2QdkpKCIvehqi",
+        "type": "PageSwitch",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "sentData",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.sentData",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_M3w2QdkpKCIvehqi",
+        "category": "Function",
+        "x": 305,
+        "y": 400,
+        "wires": [
+            [
+                "sd_WxhjNOPjGhXWoGmB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_WxhjNOPjGhXWoGmB",
+        "type": "Script",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.isViewNews=true;",
+        "functionName": "sd_WxhjNOPjGhXWoGmB",
+        "category": "Function",
+        "x": 425,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_A6kfTLkrq4s8xI0u",
+        "type": "DoCheck",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "Do Check",
+        "functionName": "ngDoCheck",
+        "category": "Lifecycle Events",
+        "x": 105,
+        "y": 400,
+        "wires": [
+            [
+                "sd_Q5VbyPtW6o1Nh2j9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_uwzsBe4DScwrstZE",
+        "type": "PageStart",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "Back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "back",
+        "category": "General",
+        "x": 125,
+        "y": 480,
+        "wires": [
+            [
+                "sd_BuySscH0gnGueuxA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_8hOK4ZwyQTLYSd8J",
+        "type": "Script",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.isViewNews=false;",
+        "functionName": "sd_8hOK4ZwyQTLYSd8J",
+        "category": "Function",
+        "x": 385,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_BuySscH0gnGueuxA",
+        "type": "Storage",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "clear",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {},
+        "value": {},
+        "resultMapping": {},
+        "functionName": "sd_BuySscH0gnGueuxA",
+        "category": "Storage",
+        "x": 245,
+        "y": 480,
+        "wires": [
+            [
+                "sd_8hOK4ZwyQTLYSd8J"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_nm1GYm6l6cGfGvzy",
+        "type": "Script",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.isViewNews=false;",
+        "functionName": "sd_nm1GYm6l6cGfGvzy",
+        "category": "Function",
+        "x": 725,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_RSZFKAMWbBRbRwWr",
+        "type": "PageCallService",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_tZue59qask1q2rWD",
+            "type": "tab",
+            "createdDate": "2022-07-20T07:46:02.433Z",
+            "label": "home",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_uwzsBe4DScwrstZE",
+            "flowName": "back"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./home",
+        "startName": "back",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_RSZFKAMWbBRbRwWr",
+        "category": "General",
+        "x": 320,
+        "y": 320,
         "wires": [
             []
         ],

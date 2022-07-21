@@ -2,17 +2,11 @@
     "routes": [
         {
             "path": "home",
-            "component": "homeComponent",
-            "children": [
-                {
-                    "path": "cards",
-                    "component": "dynamicDataComponent"
-                }
-            ]
+            "component": "homeComponent"
         },
         {
             "path": "''",
-            "redirectTo": "/home/cards",
+            "redirectTo": "/home",
             "pathMatch": "full",
             "default": true
         },

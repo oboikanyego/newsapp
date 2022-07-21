@@ -15,6 +15,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-newsReadComponent
+import { newsReadComponent } from '../components/newsRead.component';
 //CORE_REFERENCE_IMPORT-dynamicDataComponent
 import { dynamicDataComponent } from '../components/dynamicData.component';
 //CORE_REFERENCE_IMPORT-homeComponent
@@ -51,6 +53,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-newsReadComponent
+  newsReadComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dynamicDataComponent
   dynamicDataComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
@@ -80,12 +84,8 @@ export const appProviders = [
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
-  {
-    path: 'home',
-    component: homeComponent,
-    children: [{ path: 'cards', component: dynamicDataComponent }],
-  },
-  { path: '', redirectTo: '/home/cards', pathMatch: 'full' },
+  { path: 'home', component: homeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END
