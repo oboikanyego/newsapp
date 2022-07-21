@@ -64,7 +64,7 @@ export class homeComponent {
     }
   }
 
-  sendCategory(catergory: any = undefined, ...others) {
+  sendCategory(catergory = '', ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
@@ -73,7 +73,6 @@ export class homeComponent {
       bh.local = {};
       bh = this.sd_CsPwwoVrTeWHy68I(bh);
       //appendnew_next_sendCategory
-      return bh.input.catergory;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_EBXWXYbK1Uc9wNvD');
     }
@@ -83,7 +82,7 @@ export class homeComponent {
 
   sd_tlThNUO1Bc3p26X8(bh) {
     try {
-      this.page.curDate = undefined;
+      this.page.curDate = new Date();
       this.page.cardArr = undefined;
       this.page.data = undefined;
       this.page.p = 1;
@@ -99,23 +98,11 @@ export class homeComponent {
   sd_jP92Fh1TgA7O8gXX(bh) {
     try {
       this.page.paginate = this.__page_injector__.get(NgxPaginationModule);
-      bh = this.sd_KxRAR9lKuKylC7xu(bh);
+      bh = this.sd_nSLC9GkujHSkJEuk(bh);
       //appendnew_next_sd_jP92Fh1TgA7O8gXX
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_jP92Fh1TgA7O8gXX');
-    }
-  }
-
-  sd_KxRAR9lKuKylC7xu(bh) {
-    try {
-      const page = this.page;
-      page.curDate = new Date();
-      bh = this.sd_nSLC9GkujHSkJEuk(bh);
-      //appendnew_next_sd_KxRAR9lKuKylC7xu
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_KxRAR9lKuKylC7xu');
     }
   }
 
@@ -165,10 +152,25 @@ export class homeComponent {
         },
       ];
 
+      bh = this.sd_usU7Pl16gtp4nctP(bh);
       //appendnew_next_sd_nSLC9GkujHSkJEuk
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_nSLC9GkujHSkJEuk');
+    }
+  }
+
+  async sd_usU7Pl16gtp4nctP(bh) {
+    try {
+      const getnewsInstance: getnews = this.__page_injector__.get(getnews);
+
+      let outputVariables = await getnewsInstance.getBycountry();
+      this.page.data = outputVariables.local.result;
+
+      //appendnew_next_sd_usU7Pl16gtp4nctP
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_usU7Pl16gtp4nctP');
     }
   }
 
@@ -179,25 +181,11 @@ export class homeComponent {
       let outputVariables = await getnewsInstance.getNewsCatergory(
         bh.input.catergory
       );
-      this.page.data = outputVariables.local.result;
 
-      bh = this.sd_XZpusbrO27f7B65e(bh);
       //appendnew_next_sd_CsPwwoVrTeWHy68I
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_CsPwwoVrTeWHy68I');
-    }
-  }
-
-  sd_XZpusbrO27f7B65e(bh) {
-    try {
-      const page = this.page; // page.cardArr=
-      page.data.articles;
-      console.log('service data :', page.data.articles);
-      //appendnew_next_sd_XZpusbrO27f7B65e
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_XZpusbrO27f7B65e');
     }
   }
 

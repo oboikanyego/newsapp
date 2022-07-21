@@ -97,25 +97,10 @@ export class dynamicDataComponent implements DoCheck {
   sd_JwIaOfUoojdvuJuc(bh) {
     try {
       this.page.paginate = this.__page_injector__.get(NgxPaginationModule);
-      bh = this.sd_KpJrsOY8RLSsgz0j(bh);
       //appendnew_next_sd_JwIaOfUoojdvuJuc
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_JwIaOfUoojdvuJuc');
-    }
-  }
-
-  async sd_KpJrsOY8RLSsgz0j(bh) {
-    try {
-      const getnewsInstance: getnews = this.__page_injector__.get(getnews);
-
-      let outputVariables = await getnewsInstance.getBycountry();
-      this.page.cardArr = outputVariables.local.result;
-
-      //appendnew_next_sd_KpJrsOY8RLSsgz0j
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_KpJrsOY8RLSsgz0j');
     }
   }
 

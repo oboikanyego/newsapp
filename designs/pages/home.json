@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_EZ7XKtmJgMfQfV4I",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 145,
+        "y": 120,
         "wires": [
             [
                 "sd_tlThNUO1Bc3p26X8"
@@ -45,7 +45,7 @@
                 "textIp": "curDate",
                 "typedIpValue": {
                     "type": "literal",
-                    "value": ""
+                    "value": "new Date()"
                 }
             },
             {
@@ -79,8 +79,8 @@
         ],
         "functionName": "sd_tlThNUO1Bc3p26X8",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 245,
+        "y": 120,
         "wires": [
             [
                 "sd_jP92Fh1TgA7O8gXX"
@@ -89,45 +89,6 @@
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
-    },
-    {
-        "id": "sd_KxRAR9lKuKylC7xu",
-        "type": "Script",
-        "z": "sd_tZue59qask1q2rWD",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.curDate=new Date();",
-        "functionName": "sd_KxRAR9lKuKylC7xu",
-        "category": "Function",
-        "x": 445,
-        "y": 40,
-        "wires": [
-            [
-                "sd_nSLC9GkujHSkJEuk"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_pFpgzR9KZsPmnx7J",
-        "type": "Script",
-        "z": "sd_tZue59qask1q2rWD",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "=[\n    {\n\"source\": {\n\"id\": \"engadget\",\n\"name\": \"Engadget\"\n},\n\"author\": \"Mariella Moon\",\n\"title\": \"Putin signs law prohibiting crypto payments in Russia\",\n\"description\": \"People in Russia will soon no longer be allowed to use digital assets as a form of payment. Russian president Vladimir Putin has signed a bill into law prohibiting the use of digital assets, such as cryptocurrency and NFTs, to pay for goods and services. In a…\",\n\"url\": \"https://www.engadget.com/putin-law-prohibiting-crypto-payments-russia-125015139.html\",\n\"urlToImage\": \"https://s.yimg.com/os/creatr-uploaded-images/2021-10/da24dc60-287b-11ec-bdfb-1b79f92db31c\",\n\"publishedAt\": \"2022-07-16T12:50:15Z\",\n\"content\": \"People in Russia will soon no longer be allowed to use digital assets as a form of payment. Russian president Vladimir Putin has signed a bill into law prohibiting the use of digital assets, such as … [+1436 chars]\"\n},\n{\n\"source\": {\n\"id\": \"engadget\",\n\"name\": \"Engadget\"\n},\n\"author\": \"Billy Steele\",\n\"title\": \"Recommended Reading: A blockchain primer\",\n\"description\": \"Does the crypto crash mean the blockchain Is over?Stephen J. Dubner, Freakonomics RadioIn this installment of Recommended Listening, Freakonomics Radio begins a three-part series on all things blockchain. The podcast will tackle everything from Bitcoin and cr…\",\n\"url\": \"https://www.engadget.com/recommended-reading-a-blockchain-primer-140011351.html\",\n\"urlToImage\": \"https://s.yimg.com/os/creatr-uploaded-images/2022-06/66b13e10-f3fd-11ec-b7ec-a5f156811c3b\",\n\"publishedAt\": \"2022-06-25T14:00:11Z\",\n\"content\": \"Stephen J. Dubner, Freakonomics Radio\\r\\nIn this installment of Recommended Listening, Freakonomics Radio begins a three-part series on all things blockchain. The podcast will tackle everything from Bi… [+734 chars]\"\n},\n{\n\"source\": {\n\"id\": null,\n\"name\": \"Gizmodo.com\"\n},\n\"author\": \"Mack DeGeurin\",\n\"title\": \"Three Arrows Capital Ordered to Liquidate All Assets After Defaulting on $675M Bitcoin Loans\",\n\"description\": \"The rapid collapse of the massive crypto hedge fund, which once managed $18 billion, marks one of the worst causalities of the crypto collapse so far.\",\n\"url\": \"https://gizmodo.com/three-arrows-capital-bitcoin-loan-default-crypto-crash-1849125057\",\n\"urlToImage\": \"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/bd6b4e204b3844b17fba39814f9f6a24.jpg\",\n\"publishedAt\": \"2022-06-29T21:06:00Z\",\n\"content\": \"Three Arrows Capital, one of the crypto industrys biggest sinking ships, is finally being put out of its misery.\\r\\nOn Tuesday, the distressed crypto hedge fund was ordered into liquidation by a Virgin… [+2515 chars]\"\n},\n{\n\"source\": {\n\"id\": \"business-insider\",\n\"name\": \"Business Insider\"\n},\n\"author\": \"gglover@insider.com (George Glover)\",\n\"title\": \"Grayscale is suing the SEC after its spot bitcoin ETF was rejected\",\n\"description\": \"The US regulator rejected Grayscale's bid to convert its Bitcoin Trust into a spot bitcoin ETF Wednesday, citing the investment firm's failure to answer questions about market manipulation.\",\n\"url\": \"https://markets.businessinsider.com/news/currencies/bitcoin-etf-grayscale-suing-sec-crypto-analysis-regulation-2022-6\",\n\"urlToImage\": \"https://i.insider.com/62bd87fb69fbfd0018ee090a?width=1200&format=jpeg\",\n\"publishedAt\": \"2022-06-30T12:12:59Z\",\n\"content\": \"Grayscale Investments has announced its intention to sue the Securities and Exchange Commission after the US regulator rejected its proposal to list a spot bitcoin ETF.\\r\\nJust an hour after the SEC re… [+1567 chars]\"\n},\n{\n\"source\": {\n\"id\": \"reuters\",\n\"name\": \"Reuters\"\n},\n\"author\": null,\n\"title\": \"Bitcoin miners sell their holdings amid crypto winter's chill - Reuters.com\",\n\"description\": \"Bitcoin miners have been forced to tap into their cryptocurrency stashes as a plunge in prices, rising energy costs and increased competition bite into profitability.\",\n\"url\": \"https://www.reuters.com/technology/bitcoin-miners-sell-their-holdings-amid-crypto-winters-chill-2022-06-27/\",\n\"urlToImage\": \"https://www.reuters.com/resizer/YZaO2XwcWJgJQByh00F69Puj_QQ=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/YBGBAX5GA5NTHDPPFOT6R27WAI.jpg\",\n\"publishedAt\": \"2022-06-27T16:57:00Z\",\n\"content\": \"June 27 (Reuters) - Bitcoin miners have been forced to tap into their cryptocurrency stashes as a plunge in prices, rising energy costs and increased competition bite into profitability.\\r\\nThe number … [+3710 chars]\"\n},\n{\n\"source\": {\n\"id\": \"reuters\",\n\"name\": \"Reuters\"\n},\n\"author\": null,\n\"title\": \"Cryptoverse-Holding your breath for a bitcoin bounce - Reuters\",\n\"description\": \"If you're waiting for a bitcoin recovery, you may have to sweat it out for months. That's the conclusion of some technical specialists seeking method from the madness.\",\n\"url\": \"https://www.reuters.com/technology/cryptoverse-holding-your-breath-bitcoin-bounce-2022-07-19/\",\n\"urlToImage\": \"https://www.reuters.com/resizer/TP89RCVUE8u_CZJQPAFBTdtyTYg=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/7AUPLFQJA5PQ7GNVOE2QVVIFZ4.jpg\",\n\"publishedAt\": \"2022-07-19T05:16:00Z\",\n\"content\": \"July 19 (Reuters) - If you're waiting for a bitcoin recovery, you may have to sweat it out for months. That's the conclusion of some technical specialists seeking method from the madness.\\r\\nBitcoin's … [+3397 chars]\"\n},\n{\n\"source\": {\n\"id\": \"reuters\",\n\"name\": \"Reuters\"\n},\n\"author\": null,\n\"title\": \"Cryptoverse: Shrimps and whales keep bitcoin afloat - Reuters\",\n\"description\": \"The shrimps of the crypto world have joined the whales in a glorious last stand to banish the bleak bitcoin winter.\",\n\"url\": \"https://www.reuters.com/technology/cryptoverse-shrimps-whales-keep-bitcoin-afloat-2022-07-12/\",\n\"urlToImage\": \"https://www.reuters.com/resizer/WpRncH7uEjFg3FNSDU_4lEdO2V8=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/B5SVXB23RNLKLDCQVQKNN66WEA.jpg\",\n\"publishedAt\": \"2022-07-12T05:13:00Z\",\n\"content\": \"July 12 (Reuters) - The shrimps of the crypto world have joined the whales in a glorious last stand to banish the bleak bitcoin winter.\\r\\nThese two contrasting groups are both HODLers - investors in b… [+3895 chars]\"\n},\n{\n\"source\": {\n\"id\": null,\n\"name\": \"Slashdot.org\"\n},\n\"author\": \"EditorDavid\",\n\"title\": \"Is El Salvador's Bitcoin Experiment Authoritarian Propaganda?\",\n\"description\": \"What exactly happened after El Salvador president Nayib Bukele made Bitcoin a legal tender for the country? \\\"As Bitcoin has dropped more than 50 percent of its value this year, there have been suggestions that El Salvador's investment has pushed the country t…\",\n\"url\": \"https://yro.slashdot.org/story/22/07/03/1610257/is-el-salvadors-bitcoin-experiment-authoritarian-propaganda\",\n\"urlToImage\": \"https://a.fsdn.com/sd/topics/bitcoin_64.png\",\n\"publishedAt\": \"2022-07-03T20:34:00Z\",\n\"content\": \"What exactly happened after El Salvador president Nayib Bukele made Bitcoin a legal tender for the country? \\\"As Bitcoin has dropped more than 50 percent of its value this year, there have been sugges… [+3401 chars]\"\n},\n{\n\"source\": {\n\"id\": \"business-insider\",\n\"name\": \"Business Insider\"\n},\n\"author\": \"mfox@businessinsider.com (Matthew Fox)\",\n\"title\": \"An ETF that will allow investors to bet against bitcoin is set to launch this week as the cryptocurrency plunges 70% from its peak\",\n\"description\": \"The ETF launch comes after bitcoin briefly dipped below $18,000 over the weekend before recovering the all-important $20,000 price level.\",\n\"url\": \"https://markets.businessinsider.com/news/etf/short-bitcoin-etf-proshares-bet-against-crypto-bear-market-biti-2022-6\",\n\"urlToImage\": \"https://i.insider.com/62b1e1654245600018ddba9e?width=1200&format=jpeg\",\n\"publishedAt\": \"2022-06-21T15:58:50Z\",\n\"content\": \"Investors now have a convenient way to bet against bitcoin and profit from its decline with today's launch of the ProShares Short Bitcoin Strategy ETF.\\r\\nProShares, which launched the first US-based b… [+1707 chars]\"\n},\n{\n\"source\": {\n\"id\": \"reuters\",\n\"name\": \"Reuters\"\n},\n\"author\": null,\n\"title\": \"Bitcoin recovers, climbs 7.6% to pass $20400 - Reuters.com\",\n\"description\": \"Bitcoin on Sunday rose around 7.6% to $20,404 from its previous close, signaling a recovery from a sharp drop on Saturday.\",\n\"url\": \"https://www.reuters.com/markets/us/bitcoin-recovers-climbs-76-pass-20400-2022-06-19/\",\n\"urlToImage\": \"https://www.reuters.com/resizer/nj0bWe0pVxQyaFaVjauMfoySoog=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/CPGMP6VSYBKBNJA244SHJHBCIA.jpg\",\n\"publishedAt\": \"2022-06-19T22:14:00Z\",\n\"content\": \"June 19 (Reuters) - Bitcoin on Sunday rose around 7.6% to $20,404 from its previous close, signaling a recovery from a sharp drop on Saturday.\\r\\nBitcoin, the world's biggest and best-known cryptocurre… [+1674 chars]\"\n},\n{\n\"source\": {\n\"id\": \"reuters\",\n\"name\": \"Reuters\"\n},\n\"author\": \"Reuters Editorial\",\n\"title\": \"The Week in Numbers: bitcoin blues, Kellogg splits - Reuters.com\",\n\"description\": \"From deepening blues for bitcoin, to why Kellogg is doing the splits, we round up the bit stories in business and finance over the week to June 24. Ilan Rubens reports.\",\n\"url\": \"https://www.reuters.com/video/watch/idRCV00B75B\",\n\"urlToImage\": \"https://static.reuters.com/resources/r/?d=20220624&i=RCV00B75B&r=RCV00B75B&t=2\",\n\"publishedAt\": \"2022-06-24T12:07:11Z\",\n\"content\": \"Posted \\r\\nFrom deepening blues for bitcoin, to why Kellogg is doing the splits, we round up the bit stories in business and finance over the week to June 24. Ilan Rubens reports.\"\n},\n{\n\"source\": {\n\"id\": \"reuters\",\n\"name\": \"Reuters\"\n},\n\"author\": null,\n\"title\": \"U.S. SEC rejects Grayscale's spot bitcoin ETF application - Reuters.com\",\n\"description\": \"The U.S. Securities and Exchange Commission on Wednesday said in a filing that it rejected a proposal to list a spot bitcoin exchange-traded fund by Grayscale, one of the world's biggest digital asset managers, on Intercontinental Exchange Inc's <a href=\\\"http…\",\n\"url\": \"https://www.reuters.com/markets/us/us-sec-rejects-grayscales-spot-bitcoin-etf-application-2022-06-30/\",\n\"urlToImage\": \"https://www.reuters.com/resizer/BDq6jmJL7nUtYVqigSquQsnxCpE=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/4U5X5OCCFRIXTNWQR6FMX2VMMI.jpg\",\n\"publishedAt\": \"2022-06-30T00:59:00Z\",\n\"content\": \"June 29 (Reuters) - The U.S. Securities and Exchange Commission on Wednesday said in a filing that it rejected a proposal to list a spot bitcoin exchange-traded fund by Grayscale, one of the world's … [+723 chars]\"\n},\n{\n\"source\": {\n\"id\": \"reuters\",\n\"name\": \"Reuters\"\n},\n\"author\": null,\n\"title\": \"Bitcoin falls below $19000, further shaking crypto markets - Reuters.com\",\n\"description\": \"Bitcoin dropped 6.1% to $18,866.77 at 2004 GMT on Thursday, putting the biggest and best-known cryptocurrency down $1,226.41 from its previous close and down 60.9% from the year's high of $48,234 on March 28.\",\n\"url\": \"https://www.reuters.com/markets/us/bitcoin-falls-below-19000-further-shaking-crypto-markets-2022-06-30/\",\n\"urlToImage\": \"https://www.reuters.com/resizer/eeQb8FK8oNm7KlzdFaYT9lvuJ5s=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/LP3EEKNH25PZXG4NK2TOEKO2VY.jpg\",\n\"publishedAt\": \"2022-06-30T21:31:00Z\",\n\"content\": \"June 30 (Reuters) - Bitcoin dropped 6.1% to $18,866.77 at 2004 GMT on Thursday, putting the biggest and best-known cryptocurrency down $1,226.41 from its previous close and down 60.9% from the year's… [+1098 chars]\"\n}\n];\n",
-        "functionName": "sd_pFpgzR9KZsPmnx7J",
-        "category": "Function",
-        "x": 825,
-        "y": 40,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
     },
     {
         "id": "sd_EBXWXYbK1Uc9wNvD",
@@ -141,10 +102,10 @@
             {
                 "key": "catergory",
                 "defaultValue": {
-                    "type": "any",
+                    "type": "str",
                     "value": ""
                 },
-                "output": true
+                "output": false
             }
         ],
         "localVariables": [],
@@ -198,9 +159,8 @@
                 "mapVarType": "local",
                 "key": "result",
                 "valueType": "this.page",
-                "value": "data",
-                "mapVarName": "result",
-                "localVar": "this.page.data"
+                "value": "",
+                "mapVarName": "result"
             }
         ],
         "serviceImportPath": "app/sd-services/getnews",
@@ -212,28 +172,7 @@
         "accept_csd": true,
         "functionName": "sd_CsPwwoVrTeWHy68I",
         "category": "General",
-        "x": 280,
-        "y": 220,
-        "wires": [
-            [
-                "sd_XZpusbrO27f7B65e"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_XZpusbrO27f7B65e",
-        "type": "Script",
-        "z": "sd_tZue59qask1q2rWD",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "// page.cardArr=\npage.data.articles;\nconsole.log('service data :', page.data.articles)",
-        "functionName": "sd_XZpusbrO27f7B65e",
-        "category": "Function",
-        "x": 445,
+        "x": 245,
         "y": 220,
         "wires": [
             []
@@ -270,43 +209,16 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_jP92Fh1TgA7O8gXX",
         "category": "Function",
-        "x": 305,
-        "y": 40,
+        "x": 365,
+        "y": 120,
         "wires": [
             [
-                "sd_KxRAR9lKuKylC7xu"
+                "sd_nSLC9GkujHSkJEuk"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
-    },
-    {
-        "id": "sd_EjlypfHhtxKzb2AD",
-        "type": "Navigation",
-        "z": "sd_tZue59qask1q2rWD",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "path": "/home/cards",
-        "qparams": {
-            "value": "page.data.articles"
-        },
-        "qparamsArray": [
-            {
-                "key": "value",
-                "defaultValue": "page.data.articles"
-            }
-        ],
-        "functionName": "sd_EjlypfHhtxKzb2AD",
-        "category": "Navigation",
-        "x": 565,
-        "y": 220,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
     },
     {
         "id": "sd_nSLC9GkujHSkJEuk",
@@ -318,8 +230,60 @@
         "script": "page.navigation=[\n    {\n    name:\"Home\",\n    category:\"all\",\n    icon:\"home\"\n},{\n    name:\"Business\",\n    category:\"business\",\n    icon:\"work_outline\"\n},{\n    name:\"Entertainment\",\n    category:\"entertainment\",\n    icon:\"sports_esports\"\n},{\n    name:\"General\",\n    category:\"general\",\n    icon:\"people\"\n},{\n    name:\"Health\",\n    category:\"health\",\n    icon:\"medical_information\"\n},{\n    name:\"Science\",\n    category:\"science\",\n    icon:\"science\"\n},{\n    name:\"Sports\",\n    category:\"sports\",\n    icon:\"sports_gymnastics\"\n},{\n    name:\"Technology\",\n    category:\"technology\",\n    icon:\"biotech\"\n}\n]\n",
         "functionName": "sd_nSLC9GkujHSkJEuk",
         "category": "Function",
-        "x": 540,
-        "y": 40,
+        "x": 485,
+        "y": 120,
+        "wires": [
+            [
+                "sd_usU7Pl16gtp4nctP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_usU7Pl16gtp4nctP",
+        "type": "PageCallService",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_Yp5ppCJw8dBJIphW",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:03:43.575Z",
+            "label": "getnews",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_kKX5NEGkyoMOe1sl",
+            "flowName": "getBycountry"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "this.page",
+                "value": "data",
+                "mapVarName": "result",
+                "localVar": "this.page.data"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getnews",
+        "startName": "getBycountry",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_usU7Pl16gtp4nctP",
+        "category": "General",
+        "x": 605,
+        "y": 120,
         "wires": [
             []
         ],
