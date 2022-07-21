@@ -1,0 +1,26 @@
+{
+    "classes": [
+        "fullheight",
+        "borderbody",
+        "borderradius",
+        "height98",
+        "lightbackground",
+        "mainContainer",
+        "width94",
+        "width90",
+        "elipsis",
+        "padding5px",
+        "leftsidecolHome",
+        "lightcolor",
+        "profileimage",
+        "sideNavcatergory",
+        "mat-form-field-appearance-outline",
+        "mat-form-field-infix",
+        "fullwidth",
+        "textunderprofile",
+        "borderradius50",
+        "card",
+        "mat-card-title",
+        "cardimages"
+    ]
+}

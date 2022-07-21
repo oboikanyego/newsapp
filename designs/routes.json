@@ -1,0 +1,24 @@
+{
+    "routes": [
+        {
+            "path": "home",
+            "component": "homeComponent",
+            "children": [
+                {
+                    "path": "cards",
+                    "component": "dynamicDataComponent"
+                }
+            ]
+        },
+        {
+            "path": "''",
+            "redirectTo": "/home/cards",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

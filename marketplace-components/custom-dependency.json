@@ -1,0 +1,9 @@
+{
+    "packages": [
+        {
+            "type": "npm",
+            "name": "ngx-pagination",
+            "version": "6.0.2"
+        }
+    ]
+}

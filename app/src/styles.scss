@@ -1,0 +1,95 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+bh-home{
+    height: 100%;
+}
+.fullheight{
+    height: 100%;
+}
+.borderbody{
+    border: solid 1px purple;
+}
+.borderradius{
+    border-radius: 5px;
+}
+.height98{
+    height: 99.8%;
+}
+.lightbackground{
+    background: #ebeff1
+}
+.mainContainer{
+    background-color: #d9dbe2
+}
+.width94{
+    width: 94%;
+}
+.width90{
+    width:90%
+}
+.elipsis{
+    white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+     width: 270px;
+}
+.padding5px{
+    padding: 7px;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+}
+.leftsidecolHome{
+    background-color:#ffffff;
+}
+.lightcolor{
+    color: #c2cbd3;
+}
+.profileimage{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    img{
+    width: 60px;
+    height: 60px;
+}
+}
+// .calbody{
+//     height: calc( 100% - 80px );
+// }
+.sideNavcatergory{
+    height: 50px;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 10px !important;
+}
+.mat-form-field-infix {
+    border-top: 7.84375px solid transparent !important;
+}
+
+.fullwidth{
+    width: 100%;
+}
+.textunderprofile{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+.borderradius50{
+    border-radius: 50%;
+}
+.card{
+    width: 300px;
+    height: 300px;
+}
+.mat-card-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+.cardimages{
+    width: 350px;
+    height: 150px;
+}

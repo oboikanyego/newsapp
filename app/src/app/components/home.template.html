@@ -1,0 +1,33 @@
+<div fxLayout="row wrap" class="borderradius" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column " class="fullheight lightcolor leftsidecolHome" fxFlex="25" fxLayoutAlign="start center" [fxShow]="true">
+    <div fxLayout="row wrap" class="profileimage" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="fullwidth" fxLayoutAlign="start center" [fxShow]="true"><img [src]="&apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg&apos;" class="borderradius50" artImgSrc>
+        <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+          <p>
+            Oboikanyego Radipabe</p>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+          <p>
+            {{page.curDate | date:&apos;mediumDate&apos;}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="fullwidth sideNavcatergory" fxLayoutAlign="space-around center" [fxShow]="true" (click)="sendCategory(item.category)" *ngFor="let item of page.navigation">
+      <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="start center" [fxShow]="true">
+        <mat-icon style="background-color:white;">{{item.icon}}</mat-icon>
+      </div>
+      <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h4>
+          {{item.name}}
+        </h4>
+      </div>
+      <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-icon>fiber_manual_record</mat-icon>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="column wrap" style="overflow-y:auto;" class="lightbackground fullheight" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true">
+    <router-outlet></router-outlet>
+  </div>
+</div>

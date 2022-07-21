@@ -1,0 +1,13 @@
+{
+    "displayName": "newsapp",
+    "appName": "newsapp",
+    "description": "news application",
+    "lastModified": "2022-07-20T07:45:41.441Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "uiOnly",
+    "templateName": "blank",
+    "createDate": "2022-07-20T07:45:40.520Z",
+    "analyticsId": "ac9a6a88-d53b-c916-0661-91e063431e91",
+    "createdStudioVersion": "8.1.1"
+}

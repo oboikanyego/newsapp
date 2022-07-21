@@ -1,0 +1,38 @@
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column " class="fullheight" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="row wrap" style="height:80px;padding:15px" class="width94" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div>
+          Good morning,Bk</div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput placeholder="Search" [required]="false">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="fullwidth calbody" fxLayoutAlign="space-around space-around" [fxShow]="true">
+      <div fxLayout="column wrap" class="card" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.cardArr?.articles | paginate: { itemsPerPage: 10, currentPage: p , itemsPerPage: 6}">
+        <mat-card>
+          <img mat-card-image artImgSrc class="cardimages" [src]="item.urlToImage   || &apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg &apos;">
+
+          <mat-card-title class="elipsis">{{item.title}}</mat-card-title>
+
+          <mat-card-subtitle class="elipsis">{{item.description}}</mat-card-subtitle>
+
+          <mat-card-subtitle>{{item.publishedAt | date:&apos;mediumDate&apos; }}</mat-card-subtitle>
+
+          <mat-card-content></mat-card-content>
+
+          <mat-card-actions></mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

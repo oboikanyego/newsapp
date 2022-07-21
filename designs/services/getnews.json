@@ -1,0 +1,303 @@
+[
+    {
+        "id": "sd_Yp5ppCJw8dBJIphW",
+        "type": "tab",
+        "createdDate": "2022-07-20T13:03:43.575Z",
+        "label": "getnews",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "getnews",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_8wyjtmpJHzt1CcQL",
+        "type": "Start",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getNewsCatergory",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "catergory",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getNewsCatergory",
+        "category": "General",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "sd_upW4opq2b0X5k3Bf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getnews"
+    },
+    {
+        "id": "sd_QcoR8Z8fyceffDBp",
+        "type": "HttpRequest",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_QcoR8Z8fyceffDBp",
+        "category": "HTTP",
+        "x": 405,
+        "y": 80,
+        "wires": [
+            [
+                "sd_hr5G0b8TNUXUBZdd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_upW4opq2b0X5k3Bf",
+        "type": "Script",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.caterigory='entertainment'\nbh.url='https://newsapi.org/v2/everything?q=' + bh.input.caterigory + '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';",
+        "functionName": "sd_upW4opq2b0X5k3Bf",
+        "category": "Function",
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "sd_QcoR8Z8fyceffDBp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_hbS2SknAIr2coBdh",
+        "type": "Log",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "functionName": "sd_hbS2SknAIr2coBdh",
+        "category": "General",
+        "x": 705,
+        "y": 80,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_kKX5NEGkyoMOe1sl",
+        "type": "Start",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getBycountry",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getBycountry",
+        "category": "General",
+        "x": 105,
+        "y": 220,
+        "wires": [
+            [
+                "sd_C1KAn0CsclpRCNtV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getnews"
+    },
+    {
+        "id": "sd_2ywxV9Cope4Iox2k",
+        "type": "HttpRequest",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_2ywxV9Cope4Iox2k",
+        "category": "HTTP",
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "sd_v9AbQE8u2eskjIYJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_C1KAn0CsclpRCNtV",
+        "type": "Script",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.country='us'\nbh.url='https://newsapi.org/v2/top-headlines?country=' + bh.input.country + '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';\n",
+        "functionName": "sd_C1KAn0CsclpRCNtV",
+        "category": "Function",
+        "x": 245,
+        "y": 220,
+        "wires": [
+            [
+                "sd_2ywxV9Cope4Iox2k"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_v9AbQE8u2eskjIYJ",
+        "type": "Navigation",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home/cards",
+        "functionName": "sd_v9AbQE8u2eskjIYJ",
+        "category": "Navigation",
+        "x": 705,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_hr5G0b8TNUXUBZdd",
+        "type": "ServiceVariables",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "shared data",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "clientdata",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "result"
+                }
+            }
+        ],
+        "functionName": "sharedData",
+        "category": "Function",
+        "x": 565,
+        "y": 80,
+        "wires": [
+            [
+                "sd_hbS2SknAIr2coBdh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]
