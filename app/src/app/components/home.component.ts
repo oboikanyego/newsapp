@@ -8,7 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  AfterViewInit,
   DoCheck,
   SimpleChanges,
   OnChanges,
@@ -18,6 +17,7 @@ import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { NgxPaginationModule } from 'ngx-pagination'; //_splitter_
 import { getnews } from 'app/sd-services/getnews'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -66,15 +66,13 @@ export class homeComponent implements DoCheck {
     }
   }
 
-  sendCategory(catergory = '', ...others) {
+  sendCategory(catergory = '', index: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = { catergory: catergory };
+      bh.input = { catergory: catergory, index: index };
       bh.local = {};
-      bh = this.sd_CsPwwoVrTeWHy68I(bh);
-      bh = this.sd_RSZFKAMWbBRbRwWr(bh);
       bh = this.sd_VGnTvZK7hRUTfbsE(bh);
       //appendnew_next_sendCategory
     } catch (e) {
@@ -87,7 +85,6 @@ export class homeComponent implements DoCheck {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh = this.sd_Q5VbyPtW6o1Nh2j9(bh);
       //appendnew_next_ngDoCheck
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_A6kfTLkrq4s8xI0u');
@@ -119,6 +116,8 @@ export class homeComponent implements DoCheck {
       this.page.navigation = undefined;
       this.page.isViewNews = undefined;
       this.page.sentData = undefined;
+      this.page.imageObject = undefined;
+      this.page.selectedIndex = 0;
       bh = this.sd_jP92Fh1TgA7O8gXX(bh);
       //appendnew_next_sd_tlThNUO1Bc3p26X8
       return bh;
@@ -211,10 +210,27 @@ export class homeComponent implements DoCheck {
     try {
       const page = this.page;
       page.isViewNews = false;
+      // console.log('hello',page.data)
+      // page.imageObject= page.data.articles.filter( data => data.urlToImage);
+      // console.log('hello2',page.imageObject)
       //appendnew_next_sd_nm1GYm6l6cGfGvzy
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_nm1GYm6l6cGfGvzy');
+    }
+  }
+
+  sd_VGnTvZK7hRUTfbsE(bh) {
+    try {
+      const page = this.page;
+      page.selectedIndex = bh.input.index;
+      // console.log('index value',bh)
+      bh = this.sd_CsPwwoVrTeWHy68I(bh);
+      bh = this.sd_RSZFKAMWbBRbRwWr(bh);
+      //appendnew_next_sd_VGnTvZK7hRUTfbsE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_VGnTvZK7hRUTfbsE');
     }
   }
 
@@ -245,104 +261,10 @@ export class homeComponent implements DoCheck {
     }
   }
 
-  sd_VGnTvZK7hRUTfbsE(bh) {
-    try {
-      const page = this.page;
-      page.navigation = [
-        {
-          name: 'Home',
-          category: 'all',
-          icon: 'home',
-        },
-        {
-          name: 'Business',
-          category: 'business',
-          icon: 'work_outline',
-        },
-        {
-          name: 'Entertainment',
-          category: 'entertainment',
-          icon: 'sports_esports',
-        },
-        {
-          name: 'General',
-          category: 'general',
-          icon: 'people',
-        },
-        {
-          name: 'Health',
-          category: 'health',
-          icon: 'home',
-        },
-        {
-          name: 'Science',
-          category: 'science',
-          icon: 'home',
-        },
-        {
-          name: 'Sports',
-          category: 'sports',
-          icon: 'sports_gymnastics',
-        },
-        {
-          name: 'Technology',
-          category: 'technology',
-          icon: 'devices',
-        },
-      ];
-
-      //appendnew_next_sd_VGnTvZK7hRUTfbsE
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_VGnTvZK7hRUTfbsE');
-    }
-  }
-
-  sd_Q5VbyPtW6o1Nh2j9(bh) {
-    try {
-      this.page.sentData = JSON.parse(sessionStorage.getItem('news'));
-      bh = this.sd_M3w2QdkpKCIvehqi(bh);
-      //appendnew_next_sd_Q5VbyPtW6o1Nh2j9
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Q5VbyPtW6o1Nh2j9');
-    }
-  }
-
-  sd_M3w2QdkpKCIvehqi(bh) {
-    try {
-      if (
-        this.sdService.operators['nnull'](
-          this.page.sentData,
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_WxhjNOPjGhXWoGmB(bh);
-      }
-
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_M3w2QdkpKCIvehqi');
-    }
-  }
-
-  sd_WxhjNOPjGhXWoGmB(bh) {
-    try {
-      const page = this.page;
-      page.isViewNews = true;
-      //appendnew_next_sd_WxhjNOPjGhXWoGmB
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_WxhjNOPjGhXWoGmB');
-    }
-  }
-
   sd_BuySscH0gnGueuxA(bh) {
     try {
       sessionStorage.clear();
-      bh = this.sd_8hOK4ZwyQTLYSd8J(bh);
+      bh = this.sd_oY8OiPQ1Grez4JZ6(bh);
       //appendnew_next_sd_BuySscH0gnGueuxA
       return bh;
     } catch (e) {
@@ -350,14 +272,17 @@ export class homeComponent implements DoCheck {
     }
   }
 
-  sd_8hOK4ZwyQTLYSd8J(bh) {
+  async sd_oY8OiPQ1Grez4JZ6(bh) {
     try {
-      const page = this.page;
-      page.isViewNews = false;
-      //appendnew_next_sd_8hOK4ZwyQTLYSd8J
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/cards');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_oY8OiPQ1Grez4JZ6
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_8hOK4ZwyQTLYSd8J');
+      return await this.errorHandler(bh, e, 'sd_oY8OiPQ1Grez4JZ6');
     }
   }
 

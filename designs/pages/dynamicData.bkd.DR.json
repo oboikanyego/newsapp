@@ -19,6 +19,8 @@
             {
                 "_key": "class",
                 "_value": [
+                    "paddingDynamic",
+                    "lightbackground",
                     "fullwidth"
                 ],
                 "_type": "dav",
@@ -44,13 +46,13 @@
             },
             {
                 "_key": "layoutAlign",
-                "_value": "space-around",
+                "_value": "center",
                 "_type": "a",
                 "_attrDef": "p"
             },
             {
                 "_key": "pLayoutAlign",
-                "_value": "space-around",
+                "_value": "center",
                 "_type": "a",
                 "_attrDef": "p"
             },
@@ -87,7 +89,7 @@
                 },
                 {
                     "_key": "fxFlex",
-                    "_value": "100",
+                    "_value": "90",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -166,13 +168,13 @@
                     },
                     {
                         "_key": "layoutAlign",
-                        "_value": "space-around",
+                        "_value": "space-between",
                         "_type": "a",
                         "_attrDef": "p"
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "stretch",
+                        "_value": "center",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -211,7 +213,7 @@
                         },
                         {
                             "_key": "fxFlex",
-                            "_value": "",
+                            "_value": "30",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -247,7 +249,19 @@
                         },
                         {
                             "_key": "*ngFor",
-                            "_value": "let item of page.cardArr | paginate: { itemsPerPage: 10, currentPage: p , itemsPerPage: 6}",
+                            "_value": "let item of page.cardArr | paginate: { itemsPerPage: 10, currentPage: p , itemsPerPage: 6}; let ind = index",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        },
+                        {
+                            "_key": "fxFlex.sm",
+                            "_value": "48",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        },
+                        {
+                            "_key": "fxFlex.xs",
+                            "_value": "95",
                             "_type": "kv",
                             "_attrDef": "c"
                         }
@@ -273,7 +287,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "cards"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -313,9 +329,7 @@
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": [
-                                        "cardimages"
-                                    ],
+                                    "_value": [],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },
@@ -482,7 +496,7 @@
                                 },
                                 {
                                     "_key": "align",
-                                    "_value": "",
+                                    "_value": "right",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 }

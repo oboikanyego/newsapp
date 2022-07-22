@@ -1,0 +1,11 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" fxFlex="80" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <mat-card *ngFor="let chartData of page.dataSet" class="fullwidth">
+      <mat-card-content>
+        <div fxFlex="100">
+          <canvas baseChart [datasets]="[chartData]" [labels]="page.chartLabel" chartType="bar"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

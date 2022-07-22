@@ -58,6 +58,13 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "isFav",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
             }
         ],
         "functionName": "sd_SFk3cjIOLpt0URts",
@@ -65,35 +72,14 @@
         "x": 185,
         "y": 40,
         "wires": [
-            []
+            [
+                "sd_cfxV1WXn9MdahG9y"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_YKlFt3MaidGNY3RT",
-        "type": "Log",
-        "z": "sd_ka7752zqgJZQGNw8",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "this.page.news",
-        "functionName": "sd_YKlFt3MaidGNY3RT",
-        "category": "General",
-        "x": 505,
-        "y": 200,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "this.page",
-                "value": "news",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
+        "generated": true,
+        "serviceName": "newsReadComponent"
     },
     {
         "id": "sd_U4dsFMJQUzQAW5tL",
@@ -116,16 +102,17 @@
         },
         "functionName": "sd_U4dsFMJQUzQAW5tL",
         "category": "Storage",
-        "x": 245,
+        "x": 165,
         "y": 200,
         "wires": [
             [
-                "sd_Br4GT3JnyA703Oge"
+                "sd_nMhQDiCmp0ieXJmk"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "newsReadComponent"
     },
     {
         "id": "sd_Pi5HfcYKh4tcZ5xw",
@@ -136,7 +123,7 @@
         "name": "checkData",
         "functionName": "ngDoCheck",
         "category": "Lifecycle Events",
-        "x": 120,
+        "x": 65,
         "y": 200,
         "wires": [
             [
@@ -154,13 +141,574 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.content=page.news?.content.replace(/ \\[[\\s\\S]*?\\]/g, '');\nconsole.log(page.news?.content.replace(/ \\[[\\s\\S]*?\\]/g, ''))",
+        "script": "page.content=page.news?.content.replace(/ \\[[\\s\\S]*?\\]/g, '');",
         "functionName": "sd_Br4GT3JnyA703Oge",
         "category": "Function",
-        "x": 360,
-        "y": 200,
+        "x": 405,
+        "y": 280,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_z6Hk7dM8eANsq7S0",
+        "type": "PageStart",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "Back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "back",
+        "category": "General",
+        "x": 65,
+        "y": 420,
+        "wires": [
+            [
+                "sd_AoVzAK8jwelPeRaW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "newsReadComponent"
+    },
+    {
+        "id": "sd_AoVzAK8jwelPeRaW",
+        "type": "Storage",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "clear",
+        "storageType": "all",
+        "outputs": 1,
+        "key": {},
+        "value": {},
+        "resultMapping": {},
+        "functionName": "sd_AoVzAK8jwelPeRaW",
+        "category": "Storage",
+        "x": 185,
+        "y": 420,
+        "wires": [
+            [
+                "sd_WqkDFLzwdKagdBtn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_cfxV1WXn9MdahG9y",
+        "type": "PageSwitch",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "n",
+        "property": "news",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.news",
+        "rules": [
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "n",
+        "category": "Function",
+        "x": 320,
+        "y": 40,
+        "wires": [
+            [
+                "sd_qkTnyjiEo9x275C8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_qkTnyjiEo9x275C8",
+        "type": "Navigation",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_qkTnyjiEo9x275C8",
+        "category": "Navigation",
+        "x": 425,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_nMhQDiCmp0ieXJmk",
+        "type": "PageSwitch",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "check for data",
+        "property": "news",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.news",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "checkForData",
+        "category": "Function",
+        "x": 285,
+        "y": 200,
+        "wires": [
+            [
+                "sd_jcNxUm5PWOdtGFMG"
+            ],
+            [
+                "sd_Br4GT3JnyA703Oge"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_jcNxUm5PWOdtGFMG",
+        "type": "Navigation",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home/cards",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_jcNxUm5PWOdtGFMG",
+        "category": "Navigation",
+        "x": 505,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_WqkDFLzwdKagdBtn",
+        "type": "Navigation",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home/cards",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_WqkDFLzwdKagdBtn",
+        "category": "Navigation",
+        "x": 325,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ss2QwytTrmPekR1p",
+        "type": "PageStart",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "Mark as favorite",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "markAsFavorite",
+        "category": "General",
+        "x": 85,
+        "y": 580,
+        "wires": [
+            [
+                "sd_o0Gf4YCNLsm32cGr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "newsReadComponent"
+    },
+    {
+        "id": "sd_lckObSg4iWhDQvTb",
+        "type": "AfterViewInit",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "After View Init",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 545,
+        "y": 380,
+        "wires": [
+            [
+                "sd_SzPztQwzmFtJMFSa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "newsReadComponent"
+    },
+    {
+        "id": "sd_SzPztQwzmFtJMFSa",
+        "type": "PageCallService",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_Yp5ppCJw8dBJIphW",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:03:43.575Z",
+            "label": "getnews",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_OtRoSB0FJhxF2c0f",
+            "flowName": "checkIfIsFavorite"
+        },
+        "inputVariables": [
+            {
+                "key": "key",
+                "map": true,
+                "valueType": "this.page",
+                "value": "news.url"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "response",
+                "valueType": "bh",
+                "value": "response",
+                "mapVarName": "response",
+                "localVar": "bh.response"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getnews",
+        "startName": "checkIfIsFavorite",
+        "inputParams": [
+            "this.page.news.url"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_SzPztQwzmFtJMFSa",
+        "category": "General",
+        "x": 650,
+        "y": 380,
+        "wires": [
+            [
+                "sd_P7Nu1ak7wxH7OEsM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_P7Nu1ak7wxH7OEsM",
+        "type": "Script",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " page.isFav = (bh.response.length > 0) ? true : false;",
+        "functionName": "sd_P7Nu1ak7wxH7OEsM",
+        "category": "Function",
+        "x": 750,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_o0Gf4YCNLsm32cGr",
+        "type": "PageSwitch",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "isFav",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.isFav",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_o0Gf4YCNLsm32cGr",
+        "category": "Function",
+        "x": 200,
+        "y": 580,
+        "wires": [
+            [
+                "sd_tVrjaB4tnqKC4JeX"
+            ],
+            [
+                "sd_Xq5WxQJC4xqntK3w"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_tVrjaB4tnqKC4JeX",
+        "type": "PageCallService",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_Yp5ppCJw8dBJIphW",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:03:43.575Z",
+            "label": "getnews",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_lMR7V3mroF3p1EMe",
+            "flowName": "addToFavorites"
+        },
+        "inputVariables": [
+            {
+                "key": "body",
+                "map": true,
+                "valueType": "this.page",
+                "value": "news"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "bh",
+                "value": "response",
+                "mapVarName": "result",
+                "localVar": "bh.response"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getnews",
+        "startName": "addToFavorites",
+        "inputParams": [
+            "this.page.news"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_tVrjaB4tnqKC4JeX",
+        "category": "General",
+        "x": 325,
+        "y": 520,
+        "wires": [
+            [
+                "sd_uzBsm6dCdJvC6JE4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_uzBsm6dCdJvC6JE4",
+        "type": "SnackBar",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "bh",
+            "value": "response.message"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_uzBsm6dCdJvC6JE4",
+        "category": "General",
+        "x": 445,
+        "y": 520,
+        "wires": [
+            [
+                "sd_SzPztQwzmFtJMFSa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_uAiPaGPiED74wXSW",
+        "type": "SnackBar",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "bh",
+            "value": "response.message"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_uAiPaGPiED74wXSW",
+        "category": "General",
+        "x": 445,
+        "y": 620,
+        "wires": [
+            [
+                "sd_SzPztQwzmFtJMFSa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Xq5WxQJC4xqntK3w",
+        "type": "PageCallService",
+        "z": "sd_ka7752zqgJZQGNw8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_Yp5ppCJw8dBJIphW",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:03:43.575Z",
+            "label": "getnews",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_LjItp8YT5blPakdX",
+            "flowName": "removeFavorite"
+        },
+        "inputVariables": [
+            {
+                "key": "body",
+                "map": true,
+                "valueType": "this.page",
+                "value": "news"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "bh",
+                "value": "response",
+                "mapVarName": "result",
+                "localVar": "bh.response"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getnews",
+        "startName": "removeFavorite",
+        "inputParams": [
+            "this.page.news"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_Xq5WxQJC4xqntK3w",
+        "category": "General",
+        "x": 325,
+        "y": 620,
+        "wires": [
+            [
+                "sd_uAiPaGPiED74wXSW"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

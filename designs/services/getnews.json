@@ -42,7 +42,7 @@
         "accept_bh": false,
         "functionName": "getNewsCatergory",
         "category": "General",
-        "x": 120,
+        "x": 205,
         "y": 80,
         "wires": [
             [
@@ -61,6 +61,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -68,11 +69,14 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -84,22 +88,25 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_QcoR8Z8fyceffDBp",
         "category": "HTTP",
-        "x": 405,
+        "x": 585,
         "y": 80,
         "wires": [
             [
-                "sd_2OylmBQR4X80edFZ"
+                "sd_8ggeqGrjgmyPQFau"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "getnews"
     },
     {
         "id": "sd_upW4opq2b0X5k3Bf",
@@ -108,10 +115,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url='https://newsapi.org/v2/everything?q=' + bh.input.catergory + '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';",
+        "script": "bh.url='https://newsapi.org/v2/everything?q=' + bh.input.catergory + '&apiKey=62ecd6cd5b5f402ea1a5170ab9a27c9e';",
         "functionName": "sd_upW4opq2b0X5k3Bf",
         "category": "Function",
-        "x": 260,
+        "x": 385,
         "y": 80,
         "wires": [
             [
@@ -120,7 +127,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "getnews"
     },
     {
         "id": "sd_kKX5NEGkyoMOe1sl",
@@ -163,6 +171,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -170,11 +179,14 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -186,9 +198,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_2ywxV9Cope4Iox2k",
         "category": "HTTP",
@@ -196,12 +210,13 @@
         "y": 200,
         "wires": [
             [
-                "sd_gSxqTGXFrzgkWV0y"
+                "sd_mz3UM4doPl35qJyC"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "getnews"
     },
     {
         "id": "sd_C1KAn0CsclpRCNtV",
@@ -210,7 +225,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.input.country='us';\nbh.url='https://newsapi.org/v2/top-headlines?country=' + bh.input.country + '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';\n",
+        "script": "bh.input.country='us';\nbh.url='https://newsapi.org/v2/top-headlines?country='+ bh.input.country + '&apiKey=62ecd6cd5b5f402ea1a5170ab9a27c9e';\n",
         "functionName": "sd_C1KAn0CsclpRCNtV",
         "category": "Function",
         "x": 245,
@@ -232,30 +247,642 @@
         "nodeType": "flow",
         "name": "",
         "outputs": 0,
-        "logObject": "bh",
+        "logObject": "bh.local.result",
         "functionName": "sd_2OylmBQR4X80edFZ",
         "category": "General",
-        "x": 565,
-        "y": 80,
+        "x": 585,
+        "y": 200,
         "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
     },
     {
-        "id": "sd_gSxqTGXFrzgkWV0y",
-        "type": "Log",
+        "id": "sd_mz3UM4doPl35qJyC",
+        "type": "ServiceVariables",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "data",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "result"
+                }
+            }
+        ],
+        "functionName": "sd_mz3UM4doPl35qJyC",
+        "category": "Function",
+        "x": 465,
+        "y": 200,
+        "wires": [
+            [
+                "sd_2OylmBQR4X80edFZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_8ggeqGrjgmyPQFau",
+        "type": "ServiceVariables",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "data",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "result"
+                }
+            }
+        ],
+        "functionName": "sd_8ggeqGrjgmyPQFau",
+        "category": "Function",
+        "x": 665,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_OtRoSB0FJhxF2c0f",
+        "type": "Start",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "check if is favorite",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "key",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "response",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "checkIfIsFavorite",
+        "category": "General",
+        "x": 100,
+        "y": 400,
+        "wires": [
+            [
+                "sd_9Zvhv7IR4P5T05cz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getnews"
+    },
+    {
+        "id": "sd_9Zvhv7IR4P5T05cz",
+        "type": "Environment",
         "z": "sd_Yp5ppCJw8dBJIphW",
         "viewType": "client-pages",
         "nodeType": "flow",
         "name": "",
-        "outputs": 0,
-        "logObject": "bh",
-        "functionName": "sd_gSxqTGXFrzgkWV0y",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_9Zvhv7IR4P5T05cz",
         "category": "General",
-        "x": 525,
-        "y": 200,
-        "wires": [],
+        "x": 220,
+        "y": 400,
+        "wires": [
+            [
+                "sd_RFKbPJfzeho5htvt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_RFKbPJfzeho5htvt",
+        "type": "Script",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.url = bh.ssdUrl + 'checkIfIsFav';\nbh.input.body = {url: bh.input.key};",
+        "functionName": "sd_RFKbPJfzeho5htvt",
+        "category": "Function",
+        "x": 320,
+        "y": 400,
+        "wires": [
+            [
+                "sd_y1ubahAzTTSTmZum"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_y1ubahAzTTSTmZum",
+        "type": "HttpRequest",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.input.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.input.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_y1ubahAzTTSTmZum",
+        "category": "HTTP",
+        "x": 425,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_lMR7V3mroF3p1EMe",
+        "type": "Start",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "add to favorites",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "body",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "addToFavorites",
+        "category": "General",
+        "x": 105,
+        "y": 520,
+        "wires": [
+            [
+                "sd_7LuHrUFXRdXqnkhu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getnews"
+    },
+    {
+        "id": "sd_7LuHrUFXRdXqnkhu",
+        "type": "Environment",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_7LuHrUFXRdXqnkhu",
+        "category": "General",
+        "x": 225,
+        "y": 520,
+        "wires": [
+            [
+                "sd_QlENcMtGHrCmhfeL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_QlENcMtGHrCmhfeL",
+        "type": "Script",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.url = bh.ssdUrl + 'addFavorite';",
+        "functionName": "sd_QlENcMtGHrCmhfeL",
+        "category": "Function",
+        "x": 325,
+        "y": 520,
+        "wires": [
+            [
+                "sd_WJb3ufWGcBTHOvYY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_WJb3ufWGcBTHOvYY",
+        "type": "HttpRequest",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.input.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.input.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_WJb3ufWGcBTHOvYY",
+        "category": "HTTP",
+        "x": 430,
+        "y": 520,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_LjItp8YT5blPakdX",
+        "type": "Start",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "remove favorite",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "body",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "removeFavorite",
+        "category": "General",
+        "x": 105,
+        "y": 620,
+        "wires": [
+            [
+                "sd_xVFxA3p9E48P9AsR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getnews"
+    },
+    {
+        "id": "sd_xVFxA3p9E48P9AsR",
+        "type": "Environment",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_xVFxA3p9E48P9AsR",
+        "category": "General",
+        "x": 225,
+        "y": 620,
+        "wires": [
+            [
+                "sd_SEfnjpKFJiT2WbaU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_SEfnjpKFJiT2WbaU",
+        "type": "Script",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.url = bh.ssdUrl + 'removeFavorite';",
+        "functionName": "sd_SEfnjpKFJiT2WbaU",
+        "category": "Function",
+        "x": 325,
+        "y": 620,
+        "wires": [
+            [
+                "sd_5RdvC4MrrhSlU0Ns"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_5RdvC4MrrhSlU0Ns",
+        "type": "HttpRequest",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "delete",
+        "methodMappingObj": {},
+        "urlMapping": "bh.input.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.input.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_5RdvC4MrrhSlU0Ns",
+        "category": "HTTP",
+        "x": 430,
+        "y": 620,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_p7FBkazHWNS0estH",
+        "type": "Start",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "get favorites",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getFavorites",
+        "category": "General",
+        "x": 105,
+        "y": 740,
+        "wires": [
+            [
+                "sd_9x6lHE5Hvt2aFkQu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getnews"
+    },
+    {
+        "id": "sd_9x6lHE5Hvt2aFkQu",
+        "type": "Environment",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_9x6lHE5Hvt2aFkQu",
+        "category": "General",
+        "x": 225,
+        "y": 740,
+        "wires": [
+            [
+                "sd_OQ2vi6h8jCdivFZe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_OQ2vi6h8jCdivFZe",
+        "type": "Script",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.url = bh.ssdUrl + 'getFavorites';",
+        "functionName": "sd_OQ2vi6h8jCdivFZe",
+        "category": "Function",
+        "x": 325,
+        "y": 740,
+        "wires": [
+            [
+                "sd_yjHbMEGjxred8VAW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_yjHbMEGjxred8VAW",
+        "type": "HttpRequest",
+        "z": "sd_Yp5ppCJw8dBJIphW",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.input.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.input.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_yjHbMEGjxred8VAW",
+        "category": "HTTP",
+        "x": 430,
+        "y": 740,
+        "wires": [
+            []
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true

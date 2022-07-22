@@ -2,11 +2,29 @@
     "routes": [
         {
             "path": "home",
-            "component": "homeComponent"
+            "component": "homeComponent",
+            "children": [
+                {
+                    "path": "cards",
+                    "component": "dynamicDataComponent"
+                },
+                {
+                    "path": "news",
+                    "component": "newsReadComponent"
+                },
+                {
+                    "path": "charts",
+                    "component": "chartsComponent"
+                },
+                {
+                    "component": "favoritesComponent",
+                    "path": "favorites"
+                }
+            ]
         },
         {
             "path": "''",
-            "redirectTo": "/home",
+            "redirectTo": "/home/cards",
             "pathMatch": "full",
             "default": true
         },

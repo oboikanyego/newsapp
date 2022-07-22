@@ -15,6 +15,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-favoritesComponent
+import { favoritesComponent } from '../components/favorites.component';
+//CORE_REFERENCE_IMPORT-chartsComponent
+import { chartsComponent } from '../components/charts.component';
 //CORE_REFERENCE_IMPORT-newsReadComponent
 import { newsReadComponent } from '../components/newsRead.component';
 //CORE_REFERENCE_IMPORT-dynamicDataComponent
@@ -53,6 +57,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-favoritesComponent
+  favoritesComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-chartsComponent
+  chartsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-newsReadComponent
   newsReadComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dynamicDataComponent
@@ -84,8 +92,17 @@ export const appProviders = [
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
-  { path: 'home', component: homeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'home',
+    component: homeComponent,
+    children: [
+      { path: 'cards', component: dynamicDataComponent },
+      { path: 'news', component: newsReadComponent },
+      { path: 'charts', component: chartsComponent },
+      { path: 'favorites', component: favoritesComponent },
+    ],
+  },
+  { path: '', redirectTo: '/home/cards', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

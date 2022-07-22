@@ -8,7 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  AfterViewInit,
   DoCheck,
   SimpleChanges,
   OnChanges,
@@ -17,6 +16,8 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { NgxPaginationModule } from 'ngx-pagination'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
+import { getnews } from 'app/sd-services/getnews'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -26,7 +27,7 @@ import { NgxPaginationModule } from 'ngx-pagination'; //_splitter_
     //appendnew_element_providers
   ],
 })
-export class dynamicDataComponent implements OnChanges {
+export class dynamicDataComponent implements OnChanges, DoCheck {
   @Input('data')
   public data: any = undefined;
   page: any = { dep: {} };
@@ -73,7 +74,6 @@ export class dynamicDataComponent implements OnChanges {
         .get(SDPageCommonService)
         .constructFlowObject(this);
       bh.changes = changes;
-      bh = this.sd_HUAcT45XpTTaPeG7(bh);
       //appendnew_next_ngOnChanges
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_DrwvltqBH1RlPSHs');
@@ -94,12 +94,24 @@ export class dynamicDataComponent implements OnChanges {
     }
   }
 
+  ngDoCheck() {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh = this.sd_s80QsHaCA0t9cS0R(bh);
+      //appendnew_next_ngDoCheck
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_LGAhOAzRBd3mykPl');
+    }
+  }
+
   //appendnew_flow_dynamicDataComponent_start
 
   sd_Bf57H4aAsnOZn3r3(bh) {
     try {
       this.page.curDate = undefined;
-      this.page.cardArr = undefined;
+      this.page.cardArr = [];
       this.page.data = undefined;
       this.page.p = 1;
       bh = this.sd_JwIaOfUoojdvuJuc(bh);
@@ -120,24 +132,62 @@ export class dynamicDataComponent implements OnChanges {
     }
   }
 
-  sd_HUAcT45XpTTaPeG7(bh) {
-    try {
-      const page = this.page;
-      page.cardArr = bh.changes.data.currentValue.articles;
-      //appendnew_next_sd_HUAcT45XpTTaPeG7
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_HUAcT45XpTTaPeG7');
-    }
-  }
-
   sd_Ikd3xfE2DVjhNeuP(bh) {
     try {
       sessionStorage.setItem('news', JSON.stringify(bh.input.news));
+      bh = this.sd_RjdaAyCf5n19vwVQ(bh);
       //appendnew_next_sd_Ikd3xfE2DVjhNeuP
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_Ikd3xfE2DVjhNeuP');
+    }
+  }
+
+  async sd_RjdaAyCf5n19vwVQ(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/news');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_RjdaAyCf5n19vwVQ
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_RjdaAyCf5n19vwVQ');
+    }
+  }
+
+  sd_s80QsHaCA0t9cS0R(bh) {
+    try {
+      const getnewsInstance: getnews = this.__page_injector__.get(getnews);
+      this.page.data = getnewsInstance['data'];
+      bh = this.sd_DVRWDT0gZ2teof6o(bh);
+      //appendnew_next_sd_s80QsHaCA0t9cS0R
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_s80QsHaCA0t9cS0R');
+    }
+  }
+
+  sd_DVRWDT0gZ2teof6o(bh) {
+    try {
+      const page = this.page;
+      page.cardArr = page.data?.articles;
+      this.sd_HNGtyg35L2JzrYib(bh);
+      //appendnew_next_sd_DVRWDT0gZ2teof6o
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_DVRWDT0gZ2teof6o');
+    }
+  }
+
+  sd_HNGtyg35L2JzrYib(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.cardArr);
+      //appendnew_next_sd_HNGtyg35L2JzrYib
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_HNGtyg35L2JzrYib');
     }
   }
 

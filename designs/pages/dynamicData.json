@@ -101,7 +101,7 @@
                 "textIp": "cardArr",
                 "typedIpValue": {
                     "type": "literal",
-                    "value": ""
+                    "value": "[]"
                 }
             },
             {
@@ -130,7 +130,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "dynamicDataComponent"
     },
     {
         "id": "sd_DrwvltqBH1RlPSHs",
@@ -141,12 +142,10 @@
         "name": "On Changes",
         "functionName": "ngOnChanges",
         "category": "Lifecycle Events",
-        "x": 125,
-        "y": 220,
+        "x": 625,
+        "y": 260,
         "wires": [
-            [
-                "sd_HUAcT45XpTTaPeG7"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
@@ -162,14 +161,13 @@
         "script": "page.cardArr = bh.changes.data.currentValue.articles;",
         "functionName": "sd_HUAcT45XpTTaPeG7",
         "category": "Function",
-        "x": 230,
-        "y": 220,
+        "x": 545,
+        "y": 360,
         "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generateNext": true
     },
     {
         "id": "sd_cSt2brPaeleihhW1",
@@ -225,10 +223,12 @@
         "resultMapping": {},
         "functionName": "sd_Ikd3xfE2DVjhNeuP",
         "category": "Storage",
-        "x": 365,
+        "x": 265,
         "y": 340,
         "wires": [
-            []
+            [
+                "sd_RjdaAyCf5n19vwVQ"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -242,20 +242,188 @@
         "nodeType": "flow",
         "name": "",
         "outputs": 0,
-        "logObject": "bh.input.news",
+        "logObject": "this.page.cardArr",
         "functionName": "sd_HNGtyg35L2JzrYib",
         "category": "General",
-        "x": 165,
-        "y": 440,
+        "x": 465,
+        "y": 220,
         "wires": [],
         "__ssdTypeInputs__": {
             "logObject": {
-                "type": "bh.input",
-                "value": "news",
+                "type": "this.page",
+                "value": "cardArr",
                 "constant": false
             }
         },
         "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_s80QsHaCA0t9cS0R",
+        "type": "PageServiceVariables",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "data",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "data"
+                }
+            }
+        ],
+        "functionName": "sd_s80QsHaCA0t9cS0R",
+        "service": {
+            "id": "sd_Yp5ppCJw8dBJIphW",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:03:43.575Z",
+            "label": "getnews",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "generateNext": true,
+            "serviceName": "getnews",
+            "relativeParentPath": "",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/getnews",
+        "category": "Function",
+        "x": 245,
+        "y": 220,
+        "wires": [
+            [
+                "sd_DVRWDT0gZ2teof6o"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_DVRWDT0gZ2teof6o",
+        "type": "Script",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.cardArr = page.data?.articles;",
+        "functionName": "sd_DVRWDT0gZ2teof6o",
+        "category": "Function",
+        "x": 365,
+        "y": 220,
+        "wires": [
+            [
+                "sd_HNGtyg35L2JzrYib"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_evvLMf7IcCLzd4GA",
+        "type": "PageCallService",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_Yp5ppCJw8dBJIphW",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:03:43.575Z",
+            "label": "getnews",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_kKX5NEGkyoMOe1sl",
+            "flowName": "getBycountry"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "this.page",
+                "value": "cardArr",
+                "mapVarName": "result",
+                "localVar": "this.page.cardArr"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getnews",
+        "startName": "getBycountry",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_evvLMf7IcCLzd4GA",
+        "category": "General",
+        "x": 480,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
         "generateNext": true
+    },
+    {
+        "id": "sd_LGAhOAzRBd3mykPl",
+        "type": "DoCheck",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "Do Check",
+        "functionName": "ngDoCheck",
+        "category": "Lifecycle Events",
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "sd_s80QsHaCA0t9cS0R"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dynamicDataComponent"
+    },
+    {
+        "id": "sd_RjdaAyCf5n19vwVQ",
+        "type": "Navigation",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home/news",
+        "functionName": "sd_RjdaAyCf5n19vwVQ",
+        "category": "Navigation",
+        "x": 385,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
     }
 ]

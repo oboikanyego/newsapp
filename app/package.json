@@ -45,6 +45,7 @@
         "neutrinos-oauth-client": "1.2.4-beta.0",
         "ng2-charts": "2.4.0",
         "ngx-pagination": "6.0.2",
+        "angular-responsive-carousel": "2.1.2",
         "rxjs": "6.6.3",
         "signature_pad": "3.0.0-beta.4",
         "tslib": "2.0.3",

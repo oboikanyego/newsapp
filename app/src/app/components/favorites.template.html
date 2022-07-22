@@ -1,0 +1,30 @@
+<div fxLayout="row wrap" class="readMoreIcon buttonpad" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button routerLink="/home">
+    <mat-icon>arrow_back</mat-icon>Home
+  </button></div>
+<div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+  <div fxLayout="column wrap" class="marginBottom1em" fxFlex="32" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let fav of page.favorites">
+    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+      <h2>
+        {{fav.title}}
+      </h2>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><img [src]="fav.urlToImage || &apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg &apos;" style="height:410px"></div>
+    <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true">
+      <p>
+        {{fav.description }}
+      </p>
+    </div>
+    <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
+        <span class="authour">Author :</span>{{fav.author ? fav.author :&apos;Author Unknown&apos; }}</label></div>
+    <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
+        <span class="publish Date">Publish Date : </span>{{fav.publishedAt ? (fav.publishedAt | date:&apos;mediumDate&apos;)  :&apos;Publish Date known&apos; }}</label></div>
+    <div fxLayout="row wrap" class="anchortextRed paddingAround" fxLayoutAlign="start stretch" [fxShow]="true">
+      <p>
+        {{page.content}}<a href="{{fav.url}}" target="_blank">Read Full Article</a>
+      </p>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button color="warn" (click)="deleteFavorite(fav)">Delete Favorite</button></div>
+    </div>
+  </div>
+</div>

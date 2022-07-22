@@ -31,7 +31,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_tlThNUO1Bc3p26X8",
@@ -92,6 +93,20 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "imageObject",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "selectedIndex",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
             }
         ],
         "functionName": "sd_tlThNUO1Bc3p26X8",
@@ -124,6 +139,14 @@
                     "value": ""
                 },
                 "output": false
+            },
+            {
+                "key": "index",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
             }
         ],
         "localVariables": [],
@@ -134,14 +157,13 @@
         "y": 220,
         "wires": [
             [
-                "sd_CsPwwoVrTeWHy68I",
-                "sd_RSZFKAMWbBRbRwWr",
                 "sd_VGnTvZK7hRUTfbsE"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_CsPwwoVrTeWHy68I",
@@ -193,14 +215,14 @@
         "accept_csd": true,
         "functionName": "sd_CsPwwoVrTeWHy68I",
         "category": "General",
-        "x": 365,
+        "x": 565,
         "y": 220,
         "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generated": true,
+        "generateNext": false
     },
     {
         "id": "sd_jP92Fh1TgA7O8gXX",
@@ -343,8 +365,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generateNext": true,
+        "generated": false
     },
     {
         "id": "sd_M3w2QdkpKCIvehqi",
@@ -374,8 +396,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generateNext": true,
+        "generated": false
     },
     {
         "id": "sd_WxhjNOPjGhXWoGmB",
@@ -393,8 +415,8 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generateNext": true,
+        "generated": false
     },
     {
         "id": "sd_A6kfTLkrq4s8xI0u",
@@ -408,13 +430,12 @@
         "x": 105,
         "y": 400,
         "wires": [
-            [
-                "sd_Q5VbyPtW6o1Nh2j9"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_uwzsBe4DScwrstZE",
@@ -430,7 +451,7 @@
         "functionName": "back",
         "category": "General",
         "x": 125,
-        "y": 480,
+        "y": 520,
         "wires": [
             [
                 "sd_BuySscH0gnGueuxA"
@@ -438,26 +459,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
-    },
-    {
-        "id": "sd_8hOK4ZwyQTLYSd8J",
-        "type": "Script",
-        "z": "sd_tZue59qask1q2rWD",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.isViewNews=false;",
-        "functionName": "sd_8hOK4ZwyQTLYSd8J",
-        "category": "Function",
-        "x": 385,
-        "y": 480,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_BuySscH0gnGueuxA",
@@ -474,11 +477,11 @@
         "resultMapping": {},
         "functionName": "sd_BuySscH0gnGueuxA",
         "category": "Storage",
-        "x": 245,
-        "y": 480,
+        "x": 225,
+        "y": 520,
         "wires": [
             [
-                "sd_8hOK4ZwyQTLYSd8J"
+                "sd_oY8OiPQ1Grez4JZ6"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -492,7 +495,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.isViewNews=false;",
+        "script": "page.isViewNews=false;\n// console.log('hello',page.data)\n// page.imageObject= page.data.articles.filter( data => data.urlToImage);\n// console.log('hello2',page.imageObject)",
         "functionName": "sd_nm1GYm6l6cGfGvzy",
         "category": "Function",
         "x": 725,
@@ -535,8 +538,8 @@
         "accept_csd": false,
         "functionName": "sd_RSZFKAMWbBRbRwWr",
         "category": "General",
-        "x": 365,
-        "y": 300,
+        "x": 585,
+        "y": 320,
         "wires": [
             []
         ],
@@ -551,11 +554,58 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.navigation=[\n    {\n    name:\"Home\",\n    category:\"all\",\n    icon:\"home\"\n},{\n    name:\"Business\",\n    category:\"business\",\n    icon:\"work_outline\"\n},{\n    name:\"Entertainment\",\n    category:\"entertainment\",\n    icon:\"sports_esports\"\n},{\n    name:\"General\",\n    category:\"general\",\n    icon:\"people\"\n},{\n    name:\"Health\",\n    category:\"health\",\n    icon:\"home\"\n},{\n    name:\"Science\",\n    category:\"science\",\n    icon:\"home\"\n},{\n    name:\"Sports\",\n    category:\"sports\",\n    icon:\"sports_gymnastics\"\n},{\n    name:\"Technology\",\n    category:\"technology\",\n    icon:\"devices\"\n}\n]\n",
+        "script": "page.selectedIndex=bh.input.index\n// console.log('index value',bh)",
         "functionName": "sd_VGnTvZK7hRUTfbsE",
         "category": "Function",
         "x": 245,
-        "y": 320,
+        "y": 220,
+        "wires": [
+            [
+                "sd_CsPwwoVrTeWHy68I",
+                "sd_RSZFKAMWbBRbRwWr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_iftGUKyjgdqbNXAH",
+        "type": "Log",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh.input",
+        "functionName": "sd_iftGUKyjgdqbNXAH",
+        "category": "General",
+        "x": 825,
+        "y": 360,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.input",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "generated": false
+    },
+    {
+        "id": "sd_oY8OiPQ1Grez4JZ6",
+        "type": "Navigation",
+        "z": "sd_tZue59qask1q2rWD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home/cards",
+        "functionName": "sd_oY8OiPQ1Grez4JZ6",
+        "category": "Navigation",
+        "x": 320,
+        "y": 520,
         "wires": [
             []
         ],
