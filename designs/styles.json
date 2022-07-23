@@ -48,6 +48,7 @@
         "favorite",
         "underline",
         "cursorPointer",
-        "marginBottom1em"
+        "marginBottom1em",
+        "selectedCat"
     ]
 }

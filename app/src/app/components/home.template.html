@@ -10,8 +10,8 @@
     </div>
   </div>
   <div fxLayout="row wrap" fxFlex="39px" fxLayoutAlign="center stretch" [fxShow]="true">
-    <div fxLayout="column wrap" style="padding: 8px 30px" class="darkgreytop" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.navigation,let i=index" (click)="sendCategory(item.category,i)" [ngClass]="{&apos;borderRedTip&apos; : page.selectedIndex==i}">
-      <div>
+    <div fxLayout="column wrap" style="padding: 8px 30px" class="darkgreytop" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.navigation,let i=index" (click)="sendCategory(item.category,i)" [ngClass]="{&apos;selectedCat&apos; : page.selectedIndex==i}">
+      <div class="cursorPointer">
         {{item.name}}
       </div>
     </div>

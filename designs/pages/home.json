@@ -31,8 +31,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent",
-        "generated": false
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_tlThNUO1Bc3p26X8",
@@ -162,8 +161,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent",
-        "generated": false
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_CsPwwoVrTeWHy68I",
@@ -221,8 +219,8 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
-        "generateNext": false
+        "generateNext": false,
+        "generated": true
     },
     {
         "id": "sd_jP92Fh1TgA7O8gXX",
@@ -365,8 +363,7 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "generated": false
+        "generateNext": true
     },
     {
         "id": "sd_M3w2QdkpKCIvehqi",
@@ -396,8 +393,7 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "generated": false
+        "generateNext": true
     },
     {
         "id": "sd_WxhjNOPjGhXWoGmB",
@@ -415,8 +411,7 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "generated": false
+        "generateNext": true
     },
     {
         "id": "sd_A6kfTLkrq4s8xI0u",
@@ -434,8 +429,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent",
-        "generated": false
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_uwzsBe4DScwrstZE",
@@ -459,8 +453,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent",
-        "generated": false
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_BuySscH0gnGueuxA",
@@ -535,6 +528,7 @@
         "serviceImportPath": "./home",
         "startName": "back",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_RSZFKAMWbBRbRwWr",
         "category": "General",
@@ -591,8 +585,7 @@
             }
         },
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "generated": false
+        "generateNext": true
     },
     {
         "id": "sd_oY8OiPQ1Grez4JZ6",
@@ -602,6 +595,13 @@
         "nodeType": "flow",
         "name": "",
         "path": "/home/cards",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_oY8OiPQ1Grez4JZ6",
         "category": "Navigation",
         "x": 320,

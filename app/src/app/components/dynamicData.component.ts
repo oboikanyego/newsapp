@@ -11,6 +11,7 @@ import {
   DoCheck,
   SimpleChanges,
   OnChanges,
+  AfterViewInit,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -149,7 +150,9 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
         this.sdService.getPathAndQParamsObj('/home/news');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_RjdaAyCf5n19vwVQ
       return bh;
     } catch (e) {

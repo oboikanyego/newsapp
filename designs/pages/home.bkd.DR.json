@@ -894,7 +894,7 @@
                     },
                     {
                         "_key": "[ngClass]",
-                        "_value": "{'borderRedTip' : page.selectedIndex==i}",
+                        "_value": "{'selectedCat' : page.selectedIndex==i}",
                         "_type": "kv",
                         "_attrDef": "c"
                     }
@@ -913,7 +913,9 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [
+                                "cursorPointer"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
