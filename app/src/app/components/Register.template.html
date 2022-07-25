@@ -23,7 +23,7 @@
 
         </mat-form-field>
       </div>
-      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button>Login</button></div>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button (click)="registerSubmit(register.value)" [disabled]="register.invalid">Register</button></div>
     </form>
     <div fxLayout="row wrap" class="margintop10px" fxLayoutAlign="start stretch" [fxShow]="true">
       <h4>

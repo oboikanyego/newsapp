@@ -18,6 +18,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { getnews } from 'app/sd-services/getnews'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
@@ -68,15 +69,17 @@ export class RegisterComponent {
     }
   }
 
-  loginSubmit(...others) {
+  registerSubmit(form: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = {};
-      bh.local = {};
-      this.sd_hWxU0ghns6bj2Goz(bh);
-      //appendnew_next_loginSubmit
+      bh.input = { form: form };
+      bh.local = { result: undefined };
+      this.sd_uKDrVyf9HpHb3IdS(bh);
+      bh = this.sd_N3AeSiDgw4FHMFp1(bh);
+      //appendnew_next_registerSubmit
+      return bh.local.result;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_Bddc5vWDnF9hFPgY');
     }
@@ -87,11 +90,23 @@ export class RegisterComponent {
   sd_lXbR9OfaE5yf88hg(bh) {
     try {
       this.page.register = undefined;
-      bh = this.sd_X2U0NrRPoQ7a9jkA(bh);
+      bh = this.sd_fBXqvMpkkp8CIy2k(bh);
       //appendnew_next_sd_lXbR9OfaE5yf88hg
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_lXbR9OfaE5yf88hg');
+    }
+  }
+
+  sd_fBXqvMpkkp8CIy2k(bh) {
+    try {
+      this.page.addUserPath = 'addUser';
+      this.page.postMethod = 'POST';
+      bh = this.sd_X2U0NrRPoQ7a9jkA(bh);
+      //appendnew_next_sd_fBXqvMpkkp8CIy2k
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_fBXqvMpkkp8CIy2k');
     }
   }
 
@@ -110,13 +125,31 @@ export class RegisterComponent {
     }
   }
 
-  sd_hWxU0ghns6bj2Goz(bh) {
+  sd_uKDrVyf9HpHb3IdS(bh) {
     try {
-      console.log(new Date().toLocaleTimeString(), bh);
-      //appendnew_next_sd_hWxU0ghns6bj2Goz
+      console.log(new Date().toLocaleTimeString(), bh.input.form);
+      //appendnew_next_sd_uKDrVyf9HpHb3IdS
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_hWxU0ghns6bj2Goz');
+      return this.errorHandler(bh, e, 'sd_uKDrVyf9HpHb3IdS');
+    }
+  }
+
+  async sd_N3AeSiDgw4FHMFp1(bh) {
+    try {
+      const getnewsInstance: getnews = this.__page_injector__.get(getnews);
+
+      let outputVariables = await getnewsInstance.dynamicApiCall(
+        this.page.addUserPath,
+        bh.input.form,
+        this.page.postMethod
+      );
+      bh.local.respose = outputVariables.local.results;
+
+      //appendnew_next_sd_N3AeSiDgw4FHMFp1
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_N3AeSiDgw4FHMFp1');
     }
   }
 

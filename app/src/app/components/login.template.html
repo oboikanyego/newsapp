@@ -17,7 +17,7 @@
 
         </mat-form-field>
       </div>
-      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button [disabled]="page.login.Invalid">Login</button></div>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button (click)="loginSubmit(login.value)" [disabled]="login.invalid">Login</button></div>
     </form>
     <div fxLayout="row wrap" class="margintop" fxLayoutAlign="start stretch" [fxShow]="true">
       <div>

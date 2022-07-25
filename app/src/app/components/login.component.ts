@@ -18,6 +18,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { getnews } from 'app/sd-services/getnews'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
@@ -68,16 +69,42 @@ export class loginComponent {
     }
   }
 
+  loginSubmit(form: any = undefined, ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { form: form };
+      bh.local = { respose: undefined };
+      bh = this.sd_e5VxHAMh2N4ZrNZr(bh);
+      //appendnew_next_loginSubmit
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_gGrs9dABGTysGrjq');
+    }
+  }
+
   //appendnew_flow_loginComponent_start
 
   sd_9zxCBLLwzo5dC2nS(bh) {
     try {
       this.page.login = undefined;
-      bh = this.sd_TWdWgLHvEIZ7yvS1(bh);
+      bh = this.sd_R2Ttzd2WsRFYuvaE(bh);
       //appendnew_next_sd_9zxCBLLwzo5dC2nS
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_9zxCBLLwzo5dC2nS');
+    }
+  }
+
+  sd_R2Ttzd2WsRFYuvaE(bh) {
+    try {
+      this.page.addUserPath = 'login';
+      this.page.postMethod = 'POST';
+      bh = this.sd_TWdWgLHvEIZ7yvS1(bh);
+      //appendnew_next_sd_R2Ttzd2WsRFYuvaE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_R2Ttzd2WsRFYuvaE');
     }
   }
 
@@ -92,6 +119,36 @@ export class loginComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_TWdWgLHvEIZ7yvS1');
+    }
+  }
+
+  sd_e5VxHAMh2N4ZrNZr(bh) {
+    try {
+      const page = this.page;
+      console.log('VALUE', bh.input);
+      bh = this.sd_i1iUqqgZojeVq0p2(bh);
+      //appendnew_next_sd_e5VxHAMh2N4ZrNZr
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_e5VxHAMh2N4ZrNZr');
+    }
+  }
+
+  async sd_i1iUqqgZojeVq0p2(bh) {
+    try {
+      const getnewsInstance: getnews = this.__page_injector__.get(getnews);
+
+      let outputVariables = await getnewsInstance.dynamicApiCall(
+        this.page.addUserPath,
+        bh.input.form,
+        this.page.postMethod
+      );
+      bh.local.respose = outputVariables.local.results;
+
+      //appendnew_next_sd_i1iUqqgZojeVq0p2
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_i1iUqqgZojeVq0p2');
     }
   }
 
