@@ -49,6 +49,7 @@
         "underline",
         "cursorPointer",
         "marginBottom1em",
-        "selectedCat"
+        "selectedCat",
+        "ng-image-slider"
     ]
 }

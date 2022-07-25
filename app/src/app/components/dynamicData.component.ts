@@ -8,10 +8,11 @@ import {
   Input,
   Output,
   EventEmitter,
-  DoCheck,
+  ViewChild,
+  ViewChildren,
   SimpleChanges,
   OnChanges,
-  AfterViewInit,
+  DoCheck,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -31,6 +32,8 @@ import { getnews } from 'app/sd-services/getnews'; //_splitter_
 export class dynamicDataComponent implements OnChanges, DoCheck {
   @Input('data')
   public data: any = undefined;
+  @ViewChild('nav')
+  public nav: any = null;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -88,7 +91,7 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
         .constructFlowObject(this);
       bh.input = { news: news };
       bh.local = {};
-      bh = this.sd_Ikd3xfE2DVjhNeuP(bh);
+      bh = this.sd_HUAcT45XpTTaPeG7(bh);
       //appendnew_next_sendDatatNews
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_cSt2brPaeleihhW1');
@@ -107,6 +110,15 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
     }
   }
 
+  sd_Cf2IrggYN1bhTMT0(bh) {
+    try {
+      //appendnew_next_sd_Cf2IrggYN1bhTMT0
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Cf2IrggYN1bhTMT0');
+    }
+  }
+
   //appendnew_flow_dynamicDataComponent_start
 
   sd_Bf57H4aAsnOZn3r3(bh) {
@@ -115,6 +127,7 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
       this.page.cardArr = [];
       this.page.data = undefined;
       this.page.p = 1;
+      this.page.value = undefined;
       bh = this.sd_JwIaOfUoojdvuJuc(bh);
       //appendnew_next_sd_Bf57H4aAsnOZn3r3
       return bh;
@@ -126,6 +139,7 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
   sd_JwIaOfUoojdvuJuc(bh) {
     try {
       this.page.paginate = this.__page_injector__.get(NgxPaginationModule);
+      bh = this.sd_KH9hvwlT5OI7vB4U(bh);
       //appendnew_next_sd_JwIaOfUoojdvuJuc
       return bh;
     } catch (e) {
@@ -133,9 +147,31 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
     }
   }
 
+  sd_KH9hvwlT5OI7vB4U(bh) {
+    try {
+      bh.pageViews = Object.assign(bh.pageViews || {}, { nav: this.nav });
+      //appendnew_next_sd_KH9hvwlT5OI7vB4U
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_KH9hvwlT5OI7vB4U');
+    }
+  }
+
+  sd_HUAcT45XpTTaPeG7(bh) {
+    try {
+      const page = this.page; // page.cardArr = bh.changes.data.currentValue.articles;
+      page.value = page?.cardArr[bh.input.news];
+      bh = this.sd_Ikd3xfE2DVjhNeuP(bh);
+      //appendnew_next_sd_HUAcT45XpTTaPeG7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_HUAcT45XpTTaPeG7');
+    }
+  }
+
   sd_Ikd3xfE2DVjhNeuP(bh) {
     try {
-      sessionStorage.setItem('news', JSON.stringify(bh.input.news));
+      sessionStorage.setItem('news', JSON.stringify(this.page.value));
       bh = this.sd_RjdaAyCf5n19vwVQ(bh);
       //appendnew_next_sd_Ikd3xfE2DVjhNeuP
       return bh;
@@ -176,7 +212,16 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
     try {
       const page = this.page;
       page.cardArr = page.data?.articles;
-      this.sd_HNGtyg35L2JzrYib(bh);
+
+      if (page.cardArr?.length > 0) {
+        page.cardArr.forEach((item) => {
+          // console.log('data..............', item.urlToImage);
+          item['image'] = item.urlToImage;
+          item['thumbImage'] = item.urlToImage;
+          // delete item.urlToImage;
+        });
+      }
+      bh = this.sd_dhkQ7pCGKijuU8RI(bh);
       //appendnew_next_sd_DVRWDT0gZ2teof6o
       return bh;
     } catch (e) {
@@ -184,13 +229,15 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
     }
   }
 
-  sd_HNGtyg35L2JzrYib(bh) {
+  sd_dhkQ7pCGKijuU8RI(bh) {
     try {
-      console.log(new Date().toLocaleTimeString(), this.page.cardArr);
-      //appendnew_next_sd_HNGtyg35L2JzrYib
+      const page = this.page;
+      page.fistCard = page?.cardArr[0];
+
+      //appendnew_next_sd_dhkQ7pCGKijuU8RI
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_HNGtyg35L2JzrYib');
+      return this.errorHandler(bh, e, 'sd_dhkQ7pCGKijuU8RI');
     }
   }
 
@@ -200,6 +247,9 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
     const bh: any = this.__page_injector__
       .get(SDPageCommonService)
       .constructFlowObject(this);
+    {
+      this.sd_Cf2IrggYN1bhTMT0(bh);
+    }
     this.__page_injector__.get(SDPageCommonService).deletePageFromMap(this);
   }
 

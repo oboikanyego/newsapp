@@ -72,7 +72,9 @@
         "x": 365,
         "y": 100,
         "wires": [
-            []
+            [
+                "sd_KH9hvwlT5OI7vB4U"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -117,6 +119,13 @@
                     "type": "literal",
                     "value": "1"
                 }
+            },
+            {
+                "textIp": "value",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_Bf57H4aAsnOZn3r3",
@@ -142,8 +151,8 @@
         "name": "On Changes",
         "functionName": "ngOnChanges",
         "category": "Lifecycle Events",
-        "x": 625,
-        "y": 260,
+        "x": 125,
+        "y": 500,
         "wires": [
             []
         ],
@@ -158,16 +167,19 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.cardArr = bh.changes.data.currentValue.articles;",
+        "script": "// page.cardArr = bh.changes.data.currentValue.articles;\npage.value=page?.cardArr[bh.input.news];",
         "functionName": "sd_HUAcT45XpTTaPeG7",
         "category": "Function",
-        "x": 545,
-        "y": 360,
+        "x": 265,
+        "y": 340,
         "wires": [
-            []
+            [
+                "sd_Ikd3xfE2DVjhNeuP"
+            ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true
+        "generateNext": false,
+        "generated": true
     },
     {
         "id": "sd_cSt2brPaeleihhW1",
@@ -195,7 +207,7 @@
         "y": 340,
         "wires": [
             [
-                "sd_Ikd3xfE2DVjhNeuP"
+                "sd_HUAcT45XpTTaPeG7"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -217,44 +229,19 @@
             "value": "news"
         },
         "value": {
-            "type": "bh.input",
-            "value": "news"
+            "type": "this.page",
+            "value": "value"
         },
         "resultMapping": {},
         "functionName": "sd_Ikd3xfE2DVjhNeuP",
         "category": "Storage",
-        "x": 265,
+        "x": 385,
         "y": 340,
         "wires": [
             [
                 "sd_RjdaAyCf5n19vwVQ"
             ]
         ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_HNGtyg35L2JzrYib",
-        "type": "Log",
-        "z": "sd_X2EpnhPavLb4d5J0",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "this.page.cardArr",
-        "functionName": "sd_HNGtyg35L2JzrYib",
-        "category": "General",
-        "x": 465,
-        "y": 220,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "this.page",
-                "value": "cardArr",
-                "constant": false
-            }
-        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
@@ -324,14 +311,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.cardArr = page.data?.articles;",
+        "script": "page.cardArr = page.data?.articles;\n\nif (page.cardArr?.length > 0) {\n    page.cardArr.forEach(item => {\n        // console.log('data..............', item.urlToImage);\n        item['image'] = item.urlToImage;\n        item['thumbImage'] = item.urlToImage;\n        // delete item.urlToImage;\n    });\n}",
         "functionName": "sd_DVRWDT0gZ2teof6o",
         "category": "Function",
         "x": 365,
         "y": 220,
         "wires": [
             [
-                "sd_HNGtyg35L2JzrYib"
+                "sd_dhkQ7pCGKijuU8RI"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -379,8 +366,8 @@
         "accept_csd": true,
         "functionName": "sd_evvLMf7IcCLzd4GA",
         "category": "General",
-        "x": 480,
-        "y": 100,
+        "x": 445,
+        "y": 480,
         "wires": [
             []
         ],
@@ -424,7 +411,7 @@
         "resultMapping": "",
         "functionName": "sd_RjdaAyCf5n19vwVQ",
         "category": "Navigation",
-        "x": 385,
+        "x": 465,
         "y": 340,
         "wires": [
             []
@@ -432,5 +419,95 @@
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
+    },
+    {
+        "id": "sd_KH9hvwlT5OI7vB4U",
+        "type": "ViewPicker",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "str",
+                    "value": "nav"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_KH9hvwlT5OI7vB4U",
+        "category": "Function",
+        "x": 485,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_dhkQ7pCGKijuU8RI",
+        "type": "Script",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.fistCard=page?.cardArr[0];\n",
+        "functionName": "sd_dhkQ7pCGKijuU8RI",
+        "category": "Function",
+        "x": 465,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Cf2IrggYN1bhTMT0",
+        "type": "OnDestroy",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_Cf2IrggYN1bhTMT0",
+        "category": "Lifecycle Events",
+        "x": 200,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dynamicDataComponent"
+    },
+    {
+        "id": "sd_9WJ5H8QcsKqifO0Y",
+        "type": "Log",
+        "z": "sd_X2EpnhPavLb4d5J0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh.input",
+        "functionName": "sd_9WJ5H8QcsKqifO0Y",
+        "category": "General",
+        "x": 305,
+        "y": 420,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.input",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
     }
 ]

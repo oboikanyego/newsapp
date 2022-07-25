@@ -1,19 +1,26 @@
 <div fxLayout="row wrap" class="paddingDynamic lightbackground fullwidth" fxLayoutAlign="center center" [fxShow]="true">
   <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div class="fullwidth fullheight">
+        <ng-image-slider [images]="page.cardArr " [infinite]="true" [autoSlide]="1" (imageClick)="sendDatatNews($event)" [imageSize]="{width: &apos;35%&apos;, height: 200}" slideImage="1" [animationSpeed]="4" #nav>
+
+        </ng-image-slider>
+      </div>
+    </div>
     <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
-      <div fxLayout="column wrap" class="card" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.cardArr | paginate: { itemsPerPage: 10, currentPage: p , itemsPerPage: 6}; let ind = index" fxFlex.sm="48" fxFlex.xs="95">
-        <mat-card (click)="sendDatatNews(item)" class="cards">
-          <img mat-card-image artImgSrc [src]="item.urlToImage   || &apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg &apos;">
+      <div fxLayout="column wrap" fxFlex="70" fxLayoutAlign="center stretch" [fxShow]="true">
+        <mat-card style="width:80%">
+          <img mat-card-image [src]="page.fistCard?.image">
 
-          <mat-card-title class="elipsis">{{item.title}}</mat-card-title>
+          <mat-card-title>{{page.cardArr?.title}}</mat-card-title>
 
-          <mat-card-subtitle class="elipsis">{{item.description}}</mat-card-subtitle>
+          <mat-card-subtitle>{{item?.publishedAt | date:&apos;mediumDate&apos; }}</mat-card-subtitle>
 
-          <mat-card-subtitle>{{item.publishedAt | date:&apos;mediumDate&apos; }}</mat-card-subtitle>
-
-          <mat-card-content align="right"></mat-card-content>
-
-          <mat-card-actions></mat-card-actions>
+          <mat-card-content>
+            <div>
+              {{page.fistCard?.description}}
+            </div>
+          </mat-card-content>
         </mat-card>
       </div>
     </div>
