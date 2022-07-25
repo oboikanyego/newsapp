@@ -258,7 +258,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "margin: 0;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

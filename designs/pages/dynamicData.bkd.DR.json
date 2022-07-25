@@ -96,7 +96,7 @@
                 },
                 {
                     "_key": "fxLayoutGap",
-                    "_value": "",
+                    "_value": "20px",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -495,7 +495,7 @@
                         },
                         {
                             "_key": "fxFlex",
-                            "_value": "70",
+                            "_value": "58",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -545,7 +545,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "width:80%",
+                                "_value": "width:80%;     box-shadow: none;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -562,6 +562,74 @@
                                 "_attrDef": "p"
                             }
                         ],
+                        "95fef515-6c41-1aba-eead-cae47744f62f": {
+                            "paletteKey": "ng-cardheader",
+                            "parentEditorKey": "7286a83a-c5a3-abe3-988e-c610ca72a4dd",
+                            "isAdvancedChildComponent": true,
+                            "commentid": null,
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "title",
+                                    "_value": "{{page.fistCard?.title}}",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "subtitle",
+                                    "_value": "",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "imgSrc",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[src]",
+                                    "_value": "'https://media.istockphoto.com/photos/breaking-news-world-news-with-map-backgorund-picture-id1182477852?k=20&m=1182477852&s=612x612&w=0&h=I3wdSzT_5h1y9dHq_YpZ9AqdIKg8epthr8Guva8FkPA='",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "alt",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "imgSecure",
+                                    "_value": "",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[collectionName]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[imageFilter]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        },
                         "be31cc90-fbd9-8488-44da-72f4779a95ab": {
                             "paletteKey": "ng-card-image",
                             "parentEditorKey": "7286a83a-c5a3-abe3-988e-c610ca72a4dd",
@@ -957,8 +1025,8 @@
                 "e59f91e9-966f-b9e3-e103-619b86fca29b": {
                     "paletteKey": "FlexLayoutCol",
                     "parentEditorKey": "dac2dac2-0d21-5dd2-0000-ae0b5774c987",
-                    "isCommented": "true",
-                    "commentid": "1658736045081",
+                    "isCommented": "false",
+                    "commentid": null,
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -981,7 +1049,7 @@
                         },
                         {
                             "_key": "fxFlex",
-                            "_value": "30",
+                            "_value": "40",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1020,8 +1088,8 @@
                         "paletteKey": "ad-card",
                         "parentEditorKey": "e59f91e9-966f-b9e3-e103-619b86fca29b",
                         "isAdvancedComponent": true,
-                        "isCommented": "true",
-                        "commentid": "1658736045081",
+                        "isCommented": "false",
+                        "commentid": null,
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -1049,12 +1117,11 @@
                                 "_attrDef": "p"
                             }
                         ],
-                        "b5e5fe21-1307-c195-7bf8-62b996116b1d": {
-                            "paletteKey": "ng-card-title",
+                        "0a5aa471-81e0-8112-53fb-a3ebba720ae0": {
+                            "paletteKey": "ng-card-subtitle",
                             "parentEditorKey": "d6f120b6-9f12-2118-024c-0b191056ba72",
                             "isAdvancedChildComponent": true,
-                            "isCommented": "true",
-                            "commentid": "1658736045081",
+                            "commentid": null,
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1069,26 +1136,32 @@
                                     "_attrDef": "p"
                                 },
                                 {
-                                    "_key": "Title",
-                                    "_value": "{{page.fistCard?.title}}",
+                                    "_key": "Sub Title",
+                                    "_value": "{{item.title}}",
                                     "_type": "a",
                                     "_attrDef": "p",
-                                    "_useAsLabel": true
+                                    "_useAsLabel": true,
+                                    "_isVisibleForParent": true
                                 },
                                 {
                                     "_key": "align",
                                     "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "*ngFor",
+                                    "_value": "let item of page.cardArr | paginate: { itemsPerPage: 10, currentPage: p , itemsPerPage: 5};",
+                                    "_type": "kv",
+                                    "_attrDef": "c"
                                 }
                             ]
                         },
-                        "d67f1ea0-15a8-2b23-afad-0317fc633744": {
-                            "paletteKey": "ng-card-title",
+                        "0acb306c-13a4-40e2-b246-1b6b6a4318fe": {
+                            "paletteKey": "ng-card-content",
                             "parentEditorKey": "d6f120b6-9f12-2118-024c-0b191056ba72",
                             "isAdvancedChildComponent": true,
-                            "isCommented": "true",
-                            "commentid": "1658736045081",
+                            "commentid": null,
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1103,121 +1176,226 @@
                                     "_attrDef": "p"
                                 },
                                 {
-                                    "_key": "Title",
-                                    "_value": "{{page.fistCard?.title}}",
-                                    "_type": "a",
-                                    "_attrDef": "p",
-                                    "_useAsLabel": true
-                                },
-                                {
                                     "_key": "align",
                                     "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 }
-                            ]
-                        },
-                        "c26e015d-2ed3-83ae-6c33-875f30ee403b": {
-                            "paletteKey": "ng-card-title",
-                            "parentEditorKey": "d6f120b6-9f12-2118-024c-0b191056ba72",
-                            "isAdvancedChildComponent": true,
-                            "isCommented": "true",
-                            "commentid": "1658736045081",
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "Title",
-                                    "_value": "{{page.fistCard?.title}}",
-                                    "_type": "a",
-                                    "_attrDef": "p",
-                                    "_useAsLabel": true
-                                },
-                                {
-                                    "_key": "align",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
+                            ],
+                            "ec05aa4e-b48a-e375-91f8-c2d0feb04e2d": {
+                                "paletteKey": "Html5",
+                                "parentEditorKey": "0acb306c-13a4-40e2-b246-1b6b6a4318fe",
+                                "isAdvancedComponent": true,
+                                "commentid": null,
+                                "designerReference": [
+                                    {
+                                        "_key": "style",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "class",
+                                        "_value": "",
+                                        "_type": "dav",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "htmlElement",
+                                        "_value": "div",
+                                        "_type": "dav",
+                                        "_attrDef": "p",
+                                        "_useAsLabel": true
+                                    },
+                                    {
+                                        "_key": "tagType",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "name",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "sandbox",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "src",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "srcdoc",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "width",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "[autoplay]",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "[loop]",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "data",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "audioSource",
+                                        "_value": [],
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "videoSource",
+                                        "_value": [],
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "audioDatasource",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "audioSrc",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "audioType",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "videoDatasource",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "videoSrc",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "videoType",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(audioplay)",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(videoplay)",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(audiopause)",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(videopause)",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(audioended)",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(videoended)",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    }
+                                ],
+                                "56030451-995d-b0f5-24a4-7283555a3ec0": {
+                                    "paletteKey": "html-editor",
+                                    "parentEditorKey": "ec05aa4e-b48a-e375-91f8-c2d0feb04e2d",
+                                    "isAdvancedChildComponent": true,
+                                    "commentid": null,
+                                    "designerReference": [
+                                        {
+                                            "_key": "style",
+                                            "_value": "",
+                                            "_type": "kv",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "class",
+                                            "_value": "",
+                                            "_type": "dav",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "html",
+                                            "_value": "<pagination-controls (pageChange)=\"p = $event\"></pagination-controls>",
+                                            "_type": "a",
+                                            "_attrDef": "p"
+                                        }
+                                    ]
                                 }
-                            ]
-                        },
-                        "d40efd55-c439-0910-1a7a-53075d23f511": {
-                            "paletteKey": "ng-card-title",
-                            "parentEditorKey": "d6f120b6-9f12-2118-024c-0b191056ba72",
-                            "isAdvancedChildComponent": true,
-                            "isCommented": "true",
-                            "commentid": "1658736045081",
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "Title",
-                                    "_value": "{{page.fistCard?.title}}",
-                                    "_type": "a",
-                                    "_attrDef": "p",
-                                    "_useAsLabel": true
-                                },
-                                {
-                                    "_key": "align",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                }
-                            ]
-                        },
-                        "281d0964-ea4b-e02d-48bd-f4e9f4d45e0a": {
-                            "paletteKey": "ng-card-title",
-                            "parentEditorKey": "d6f120b6-9f12-2118-024c-0b191056ba72",
-                            "isAdvancedChildComponent": true,
-                            "isCommented": "true",
-                            "commentid": "1658736045081",
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "Title",
-                                    "_value": "{{page.fistCard?.title}}",
-                                    "_type": "a",
-                                    "_attrDef": "p",
-                                    "_useAsLabel": true
-                                },
-                                {
-                                    "_key": "align",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                }
-                            ]
+                            }
                         }
                     }
                 },
@@ -1641,8 +1819,8 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "00fafba8-41b7-2919-c281-798012c49d6d",
                     "isAdvancedComponent": true,
-                    "isCommented": "false",
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1658743768203",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -1829,8 +2007,8 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "cfc27c91-e08e-8559-a799-75cafb8f611e",
                         "isAdvancedChildComponent": true,
-                        "isCommented": "false",
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1658743768203",
                         "designerReference": [
                             {
                                 "_key": "style",

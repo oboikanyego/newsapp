@@ -139,26 +139,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true,
-        "serviceName": "dynamicDataComponent"
-    },
-    {
-        "id": "sd_DrwvltqBH1RlPSHs",
-        "type": "OnChanges",
-        "z": "sd_X2EpnhPavLb4d5J0",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "On Changes",
-        "functionName": "ngOnChanges",
-        "category": "Lifecycle Events",
-        "x": 125,
-        "y": 500,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "dynamicDataComponent"
+        "generated": true
     },
     {
         "id": "sd_HUAcT45XpTTaPeG7",
@@ -326,55 +307,6 @@
         "generated": true
     },
     {
-        "id": "sd_evvLMf7IcCLzd4GA",
-        "type": "PageCallService",
-        "z": "sd_X2EpnhPavLb4d5J0",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 1,
-        "isValidNode": true,
-        "noerr": 0,
-        "service": {
-            "id": "sd_Yp5ppCJw8dBJIphW",
-            "type": "tab",
-            "createdDate": "2022-07-20T13:03:43.575Z",
-            "label": "getnews",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 0
-        },
-        "flow": {
-            "flowId": "sd_kKX5NEGkyoMOe1sl",
-            "flowName": "getBycountry"
-        },
-        "inputVariables": [],
-        "outputMapping": [
-            {
-                "mapVarType": "local",
-                "key": "result",
-                "valueType": "this.page",
-                "value": "cardArr",
-                "mapVarName": "result",
-                "localVar": "this.page.cardArr"
-            }
-        ],
-        "serviceImportPath": "app/sd-services/getnews",
-        "startName": "getBycountry",
-        "inputParams": [],
-        "accept_bh": false,
-        "accept_csd": true,
-        "functionName": "sd_evvLMf7IcCLzd4GA",
-        "category": "General",
-        "x": 445,
-        "y": 480,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
-    },
-    {
         "id": "sd_LGAhOAzRBd3mykPl",
         "type": "DoCheck",
         "z": "sd_X2EpnhPavLb4d5J0",
@@ -467,47 +399,5 @@
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
-    },
-    {
-        "id": "sd_Cf2IrggYN1bhTMT0",
-        "type": "OnDestroy",
-        "z": "sd_X2EpnhPavLb4d5J0",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "",
-        "functionName": "sd_Cf2IrggYN1bhTMT0",
-        "category": "Lifecycle Events",
-        "x": 200,
-        "y": 500,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "dynamicDataComponent"
-    },
-    {
-        "id": "sd_9WJ5H8QcsKqifO0Y",
-        "type": "Log",
-        "z": "sd_X2EpnhPavLb4d5J0",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "bh.input",
-        "functionName": "sd_9WJ5H8QcsKqifO0Y",
-        "category": "General",
-        "x": 305,
-        "y": 420,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "bh.input",
-                "value": "",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
     }
 ]

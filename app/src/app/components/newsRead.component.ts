@@ -8,9 +8,11 @@ import {
   Input,
   Output,
   EventEmitter,
-  DoCheck,
+  ViewChild,
+  ViewChildren,
   SimpleChanges,
   OnChanges,
+  DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
@@ -157,12 +159,10 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
   async sd_qkTnyjiEo9x275C8(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj(null);
+        this.sdService.getPathAndQParamsObj('/');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       //appendnew_next_sd_qkTnyjiEo9x275C8
       return bh;
     } catch (e) {
@@ -215,9 +215,7 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
         this.sdService.getPathAndQParamsObj('/home/cards');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       //appendnew_next_sd_jcNxUm5PWOdtGFMG
       return bh;
     } catch (e) {

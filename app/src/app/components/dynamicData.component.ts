@@ -13,6 +13,7 @@ import {
   SimpleChanges,
   OnChanges,
   DoCheck,
+  AfterViewInit,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -29,7 +30,7 @@ import { getnews } from 'app/sd-services/getnews'; //_splitter_
     //appendnew_element_providers
   ],
 })
-export class dynamicDataComponent implements OnChanges, DoCheck {
+export class dynamicDataComponent implements DoCheck {
   @Input('data')
   public data: any = undefined;
   @ViewChild('nav')
@@ -72,18 +73,6 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
     }
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.changes = changes;
-      //appendnew_next_ngOnChanges
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_DrwvltqBH1RlPSHs');
-    }
-  }
-
   sendDatatNews(news: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
@@ -107,15 +96,6 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
       //appendnew_next_ngDoCheck
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_LGAhOAzRBd3mykPl');
-    }
-  }
-
-  sd_Cf2IrggYN1bhTMT0(bh) {
-    try {
-      //appendnew_next_sd_Cf2IrggYN1bhTMT0
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Cf2IrggYN1bhTMT0');
     }
   }
 
@@ -247,9 +227,6 @@ export class dynamicDataComponent implements OnChanges, DoCheck {
     const bh: any = this.__page_injector__
       .get(SDPageCommonService)
       .constructFlowObject(this);
-    {
-      this.sd_Cf2IrggYN1bhTMT0(bh);
-    }
     this.__page_injector__.get(SDPageCommonService).deletePageFromMap(this);
   }
 

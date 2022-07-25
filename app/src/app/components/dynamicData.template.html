@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" class="paddingDynamic lightbackground fullwidth" fxLayoutAlign="center center" [fxShow]="true">
-  <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxFlex="90" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
       <div class="fullwidth fullheight">
         <ng-image-slider [images]="page.cardArr " [infinite]="true" [autoSlide]="1" (imageClick)="sendDatatNews($event)" [imageSize]="{width: &apos;35%&apos;, height: 200}" slideImage="1" [animationSpeed]="4" #nav>
@@ -8,8 +8,14 @@
       </div>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
-      <div fxLayout="column wrap" fxFlex="70" fxLayoutAlign="center stretch" [fxShow]="true">
-        <mat-card style="width:80%">
+      <div fxLayout="column wrap" fxFlex="58" fxLayoutAlign="center stretch" [fxShow]="true">
+        <mat-card style="width:80%;     box-shadow: none;">
+          <mat-card-header>
+            <mat-card-title>{{page.fistCard?.title}}</mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+            <img mat-card-avatar [src]="&apos;https://media.istockphoto.com/photos/breaking-news-world-news-with-map-backgorund-picture-id1182477852?k=20&amp;m=1182477852&amp;s=612x612&amp;w=0&amp;h=I3wdSzT_5h1y9dHq_YpZ9AqdIKg8epthr8Guva8FkPA=&apos;">
+          </mat-card-header>
+
           <img mat-card-image [src]="page.fistCard?.image">
 
           <mat-card-title>{{page.cardArr?.title}}</mat-card-title>
@@ -23,11 +29,18 @@
           </mat-card-content>
         </mat-card>
       </div>
-    </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
-      <div>
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <div fxLayout="column wrap" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-card>
+          <mat-card-subtitle *ngFor="let item of page.cardArr | paginate: { itemsPerPage: 10, currentPage: p , itemsPerPage: 5};">{{item.title}}</mat-card-subtitle>
+
+          <mat-card-content>
+            <div>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"></div>
   </div>
 </div>
