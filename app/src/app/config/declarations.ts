@@ -15,6 +15,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-RegisterComponent
+import { RegisterComponent } from '../components/Register.component';
+//CORE_REFERENCE_IMPORT-loginComponent
+import { loginComponent } from '../components/login.component';
 //CORE_REFERENCE_IMPORT-favoritesComponent
 import { favoritesComponent } from '../components/favorites.component';
 //CORE_REFERENCE_IMPORT-chartsComponent
@@ -57,6 +61,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-RegisterComponent
+  RegisterComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginComponent
+  loginComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-favoritesComponent
   favoritesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-chartsComponent
@@ -100,6 +108,8 @@ export const appRoutes = [
       { path: 'news', component: newsReadComponent },
       { path: 'charts', component: chartsComponent },
       { path: 'favorites', component: favoritesComponent },
+      { path: 'login', component: loginComponent },
+      { path: 'register', component: RegisterComponent },
     ],
   },
   { path: '', redirectTo: '/home/cards', pathMatch: 'full' },

@@ -7,31 +7,31 @@
         </ng-image-slider>
       </div>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between start" [fxShow]="true">
       <div fxLayout="column wrap" fxFlex="58" fxLayoutAlign="center stretch" [fxShow]="true">
-        <mat-card style="width:80%;     box-shadow: none;">
-          <mat-card-header>
-            <mat-card-title>{{page.fistCard?.title}}</mat-card-title>
-            <mat-card-subtitle></mat-card-subtitle>
-            <img mat-card-avatar [src]="&apos;https://media.istockphoto.com/photos/breaking-news-world-news-with-map-backgorund-picture-id1182477852?k=20&amp;m=1182477852&amp;s=612x612&amp;w=0&amp;h=I3wdSzT_5h1y9dHq_YpZ9AqdIKg8epthr8Guva8FkPA=&apos;">
-          </mat-card-header>
-
-          <img mat-card-image [src]="page.fistCard?.image">
-
-          <mat-card-title>{{page.cardArr?.title}}</mat-card-title>
-
-          <mat-card-subtitle>{{item?.publishedAt | date:&apos;mediumDate&apos; }}</mat-card-subtitle>
-
-          <mat-card-content>
-            <div>
-              {{page.fistCard?.description}}
-            </div>
-          </mat-card-content>
-        </mat-card>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h1>
+            Top Story</h1>
+        </div>
+        <div fxLayout="row " class="topStory" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true">
+            <h3>
+              {{page.fistCard?.title}}
+            </h3>
+            <p>
+              {{page.fistCard?.content}} <a href="{{page.fistCard?.url}}" target="_blank">Read Full Article</a>
+            </p>
+          </div>
+          <div fxLayout="column wrap" fxFlex="55" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page.fistCard?.image || &apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg &apos;" width="100%"></div>
+        </div>
       </div>
-      <div fxLayout="column wrap" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true">
-        <mat-card>
-          <mat-card-subtitle *ngFor="let item of page.cardArr | paginate: { itemsPerPage: 10, currentPage: p , itemsPerPage: 5};">{{item.title}}</mat-card-subtitle>
+      <div fxLayout="column " fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h1>
+            This Week</h1>
+        </div>
+        <mat-card style="box-shadow: none;">
+          <mat-card-subtitle class="cursorPointer storyHighlight" *ngFor="let item of page.cardArr | paginate: { itemsPerPage: 10, currentPage: p , itemsPerPage: 5}; let i = index" (click)="sendDatatNews(i)"><span class="indexIndicator">{{i + 1}}.</span> {{item.title}}</mat-card-subtitle>
 
           <mat-card-content>
             <div>

@@ -1,36 +1,53 @@
 <div fxLayout="row wrap" class="boxRead lightbackground" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true">
-  <div fxLayout="column wrap" fxFlex="95" fxLayoutAlign="start stretch" [fxShow]="true">
-    <div fxLayout="row wrap" class="readMoreIcon buttonpad" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button (click)="back()">
-        <mat-icon>arrow_back</mat-icon>Home
-      </button></div>
-    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
-      <h2>
-        {{page.news?.title}}
-      </h2>
-    </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><img [src]="page.news?.urlToImage || &apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg &apos;" style="height:410px"></div>
-    <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true">
-      <p>
-        {{page.news?.description }}
-      </p>
-    </div>
-    <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
-        <span class="authour">Author :</span>{{page.news?.author ? page.news?.author :&apos;Author Unknown&apos; }}</label></div>
-    <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
-        <span class="publish Date">Publish Date : </span>{{page.news?.publishedAt ? (page.news?.publishedAt | date:&apos;mediumDate&apos;)  :&apos;Publish Date known&apos; }}</label></div>
-    <div fxLayout="row wrap" class="anchortextRed paddingAround" fxLayoutAlign="start stretch" [fxShow]="true">
-      <p>
-        {{page.content}}<a href="{{page.news?.url}}" target="_blank">Read Full Article</a>
-      </p>
-    </div>
-    <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end center" [fxShow]="true"><label>
-        {{page.isFav ? &apos;Unmark as Favorite&apos; : &apos;Mark as Favorite&apos;}}</label>
-      <mat-icon class="cursorPointer" [class.favorite]="page.isFav" (click)="markAsFavorite()">star</mat-icon>
-    </div>
-    <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div>
+  <div fxLayout="column wrap" fxFlex="95" fxLayoutGap="30px" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="readMoreIcon buttonpad" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button (click)="back()">
+          <mat-icon>arrow_back</mat-icon>Home
+        </button></div>
+      <div fxLayout="column wrap" class="cursorPointer" fxLayoutAlign="start stretch" [fxShow]="true" [class.favoriteContainerUnmarked]="!page.isFav" [class.favoriteContainerMarked]="page.isFav" (click)="markAsFavorite()">
+        <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end center" [fxShow]="true"><label>
+            {{page.isFav ? &apos;Unmark as Favorite&apos; : &apos;Mark as Favorite&apos;}}</label>
+          <mat-icon class="cursorPointer" [class.favorite]="page.isFav" (click)="markAsFavorite()">star</mat-icon>
+        </div>
       </div>
-      <div>
+    </div>
+    <div fxLayout="row " fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page.news?.urlToImage || &apos;https://st2.depositphotos.com/3223379/5688/i/950/depositphotos_56880225-stock-photo-words-news.jpg &apos;" style="height:410px"></div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h3>
+            {{page.news?.title}}
+          </h3>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
+              <span class="authour">Author :</span>{{page.news?.author ? page.news?.author :&apos;Author Unknown&apos; }}</label></div>
+          <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
+              <span class="publish Date">Publish Date : </span>{{page.news?.publishedAt ? (page.news?.publishedAt | date:&apos;mediumDate&apos;)  :&apos;Publish Date known&apos; }}</label></div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
+              <span class="authour">Source from : </span>{{page.news?.source.name ? page.news?.source.name :&apos;Author Unknown&apos; }}</label></div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <p>
+            {{page.news?.description }}
+          </p>
+        </div>
+        <div fxLayout="row wrap" class="anchortextRed" fxLayoutAlign="start stretch" [fxShow]="true">
+          <p>
+            {{page.content}}<a href="{{page.news?.url}}" target="_blank">Read Full Article</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="marginzero" fxLayoutAlign="start stretch" [fxShow]="true">
+      <h2>
+        Add comment:</h2>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start end" [fxShow]="true">
+      <div class="displaycontent">
+        <textarea rows="4" cols="50" placeholder="Express yourself here..." #comment></textarea> <button mat-stroked-button (click)="submit(comment.value)">Basic</button>
       </div>
     </div>
   </div>

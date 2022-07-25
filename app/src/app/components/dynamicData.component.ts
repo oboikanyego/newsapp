@@ -212,8 +212,11 @@ export class dynamicDataComponent implements DoCheck {
   sd_dhkQ7pCGKijuU8RI(bh) {
     try {
       const page = this.page;
-      page.fistCard = page?.cardArr[0];
-
+      page.fistCard = page?.cardArr[1];
+      page.fistCard.content = page.fistCard.content.replace(
+        / \[[\s\S]*?\]/g,
+        ''
+      );
       //appendnew_next_sd_dhkQ7pCGKijuU8RI
       return bh;
     } catch (e) {

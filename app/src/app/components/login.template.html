@@ -1,0 +1,28 @@
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <h2>
+        Welcome to NewsPortal Login or Register</h2>
+    </div>
+    <form #login="ngForm">
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.login.email" name="email" placeholder="Enter email" [required]="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.login.password" name="password" placeholder="Password" [required]="true" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&amp;*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button [disabled]="page.login.Invalid">Login</button></div>
+    </form>
+    <div fxLayout="row wrap" class="margintop" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div>
+        <a href="home/register">Create an account?</a>
+      </div>
+    </div>
+  </div>
+</div>

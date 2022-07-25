@@ -197,6 +197,33 @@ export class getnews {
     }
   }
 
+  async submitComment(comment: any = undefined, ...others) {
+    try {
+      var bh: any = {
+        input: {
+          comment: comment,
+        },
+        local: {
+          result: undefined,
+        },
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_RIGjl3bz0rn4bA36(bh);
+      //appendnew_next_submitComment
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            result: bh.local.result,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_HxCTqRD5BxEnoIBe');
+    }
+  }
+
   //appendnew_flow_getnews_start
 
   async sd_upW4opq2b0X5k3Bf(bh) {
@@ -244,7 +271,7 @@ export class getnews {
 
   async sd_C1KAn0CsclpRCNtV(bh) {
     try {
-      bh.input.country = 'us';
+      bh.input.country = 'sa';
       bh.url =
         'https://newsapi.org/v2/top-headlines?country=' +
         bh.input.country +
@@ -280,21 +307,10 @@ export class getnews {
   async sd_mz3UM4doPl35qJyC(bh) {
     try {
       this.data = bh.local.result;
-      this.sd_2OylmBQR4X80edFZ(bh);
       //appendnew_next_sd_mz3UM4doPl35qJyC
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_mz3UM4doPl35qJyC');
-    }
-  }
-
-  async sd_2OylmBQR4X80edFZ(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.local.result);
-      //appendnew_next_sd_2OylmBQR4X80edFZ
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_2OylmBQR4X80edFZ');
     }
   }
 
@@ -456,6 +472,62 @@ export class getnews {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_yjHbMEGjxred8VAW');
+    }
+  }
+
+  async sd_RIGjl3bz0rn4bA36(bh) {
+    try {
+      bh.ssdUrl = bh.system.environment.properties.ssdURL;
+      bh = await this.sd_tDAcZ2BpwGRc03gr(bh);
+      //appendnew_next_sd_RIGjl3bz0rn4bA36
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_RIGjl3bz0rn4bA36');
+    }
+  }
+
+  async sd_tDAcZ2BpwGRc03gr(bh) {
+    try {
+      bh.local.url = bh.ssdUrl + 'addComment';
+      console.log(bh.input);
+
+      bh.input.body = {
+        comment: bh.input.comment,
+      };
+      bh = await this.sd_07abefVay84PdLOL(bh);
+      //appendnew_next_sd_tDAcZ2BpwGRc03gr
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_tDAcZ2BpwGRc03gr');
+    }
+  }
+
+  async sd_07abefVay84PdLOL(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.input.body,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_2OylmBQR4X80edFZ(bh);
+      //appendnew_next_sd_07abefVay84PdLOL
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_07abefVay84PdLOL');
+    }
+  }
+
+  async sd_2OylmBQR4X80edFZ(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh.local.result);
+      //appendnew_next_sd_2OylmBQR4X80edFZ
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_2OylmBQR4X80edFZ');
     }
   }
 
