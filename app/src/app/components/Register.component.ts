@@ -17,6 +17,8 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { getnews } from 'app/sd-services/getnews'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
@@ -144,10 +146,45 @@ export class RegisterComponent {
       );
       bh.local.respose = outputVariables.local.results;
 
+      bh = this.sd_xdE0KrQPG6sJmV5W(bh);
       //appendnew_next_sd_N3AeSiDgw4FHMFp1
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_N3AeSiDgw4FHMFp1');
+    }
+  }
+
+  sd_xdE0KrQPG6sJmV5W(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('Succefully Registered', 'ok', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      bh = this.sd_VZTqKgNNBkHfZyn2(bh);
+      //appendnew_next_sd_xdE0KrQPG6sJmV5W
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_xdE0KrQPG6sJmV5W');
+    }
+  }
+
+  async sd_VZTqKgNNBkHfZyn2(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/login');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+      //appendnew_next_sd_VZTqKgNNBkHfZyn2
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_VZTqKgNNBkHfZyn2');
     }
   }
 

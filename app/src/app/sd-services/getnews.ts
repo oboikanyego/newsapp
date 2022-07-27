@@ -317,7 +317,7 @@ export class getnews {
       bh.url =
         'https://newsapi.org/v2/everything?q=' +
         bh.input.catergory +
-        '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';
+        '&apiKey=7d8065bf726f423fb1ae1f708168e2cd';
       bh = await this.sd_QcoR8Z8fyceffDBp(bh);
       //appendnew_next_sd_upW4opq2b0X5k3Bf
       return bh;
@@ -361,7 +361,7 @@ export class getnews {
       bh.url =
         'https://newsapi.org/v2/top-headlines?country=' +
         bh.input.country +
-        '&apiKey=381e15c0040145c0aab17b7c5b0bd5bd';
+        '&apiKey=7d8065bf726f423fb1ae1f708168e2cd';
 
       bh = await this.sd_2ywxV9Cope4Iox2k(bh);
       //appendnew_next_sd_C1KAn0CsclpRCNtV

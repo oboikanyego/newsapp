@@ -22,7 +22,7 @@
                 <mat-error align="start" *ngIf="login.controls.password?.errors">Password does not need special characters</mat-error>
               </mat-form-field>
             </div>
-            <div fxLayout="row wrap" style="padding-top: 32px;" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button (click)="loginSubmit(login)" [disabled]="login.invalid">Login</button></div>
+            <div fxLayout="row wrap" style="padding-top: 32px;" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button (click)="loginSubmit(login.value)" [disabled]="login.invalid">Login</button></div>
           </form>
           <div fxLayout="row wrap" class="margintop" fxLayoutAlign="start stretch" [fxShow]="true">
             <div>

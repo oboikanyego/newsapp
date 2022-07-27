@@ -245,7 +245,7 @@ body{
 }
 
 a {
-    color: orangered;
+    color: orangered !important;
     text-decoration: none;
 }
 
@@ -354,4 +354,8 @@ bh-covid{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
+}
+.commentSection{
+    width: 100%;
+    padding: 10px;
 }
