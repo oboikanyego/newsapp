@@ -10,8 +10,6 @@ import {
   EventEmitter,
   ViewChild,
   ViewChildren,
-  SimpleChanges,
-  OnChanges,
   DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_

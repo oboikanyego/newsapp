@@ -59,7 +59,7 @@
             </mat-form-field>
           </div>
         </div>
-        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button class="negativeMarBot" (click)="submit(comment.value)" [disabled]="!page.currentUser">Submit</button></div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button class="negativeMarBot" ngbPopover="You see, I show up on hover!" triggers="mouseenter:mouseleave" popoverTitle="Pop title" (click)="submit(comment.value)" [disabled]="!page.currentUser">Submit</button></div>
       </div>
     </div>
   </div>
