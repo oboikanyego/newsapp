@@ -42,24 +42,65 @@
       </div>
     </div>
     <div fxLayout="row wrap" class="marginzero" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div *ngFor="let item of page.comments" class="commentSection">
-        <span><b>{{item?.owner}}</b></span>: <span class="redColor">{{item?.comment}}</span><br>
-      </div>
+      <mat-card class="fullwidth">
+        <mat-card-content>
+          <h2 class="marginzero">
+            Comment Section:</h2>
+        </mat-card-content>
+
+        <mat-card-content class="fullwidth">
+          <div fxLayout="row wrap" class="fullwidth" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-card *ngFor="let item of page.comments" style="margin: 10px;">
+                <mat-card-subtitle><span><b>{{item?.owner}}</b></span></mat-card-subtitle>
+
+                <mat-card-content>
+                  <div>
+                    <span class="redColor">{{item?.comment.comment}}</span>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions align="center">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div *ngFor="let icon of page.icons">
+                  <i class="{{icon}} socialIcon cursorPointer"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="column wrap" class="inputContainer" fxFlex="80" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+      <div fxLayout="column wrap" class="inputContainer" fxFlex="80" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.currentUser">
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <h2 class="marginzero">
             Add comment:</h2>
         </div>
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
-            <mat-form-field [appearance]="&apos;outline&apos;">
-              <textarea matInput #comment placeholder="Express yourself here..." [required]="false"></textarea>
-            </mat-form-field>
+            <form #comment="ngForm" (reset)="clearForm()">
+              <mat-form-field [appearance]="&apos;outline&apos;">
+                <textarea matInput [(ngModel)]="page.comment" name="comment" placeholder="Express yourself here..." [required]="false"></textarea>
+              </mat-form-field>
+            </form>
           </div>
         </div>
-        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button class="negativeMarBot" popoverTitle="Simple Popover" ngbPopover="You see, I show up on hover!" triggers="mouseenter:mouseleave" matTooltip="Login Please" (click)="submit(comment.value)" [disabled]="!page.currentUser">Submit</button></div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button class="negativeMarBot" matTooltip="Login Please" (click)="submit(comment.value)" [disabled]="!page.currentUser">Submit</button></div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="!page.currentUser">
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h2>
+            Add comment:</h2>
+        </div>
+        <div fxLayout="row wrap" class="cursorPointer" fxLayoutAlign="start stretch" [fxShow]="true"><span routerLink="/login" class="redColor">
+                <b>Only logged in users can comment</b></span></div>
       </div>
     </div>
   </div>

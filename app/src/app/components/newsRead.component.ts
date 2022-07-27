@@ -8,8 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  ViewChild,
-  ViewChildren,
   DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_
@@ -28,7 +26,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
     //appendnew_element_providers
   ],
 })
-export class newsReadComponent implements DoCheck, AfterViewInit {
+export class newsReadComponent implements AfterViewInit {
   @Input('news')
   public news: any = undefined;
   page: any = { dep: {} };
@@ -66,17 +64,6 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_uaWAnkSZqahEOFcA');
-    }
-  }
-
-  ngDoCheck() {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      //appendnew_next_ngDoCheck
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Pi5HfcYKh4tcZ5xw');
     }
   }
 
@@ -148,6 +135,34 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
     }
   }
 
+  socialMedia(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_4tJsT1fLrYMGTkS9(bh);
+      //appendnew_next_socialMedia
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_KvB6I3BWWrYqYcZA');
+    }
+  }
+
+  clearForm(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_pPghNCICpzeevScE(bh);
+      //appendnew_next_clearForm
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_U5VwOOdiHSOUUQ0U');
+    }
+  }
+
   //appendnew_flow_newsReadComponent_start
 
   sd_SFk3cjIOLpt0URts(bh) {
@@ -156,8 +171,11 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       this.page.isFav = false;
       this.page.currentUser = undefined;
       this.page.comments = [];
+      this.page.submitted = false;
+      this.page.icons = [];
+      this.page.comment = '';
       bh = this.sd_y6JjhkC5FmXk4gcc(bh);
-      bh = this.sd_OgveSdf9dPYZm9qk(bh);
+      bh = this.sd_a1iCqTHXqxFq1r8k(bh);
       //appendnew_next_sd_SFk3cjIOLpt0URts
       return bh;
     } catch (e) {
@@ -173,6 +191,18 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_y6JjhkC5FmXk4gcc');
+    }
+  }
+
+  sd_a1iCqTHXqxFq1r8k(bh) {
+    try {
+      const page = this.page;
+      page.icons = ['fa fa-whatsapp', 'fa fa-twitter', 'fa fa-facebook'];
+      bh = this.sd_OgveSdf9dPYZm9qk(bh);
+      //appendnew_next_sd_a1iCqTHXqxFq1r8k
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_a1iCqTHXqxFq1r8k');
     }
   }
 
@@ -224,8 +254,8 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
 
   sd_AoVzAK8jwelPeRaW(bh) {
     try {
-      localStorage.clear();
-      sessionStorage.clear();
+      localStorage.removeItem('news');
+      sessionStorage.removeItem('news');
       bh = this.sd_WqkDFLzwdKagdBtn(bh);
       //appendnew_next_sd_AoVzAK8jwelPeRaW
       return bh;
@@ -412,7 +442,7 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
     try {
       this.__page_injector__
         .get(MatSnackBar)
-        .open('Please login to get access to rating', 'OK', {
+        .open('Please login to add to favorite', 'OK', {
           duration: 3000,
           direction: 'ltr',
           horizontalPosition: 'center',
@@ -444,11 +474,23 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       bh.input.url = page.news.url;
       bh.comment = bh.input;
       console.log('comment', bh.comment);
-      bh = this.sd_Kzh2UoFB583pEVee(bh);
+      bh = this.sd_qkUjDgMg6lHB3TET(bh);
       //appendnew_next_sd_AiD0maikF6Bd84N7
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_AiD0maikF6Bd84N7');
+    }
+  }
+
+  sd_qkUjDgMg6lHB3TET(bh) {
+    try {
+      const page = this.page;
+      page.submitted = true;
+      bh = this.sd_Kzh2UoFB583pEVee(bh);
+      //appendnew_next_sd_qkUjDgMg6lHB3TET
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_qkUjDgMg6lHB3TET');
     }
   }
 
@@ -516,10 +558,46 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       let outputVariables = await getnewsInstance.submitComment(bh.comment);
       bh.local.result = outputVariables.local.result;
 
+      bh = this.sd_5hAEiy81cypYg572(bh);
       //appendnew_next_sd_OupxJ3UsKZPdIrq4
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_OupxJ3UsKZPdIrq4');
+    }
+  }
+
+  sd_5hAEiy81cypYg572(bh) {
+    try {
+      let outputVariables = this.getComments();
+
+      bh = this.sd_CgbKcpu95pUfNHis(bh);
+      //appendnew_next_sd_5hAEiy81cypYg572
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_5hAEiy81cypYg572');
+    }
+  }
+
+  sd_CgbKcpu95pUfNHis(bh) {
+    try {
+      bh = this.sd_oZqyx4g4ppM3WxPP(bh);
+      //appendnew_next_sd_CgbKcpu95pUfNHis
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_CgbKcpu95pUfNHis');
+    }
+  }
+
+  sd_oZqyx4g4ppM3WxPP(bh) {
+    try {
+      const page = this.page;
+      console.log(page.comment);
+      page.comment = '';
+      // page.comment.resetForm()
+      //appendnew_next_sd_oZqyx4g4ppM3WxPP
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_oZqyx4g4ppM3WxPP');
     }
   }
 
@@ -543,11 +621,23 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       );
       this.page.comments = outputVariables.local.result;
 
-      bh = this.sd_10J4mtHdVPQSzhrL(bh);
+      bh = this.sd_TV353sX3SqSBIBRA(bh);
       //appendnew_next_sd_Y5WPBRP53E7ESGtQ
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_Y5WPBRP53E7ESGtQ');
+    }
+  }
+
+  sd_TV353sX3SqSBIBRA(bh) {
+    try {
+      let outputVariables = this.socialMedia();
+
+      bh = this.sd_10J4mtHdVPQSzhrL(bh);
+      //appendnew_next_sd_TV353sX3SqSBIBRA
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_TV353sX3SqSBIBRA');
     }
   }
 
@@ -559,6 +649,47 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_10J4mtHdVPQSzhrL');
+    }
+  }
+
+  sd_4tJsT1fLrYMGTkS9(bh) {
+    try {
+      const page = this.page;
+      const whatsapp = document.querySelector('.fa-whatsapp');
+      const twitter = document.querySelector('.fa-twitter');
+      const facebook = document.querySelector('.fa-facebook');
+      const pageUrl = page.news.url;
+      const message = 'Hi! Please view my News Portal App here:';
+      const whatsappApi = `https://wa.me/?text=${message}: ${pageUrl}`;
+      const twitterApi = `https://twitter.com/intent/tweet?text=${message}: ${pageUrl}`;
+      const facebookApi = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+      whatsapp?.addEventListener('click', () => {
+        window.open(whatsappApi, '_blank');
+      });
+      twitter?.addEventListener('click', () => {
+        window.open(twitterApi, '_blank');
+      });
+      facebook?.addEventListener('click', () => {
+        window.open(facebookApi, '_blank');
+      });
+
+      //appendnew_next_sd_4tJsT1fLrYMGTkS9
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4tJsT1fLrYMGTkS9');
+    }
+  }
+
+  sd_pPghNCICpzeevScE(bh) {
+    try {
+      const page = this.page;
+      console.log(page.comment);
+      page.comment.value.comment = '';
+      // page.comment.resetForm()
+      //appendnew_next_sd_pPghNCICpzeevScE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pPghNCICpzeevScE');
     }
   }
 

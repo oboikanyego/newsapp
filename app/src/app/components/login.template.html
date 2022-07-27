@@ -11,7 +11,8 @@
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
               <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
                 <input matInput [(ngModel)]="page.login.email" name="email" type="email" placeholder="Enter email" [required]="true" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" id="email">
-                <mat-error align="start" *ngIf="login.controls.email?.errors &amp;&amp; login.controls.email.errors.required">Enter valid email</mat-error>
+                <mat-error align="start" *ngIf="login.controls?.email?.touched &amp;&amp; login.controls?.email?.errors?.pattern">Enter valid email</mat-error>
+                <mat-error align="start" *ngIf="login.controls?.email?.touched &amp;&amp; login.controls?.email?.errors?.required">Email is required</mat-error>
               </mat-form-field>
             </div>
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">

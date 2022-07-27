@@ -7,6 +7,9 @@ $red: #ED1C24;
 $white: #fff;
 $black: #000;
 $primary: #d9dbe2;
+$green:#43d854;
+$lightBlue:#55acee;
+$blue:#3b5998;
  
 bh-home,bh-register,bh-login{
     height: 100%;
@@ -260,7 +263,6 @@ a {
     padding: 8px 12px;
     border-radius: 5px;
     background: red;
-    color: white;
 }
 .marginzero{
     margin: 0;
@@ -275,7 +277,7 @@ a {
 .whiteBG {
     background: $white;
 }
-.whiteColor {
+.whiteColor, .socialIcon ,.favoriteContainerMarked {
     color: $white;
 }
 
@@ -358,4 +360,20 @@ bh-covid{
 .commentSection{
     width: 100%;
     padding: 10px;
+}
+.socialIcon{
+    font-size: 2em;
+    padding: 5px;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+}
+.bgGreen, .fa-whatsapp{
+    background-color: $green;
+}
+.bgLightBlue , .fa-twitter{
+    background-color: $lightBlue;
+}
+.bgBlue , .fa-facebook{
+    background-color: $blue;
 }

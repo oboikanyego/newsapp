@@ -8,8 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  ViewChild,
-  ViewChildren,
   DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_
@@ -192,9 +190,7 @@ export class loginComponent {
         this.sdService.getPathAndQParamsObj('/home/cards');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       //appendnew_next_sd_7kvjkWmzwo2p5BOF
       return bh;
     } catch (e) {

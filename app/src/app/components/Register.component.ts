@@ -8,8 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  ViewChild,
-  ViewChildren,
   DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_
@@ -175,12 +173,10 @@ export class RegisterComponent {
   async sd_VZTqKgNNBkHfZyn2(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/home/login');
+        this.sdService.getPathAndQParamsObj('/login');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       //appendnew_next_sd_VZTqKgNNBkHfZyn2
       return bh;
     } catch (e) {
