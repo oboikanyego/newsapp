@@ -1,5 +1,5 @@
-<div fxLayout="column " fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
-  <div fxLayout="row wrap" fxFlex="121px" fxLayoutAlign="center stretch" [fxShow]="true">
+<div fxLayout="column " fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="row wrap" fxFlex="135px" fxLayoutAlign="center stretch" [fxShow]="true">
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="row wrap" class="headingSize" fxLayoutAlign="start stretch" [fxShow]="true">
         <h1 style="margin: 0;" class="marginbotzero">
@@ -7,16 +7,26 @@
       </div>
       <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><label class="label">
           Your Daily News</label></div>
+      <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><label class="label">
+          <a routerLink="../register" class="boldHover">Register</a>/<a routerLink="../login" class="boldHover">Login</a></label></div>
     </div>
   </div>
-  <div fxLayout="row wrap" fxFlex="39px" fxLayoutAlign="center stretch" [fxShow]="true">
-    <div fxLayout="column wrap" style="padding: 8px 30px" class="darkgreytop" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.navigation,let i=index" (click)="sendCategory(item.category,i)" [ngClass]="{&apos;selectedCat&apos; : page.selectedIndex==i}">
-      <div class="cursorPointer">
-        {{item.name}}
+  <div fxLayout="row wrap" fxFlex="50px" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="horizontalAutoScroll" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row " class="fullheight" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="padding15px darkgreytop" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.navigation,let i=index" (click)="sendCategory(item.category,i)" [ngClass]="{&apos;selectedCat&apos; : page.selectedIndex==i}">
+          <div class="boldHover cursorPointer">
+            {{item.name}}
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="padding15px darkgreytop" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div routerLink="../covid" class="boldHover cursorPointer">
+            Covid</div>
+        </div>
       </div>
     </div>
   </div>
-  <div fxLayout="row wrap" class="fullwidth displayContainer margintop borderbody borderradius" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" class="displayContainer" fxLayoutAlign="center center" [fxShow]="true">
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -292,15 +292,13 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.cardArr = page.data?.articles;\n\nif (page.cardArr?.length > 0) {\n    page.cardArr.forEach(item => {\n        // console.log('data..............', item.urlToImage);\n        item['image'] = item.urlToImage;\n        item['thumbImage'] = item.urlToImage;\n        // delete item.urlToImage;\n    });\n}",
+        "script": "page.cardArr = page.data?.articles;\n\nif (page.cardArr?.length > 0) {\n    page.cardArr.forEach(item => {\n        // console.log('data..............', item.urlToImage);\n        item['image'] = item.urlToImage;\n        item['thumbImage'] = item.urlToImage;\n        // delete item.urlToImage;\n    });\n\n    page.fistCard = page.cardArr[1];\n    page.fistCard.content = page.fistCard.content.replace(/ \\[[\\s\\S]*?\\]/g, '');\n}",
         "functionName": "sd_DVRWDT0gZ2teof6o",
         "category": "Function",
         "x": 365,
         "y": 220,
         "wires": [
-            [
-                "sd_dhkQ7pCGKijuU8RI"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -374,25 +372,6 @@
         "category": "Function",
         "x": 485,
         "y": 100,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_dhkQ7pCGKijuU8RI",
-        "type": "Script",
-        "z": "sd_X2EpnhPavLb4d5J0",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.fistCard=page?.cardArr[0];\n",
-        "functionName": "sd_dhkQ7pCGKijuU8RI",
-        "category": "Function",
-        "x": 465,
-        "y": 220,
         "wires": [
             []
         ],

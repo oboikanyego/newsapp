@@ -258,6 +258,58 @@ export class getnews {
     }
   }
 
+  async covidCasesForCountries(...others) {
+    try {
+      var bh: any = {
+        input: {},
+        local: {
+          results: undefined,
+        },
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_boMwgiX9XcBuVScM(bh);
+      //appendnew_next_covidCasesForCountries
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            results: bh.local.results,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Fx2lI3m9DrF1UFjm');
+    }
+  }
+
+  async getComments(postUrl: any = undefined, ...others) {
+    try {
+      var bh: any = {
+        input: {
+          postUrl: postUrl,
+        },
+        local: {
+          result: undefined,
+        },
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_TM7UKzkvHnWz08NV(bh);
+      //appendnew_next_getComments
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            result: bh.local.result,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_R8U1xFDrMBXySq3J');
+    }
+  }
+
   //appendnew_flow_getnews_start
 
   async sd_upW4opq2b0X5k3Bf(bh) {
@@ -524,10 +576,8 @@ export class getnews {
     try {
       bh.local.url = bh.ssdUrl + 'addComment';
       console.log(bh.input);
-
-      bh.input.body = {
-        comment: bh.input.comment,
-      };
+      bh.body = bh.input.comment;
+      console.log(bh.input.comment);
       bh = await this.sd_07abefVay84PdLOL(bh);
       //appendnew_next_sd_tDAcZ2BpwGRc03gr
       return bh;
@@ -544,7 +594,7 @@ export class getnews {
         responseType: 'json',
         headers: {},
         params: {},
-        body: bh.input.body,
+        body: bh.body,
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
       //appendnew_next_sd_07abefVay84PdLOL
@@ -603,6 +653,87 @@ export class getnews {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_2OylmBQR4X80edFZ');
+    }
+  }
+
+  async sd_boMwgiX9XcBuVScM(bh) {
+    try {
+      bh.url =
+        'https://disease.sh/v3/covid-19/countries?yesterday=false&sort=cases';
+      bh = await this.sd_jHMqcSFeCfdDCWgu(bh);
+      //appendnew_next_sd_boMwgiX9XcBuVScM
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_boMwgiX9XcBuVScM');
+    }
+  }
+
+  async sd_jHMqcSFeCfdDCWgu(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.results = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_jHMqcSFeCfdDCWgu
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_jHMqcSFeCfdDCWgu');
+    }
+  }
+
+  async sd_TM7UKzkvHnWz08NV(bh) {
+    try {
+      bh.ssdUrl = bh.system.environment.properties.ssdURL;
+      bh = await this.sd_z00kNRjFeiISiEVw(bh);
+      //appendnew_next_sd_TM7UKzkvHnWz08NV
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_TM7UKzkvHnWz08NV');
+    }
+  }
+
+  async sd_z00kNRjFeiISiEVw(bh) {
+    try {
+      bh.local.url = bh.ssdUrl + 'getComments?url=' + bh.input.postUrl;
+      bh = await this.sd_N49b852L9K9YSU3W(bh);
+      //appendnew_next_sd_z00kNRjFeiISiEVw
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_z00kNRjFeiISiEVw');
+    }
+  }
+
+  async sd_N49b852L9K9YSU3W(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.body,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_BTAAVyGEu7EbQhiB(bh);
+      //appendnew_next_sd_N49b852L9K9YSU3W
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_N49b852L9K9YSU3W');
+    }
+  }
+
+  async sd_BTAAVyGEu7EbQhiB(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh.local.result);
+      //appendnew_next_sd_BTAAVyGEu7EbQhiB
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_BTAAVyGEu7EbQhiB');
     }
   }
 

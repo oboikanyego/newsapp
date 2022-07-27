@@ -1,0 +1,71 @@
+<div fxLayout="row wrap" class="lightbackground" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="2em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="whiteBG" fxFlex="100px" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="32" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button routerLink="/home/cards">
+            <mat-icon>home</mat-icon>Home
+          </button></div>
+      </div>
+      <div fxLayout="column wrap" fxFlex="32" fxLayoutAlign="center center" [fxShow]="true">
+        <h1 class="font3rem redColor marginzero">
+          Covid cases</h1>
+      </div>
+      <div fxLayout="column wrap" fxFlex="32" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-around stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="48" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-card align="center" class="cardHeight360px alignCenterCard">
+          <mat-card-content align="center">
+            <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+              <h3>
+                <b>Select Country:</b>
+              </h3>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                <mat-select [(value)]="option" placeholder="Select Country" [required]="false" (selectionChange)="sd_PfRYH9fxEa17c31D(option)">
+                  <ng-template ngFor let-option [ngForOf]="page?.countries" let-i="index">
+                    <mat-option [value]="option">{{ option }}</mat-option>
+                  </ng-template>
+                </mat-select>
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div fxLayout="column wrap" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page?.selectedCountry?.countryInfo?.flag" class="fullwidth" artImgSrc></div>
+              <div fxLayout="column wrap" fxFlex="56" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <h1 class="marginzero font3rem">
+                    {{page.selectedCountry.country}}
+                  </h1>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <p class="font1em">
+                    Number of Confirmed Cases</p>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <h1 class="font3rem redColor removeTopMargin">
+                    {{page.selectedCountry.cases}}
+                  </h1>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <p class="font1em removeTopMargin">
+                    Tests Conducted : {{page.selectedCountry.tests}}</p>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxLayout="column wrap" fxFlex="48" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-card class="cardHeight360px">
+          <mat-card-content align="center">
+            <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxFlex="100">
+                <canvas baseChart class="fullheight" [data]="page?.values" [labels]="page?.label" [colors]="page?.colors" [legend]="true" chartType="pie"></canvas>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

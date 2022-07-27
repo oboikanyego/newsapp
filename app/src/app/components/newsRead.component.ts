@@ -10,8 +10,6 @@ import {
   EventEmitter,
   ViewChild,
   ViewChildren,
-  SimpleChanges,
-  OnChanges,
   DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_
@@ -76,7 +74,6 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh = this.sd_U4dsFMJQUzQAW5tL(bh);
       //appendnew_next_ngDoCheck
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_Pi5HfcYKh4tcZ5xw');
@@ -104,7 +101,7 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
         .constructFlowObject(this);
       bh.input = {};
       bh.local = {};
-      bh = this.sd_o0Gf4YCNLsm32cGr(bh);
+      bh = this.sd_k1p09TBbrBMg1yuP(bh);
       //appendnew_next_markAsFavorite
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ss2QwytTrmPekR1p');
@@ -123,17 +120,31 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
     }
   }
 
-  submit(value: any = undefined, ...others) {
+  submit(comment: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = { value: value };
+      bh.input = { comment: comment };
       bh.local = {};
-      bh = this.sd_Kzh2UoFB583pEVee(bh);
+      bh = this.sd_Ue0Iiee3ARDP3HpB(bh);
       //appendnew_next_submit
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_X6pj3RF2Q4MPo8QN');
+    }
+  }
+
+  getComments(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_RWRraJISP9ddT9kH(bh);
+      //appendnew_next_getComments
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_sU8Bhd8bfjYKE3dt');
     }
   }
 
@@ -143,11 +154,36 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
     try {
       this.page.news = undefined;
       this.page.isFav = false;
-      bh = this.n(bh);
+      this.page.currentUser = undefined;
+      this.page.comments = [];
+      bh = this.sd_y6JjhkC5FmXk4gcc(bh);
+      bh = this.sd_OgveSdf9dPYZm9qk(bh);
       //appendnew_next_sd_SFk3cjIOLpt0URts
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SFk3cjIOLpt0URts');
+    }
+  }
+
+  sd_y6JjhkC5FmXk4gcc(bh) {
+    try {
+      let outputVariables = this.getComments();
+
+      //appendnew_next_sd_y6JjhkC5FmXk4gcc
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_y6JjhkC5FmXk4gcc');
+    }
+  }
+
+  sd_OgveSdf9dPYZm9qk(bh) {
+    try {
+      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+      bh = this.n(bh);
+      //appendnew_next_sd_OgveSdf9dPYZm9qk
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_OgveSdf9dPYZm9qk');
     }
   }
 
@@ -176,75 +212,13 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
         this.sdService.getPathAndQParamsObj('/');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_qkTnyjiEo9x275C8
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_qkTnyjiEo9x275C8');
-    }
-  }
-
-  sd_U4dsFMJQUzQAW5tL(bh) {
-    try {
-      this.page.news = JSON.parse(sessionStorage.getItem('news'));
-      bh = this.checkForData(bh);
-      //appendnew_next_sd_U4dsFMJQUzQAW5tL
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_U4dsFMJQUzQAW5tL');
-    }
-  }
-
-  checkForData(bh) {
-    try {
-      if (
-        this.sdService.operators['empty'](
-          this.page.news,
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_jcNxUm5PWOdtGFMG(bh);
-      } else if (
-        this.sdService.operators['nempty'](
-          this.page.news,
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_Br4GT3JnyA703Oge(bh);
-      }
-
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_nMhQDiCmp0ieXJmk');
-    }
-  }
-
-  async sd_jcNxUm5PWOdtGFMG(bh) {
-    try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/home/cards');
-      await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
-      //appendnew_next_sd_jcNxUm5PWOdtGFMG
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_jcNxUm5PWOdtGFMG');
-    }
-  }
-
-  sd_Br4GT3JnyA703Oge(bh) {
-    try {
-      const page = this.page;
-      page.content = page.news?.content.replace(/ \[[\s\S]*?\]/g, '');
-      //appendnew_next_sd_Br4GT3JnyA703Oge
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Br4GT3JnyA703Oge');
     }
   }
 
@@ -273,6 +247,38 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_WqkDFLzwdKagdBtn');
+    }
+  }
+
+  async sd_k1p09TBbrBMg1yuP(bh) {
+    try {
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['nempty'](
+          this.page.currentUser,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_o0Gf4YCNLsm32cGr(bh);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_wCh9CsgaBSCPl3cF(bh);
+        otherwiseFlag = false;
+      }
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_k1p09TBbrBMg1yuP');
     }
   }
 
@@ -402,12 +408,56 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
     }
   }
 
+  sd_wCh9CsgaBSCPl3cF(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('Please login to get access to rating', 'OK', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      //appendnew_next_sd_wCh9CsgaBSCPl3cF
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_wCh9CsgaBSCPl3cF');
+    }
+  }
+
+  sd_Ue0Iiee3ARDP3HpB(bh) {
+    try {
+      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+      bh = this.sd_AiD0maikF6Bd84N7(bh);
+      //appendnew_next_sd_Ue0Iiee3ARDP3HpB
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Ue0Iiee3ARDP3HpB');
+    }
+  }
+
+  sd_AiD0maikF6Bd84N7(bh) {
+    try {
+      const page = this.page;
+      console.log('comment', page.currentUser);
+      bh.input.owner = page.currentUser.fullname;
+      bh.input.url = page.news.url;
+      bh.comment = bh.input;
+      console.log('comment', bh.comment);
+      bh = this.sd_Kzh2UoFB583pEVee(bh);
+      //appendnew_next_sd_AiD0maikF6Bd84N7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_AiD0maikF6Bd84N7');
+    }
+  }
+
   async sd_Kzh2UoFB583pEVee(bh) {
     try {
       let otherwiseFlag = true;
       if (
         this.sdService.operators['null'](
-          bh.input.value,
+          bh.input.comment,
           undefined,
           undefined,
           undefined
@@ -417,7 +467,7 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
         otherwiseFlag = false;
       } else if (
         this.sdService.operators['empty'](
-          bh.input.value,
+          bh.input.comment,
           undefined,
           undefined,
           undefined
@@ -463,13 +513,52 @@ export class newsReadComponent implements DoCheck, AfterViewInit {
     try {
       const getnewsInstance: getnews = this.__page_injector__.get(getnews);
 
-      let outputVariables = await getnewsInstance.submitComment(bh.input.value);
+      let outputVariables = await getnewsInstance.submitComment(bh.comment);
       bh.local.result = outputVariables.local.result;
 
       //appendnew_next_sd_OupxJ3UsKZPdIrq4
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_OupxJ3UsKZPdIrq4');
+    }
+  }
+
+  sd_RWRraJISP9ddT9kH(bh) {
+    try {
+      this.page.news = JSON.parse(sessionStorage.getItem('news'));
+      bh = this.sd_Y5WPBRP53E7ESGtQ(bh);
+      //appendnew_next_sd_RWRraJISP9ddT9kH
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_RWRraJISP9ddT9kH');
+    }
+  }
+
+  async sd_Y5WPBRP53E7ESGtQ(bh) {
+    try {
+      const getnewsInstance: getnews = this.__page_injector__.get(getnews);
+
+      let outputVariables = await getnewsInstance.getComments(
+        this.page.news.url
+      );
+      this.page.comments = outputVariables.local.result;
+
+      bh = this.sd_10J4mtHdVPQSzhrL(bh);
+      //appendnew_next_sd_Y5WPBRP53E7ESGtQ
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Y5WPBRP53E7ESGtQ');
+    }
+  }
+
+  sd_10J4mtHdVPQSzhrL(bh) {
+    try {
+      const page = this.page;
+      console.log('comment0000', page.comments);
+      //appendnew_next_sd_10J4mtHdVPQSzhrL
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_10J4mtHdVPQSzhrL');
     }
   }
 

@@ -15,6 +15,12 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-CovidComponent
+import { CovidComponent } from '../components/Covid.component';
+//CORE_REFERENCE_IMPORT-loginIdsComponent
+import { loginIdsComponent } from '../components/loginIds.component';
+//CORE_REFERENCE_IMPORT-DashbordComponent
+import { DashbordComponent } from '../components/Dashbord.component';
 //CORE_REFERENCE_IMPORT-RegisterComponent
 import { RegisterComponent } from '../components/Register.component';
 //CORE_REFERENCE_IMPORT-loginComponent
@@ -61,6 +67,12 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-CovidComponent
+  CovidComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginIdsComponent
+  loginIdsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-DashbordComponent
+  DashbordComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-RegisterComponent
   RegisterComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginComponent
@@ -108,10 +120,12 @@ export const appRoutes = [
       { path: 'news', component: newsReadComponent },
       { path: 'charts', component: chartsComponent },
       { path: 'favorites', component: favoritesComponent },
-      { path: 'login', component: loginComponent },
-      { path: 'register', component: RegisterComponent },
+      { path: 'dashboard', component: DashbordComponent },
     ],
   },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: loginComponent },
+  { path: 'covid', component: CovidComponent },
   { path: '', redirectTo: '/home/cards', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

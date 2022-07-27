@@ -10,10 +10,7 @@ import {
   EventEmitter,
   ViewChild,
   ViewChildren,
-  SimpleChanges,
-  OnChanges,
   DoCheck,
-  AfterViewInit,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -200,27 +197,17 @@ export class dynamicDataComponent implements DoCheck {
           item['thumbImage'] = item.urlToImage;
           // delete item.urlToImage;
         });
+
+        page.fistCard = page.cardArr[1];
+        page.fistCard.content = page.fistCard.content.replace(
+          / \[[\s\S]*?\]/g,
+          ''
+        );
       }
-      bh = this.sd_dhkQ7pCGKijuU8RI(bh);
       //appendnew_next_sd_DVRWDT0gZ2teof6o
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_DVRWDT0gZ2teof6o');
-    }
-  }
-
-  sd_dhkQ7pCGKijuU8RI(bh) {
-    try {
-      const page = this.page;
-      page.fistCard = page?.cardArr[1];
-      page.fistCard.content = page.fistCard.content.replace(
-        / \[[\s\S]*?\]/g,
-        ''
-      );
-      //appendnew_next_sd_dhkQ7pCGKijuU8RI
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_dhkQ7pCGKijuU8RI');
     }
   }
 

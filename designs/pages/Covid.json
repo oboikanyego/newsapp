@@ -1,0 +1,298 @@
+[
+    {
+        "id": "sd_PIxjYd9xMKn7FB2z",
+        "type": "tab",
+        "createdDate": "2022-07-26T11:51:03.420Z",
+        "label": "Covid",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "CovidComponent"
+    },
+    {
+        "id": "sd_7ctxxmM57r2RLtk9",
+        "type": "OnInit",
+        "z": "sd_PIxjYd9xMKn7FB2z",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "functionName": "sd_7ctxxmM57r2RLtk9",
+        "category": "Lifecycle Events",
+        "x": 85,
+        "y": 120,
+        "wires": [
+            [
+                "sd_syMlmwpyOfA8qGrp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CovidComponent"
+    },
+    {
+        "id": "sd_syMlmwpyOfA8qGrp",
+        "type": "PageVariables",
+        "z": "sd_PIxjYd9xMKn7FB2z",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "Covidcases",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "countries",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "selectedCountry",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{}"
+                }
+            },
+            {
+                "textIp": "defaultCountry",
+                "typedIpValue": {
+                    "type": "str",
+                    "value": "South Africa"
+                }
+            },
+            {
+                "textIp": "colors",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "chartData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "counter",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
+            },
+            {
+                "textIp": "label",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "values",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            }
+        ],
+        "functionName": "sd_syMlmwpyOfA8qGrp",
+        "category": "Function",
+        "x": 235,
+        "y": 120,
+        "wires": [
+            [
+                "sd_eq6MirsCH1NqKF7i"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_eq6MirsCH1NqKF7i",
+        "type": "PageCallService",
+        "z": "sd_PIxjYd9xMKn7FB2z",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_Yp5ppCJw8dBJIphW",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:03:43.575Z",
+            "label": "getnews",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_Fx2lI3m9DrF1UFjm",
+            "flowName": "covidCasesForCountries"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "results",
+                "valueType": "this.page",
+                "value": "Covidcases",
+                "mapVarName": "results",
+                "localVar": "this.page.Covidcases"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getnews",
+        "startName": "covidCasesForCountries",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_eq6MirsCH1NqKF7i",
+        "category": "General",
+        "x": 405,
+        "y": 120,
+        "wires": [
+            [
+                "sd_vPgqF6DEZvF6J1Wx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_vPgqF6DEZvF6J1Wx",
+        "type": "Script",
+        "z": "sd_PIxjYd9xMKn7FB2z",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.Covidcases.forEach(obj => page.countries.push(obj.country));\npage.countries.sort();",
+        "functionName": "sd_vPgqF6DEZvF6J1Wx",
+        "category": "Function",
+        "x": 545,
+        "y": 120,
+        "wires": [
+            [
+                "sd_fJQNmjNnM9Ccz6Vj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_PfRYH9fxEa17c31D",
+        "type": "PageStart",
+        "z": "sd_PIxjYd9xMKn7FB2z",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "country",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sd_PfRYH9fxEa17c31D",
+        "category": "General",
+        "x": 85,
+        "y": 220,
+        "wires": [
+            [
+                "sd_TGYefqpzeC6DqMMA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CovidComponent"
+    },
+    {
+        "id": "sd_TGYefqpzeC6DqMMA",
+        "type": "Script",
+        "z": "sd_PIxjYd9xMKn7FB2z",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input);\npage.Covidcases.forEach( obj => {\n    if(bh.input.country === obj.country){\n        page.selectedCountry = obj;\n    }\n})\n\npage.values=[\npage.selectedCountry.deaths,\npage.selectedCountry.active,\npage.selectedCountry.critical,\npage.selectedCountry.recovered,\npage.selectedCountry.tests\n];\npage.label=[\n    \"deaths\",\"active\",\"critical\",\"recovered\",\"tests\"\n]\nlet colors =[];\nwhile (colors.length < page.label.length) {\n    do {\n        var color = Math.floor((Math.random()*1000000)+1);\n    } while (colors.indexOf(color) >= 0);\n    colors.push(\"#\" + (\"000000\" + color.toString(16)).slice(-6));\n}\npage.colors=[{\n    backgroundColor : colors\n}]\nconsole.log(page.colors);",
+        "functionName": "sd_TGYefqpzeC6DqMMA",
+        "category": "Function",
+        "x": 205,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_fJQNmjNnM9Ccz6Vj",
+        "type": "PageCallService",
+        "z": "sd_PIxjYd9xMKn7FB2z",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_PIxjYd9xMKn7FB2z",
+            "type": "tab",
+            "createdDate": "2022-07-26T11:51:03.420Z",
+            "label": "Covid",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_PfRYH9fxEa17c31D",
+            "flowName": "sd_PfRYH9fxEa17c31D"
+        },
+        "inputVariables": [
+            {
+                "key": "country",
+                "map": true,
+                "valueType": "this.page",
+                "value": "defaultCountry"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "./Covid",
+        "startName": "sd_PfRYH9fxEa17c31D",
+        "inputParams": [
+            "this.page.defaultCountry"
+        ],
+        "accept_csd": false,
+        "functionName": "sd_fJQNmjNnM9Ccz6Vj",
+        "category": "General",
+        "x": 720,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

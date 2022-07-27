@@ -1,8 +1,8 @@
-<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true">
   <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true">
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
       <h2>
-        Welcome to NewsPortal Login or Register</h2>
+        Welcome to NewsPortal Login</h2>
     </div>
     <form #login="ngForm">
       <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -21,7 +21,7 @@
     </form>
     <div fxLayout="row wrap" class="margintop" fxLayoutAlign="start stretch" [fxShow]="true">
       <div>
-        <a href="home/register">Create an account?</a>
+        <a routerLink="../register">Create an account?</a>
       </div>
     </div>
   </div>

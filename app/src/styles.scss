@@ -3,11 +3,19 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
-bh-home{
+$red: #ED1C24;
+$white: #fff;
+$black: #000;
+$primary: #d9dbe2;
+ 
+bh-home,bh-register,bh-login{
     height: 100%;
 }
 .fullheight{
     height: 100%;
+}
+.mat-button.mat-primary.mat-button-disabled, .mat-button.mat-accent.mat-button-disabled, .mat-button.mat-warn.mat-button-disabled, .mat-button.mat-button-disabled.mat-button-disabled, .mat-icon-button.mat-primary.mat-button-disabled, .mat-icon-button.mat-accent.mat-button-disabled, .mat-icon-button.mat-warn.mat-button-disabled, .mat-icon-button.mat-button-disabled.mat-button-disabled, .mat-stroked-button.mat-primary.mat-button-disabled, .mat-stroked-button.mat-accent.mat-button-disabled, .mat-stroked-button.mat-warn.mat-button-disabled, .mat-stroked-button.mat-button-disabled.mat-button-disabled{
+background: darkgray;
 }
 .borderradius{
     border-radius: 5px;
@@ -16,28 +24,29 @@ bh-home{
 .height98{
     height: 99.8%;
 }
+.padding15px{
+    padding: 11px 30px
+}
 .lightbackground{
     background: #ebeff1
 }
 .mainContainer{
-    background-color: #d9dbe2
+    background-color: $primary;
 }
 .mat-button {
     color: #ffff !important;
-    background-color: #ED1C24 !important;
+    background-color: #ED1C24 ;
 }
 .width94{
     width: 94%;
 }
 .headingSize{
-    font-size: 30px;
+    font-size: 2em;
     font-weight: 700;
     color: #ED1C24;
-    letter-spacing: -0.01em;
-    line-height: 1;
 }
 .label{
-    font-size: 18px;
+    font-size:23px;
     color: #b0b0b0;
     font-weight: 300;
 }
@@ -118,10 +127,16 @@ body{
     // height: 271px;
     margin-bottom: 1em;
 }
+.negativeMarBot{
+    margin-bottom: -20px;
+}
 // .cards {
 //   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px, rgba(0, 0, 0, 0.05) 0px 0.5px 1px;
 //   transition: all .3s ease-in-out;
 // }
+.width50{
+    width:50%;
+}
 .borderRedTip{
     border-top: solid red 3px ;
 }
@@ -167,10 +182,12 @@ body{
 }
 .anchortextRed{
     a{
-    text-decoration: none;
-    font-weight: 500;
-    color: red;  
+        text-decoration: none;
+        color: red;    
     }
+}
+.boldHover:hover {
+    font-weight: bold;
 }
 .readMoreIcon{
     .mat-icon {
@@ -187,11 +204,13 @@ body{
     font-weight: bold; 
     }   
 }
-
+.horizontalAutoScroll {
+    overflow-x: auto;
+}
 .displayContainer {
     display: block !important;
-    max-height: calc(100vh - 160px);
-    padding: 1.5em 0
+    max-height: calc(100vh - 185px);
+    overflow-y: auto;
 }
 .favorite {
     color: orange;
@@ -206,6 +225,7 @@ body{
     margin-bottom: 1em;
 }
 .selectedCat{
+    color: $white;
     background-color: #ED1C24;
 }
 .topStory {
@@ -250,4 +270,86 @@ a {
 }
 .margintop10px{
     margin-top: 10px;
+}
+
+.whiteBG {
+    background: $white;
+}
+.whiteColor {
+    color: $white;
+}
+
+.redColor {
+    color: $red;
+}
+
+.font3rem {
+    font-size: 3rem !important;
+}
+
+.removeTopMargin{
+    margin-top:0;
+}
+
+.countryText{
+    margin-bottom: .3em;
+}
+bh-covid{
+    height:100%;
+}
+.font1em{
+    font-size: 1.4em !important;
+}
+.alignCenterCard{
+    display: grid !important;
+    align-items: center !important;
+}
+.cardHeight360px{
+    height: 360px;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $red;
+}
+.inputContainer {
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: rgba(0, 0, 0, 0.12);
+        background: $white;
+        border-radius: 5px;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 0.5em 0 1em 0 !important;
+    }
+    .mat-form-field-infix {
+        border-top: 0.74375em solid transparent;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-prefix,
+    .mat-form-field-appearance-outline
+    .mat-form-field-suffix {
+        top: 0.45em;
+    }
+    .mat-form-field-wrapper {
+        padding-bottom: 0;
+    }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
 }

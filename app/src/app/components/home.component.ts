@@ -10,8 +10,6 @@ import {
   EventEmitter,
   ViewChild,
   ViewChildren,
-  SimpleChanges,
-  OnChanges,
   DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_
@@ -121,6 +119,7 @@ export class homeComponent implements DoCheck {
       this.page.sentData = undefined;
       this.page.imageObject = undefined;
       this.page.selectedIndex = 0;
+      this.page.covidCases = [];
       bh = this.sd_jP92Fh1TgA7O8gXX(bh);
       //appendnew_next_sd_tlThNUO1Bc3p26X8
       return bh;

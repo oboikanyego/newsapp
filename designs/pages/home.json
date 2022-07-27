@@ -106,6 +106,13 @@
                     "type": "literal",
                     "value": "0"
                 }
+            },
+            {
+                "textIp": "covidCases",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
             }
         ],
         "functionName": "sd_tlThNUO1Bc3p26X8",

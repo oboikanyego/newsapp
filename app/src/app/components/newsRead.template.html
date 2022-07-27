@@ -22,7 +22,7 @@
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
               <span class="authour">Author :</span>{{page.news?.author ? page.news?.author :&apos;Author Unknown&apos; }}</label></div>
-          <div fxLayout="row wrap" class="paddingAround" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
               <span class="publish Date">Publish Date : </span>{{page.news?.publishedAt ? (page.news?.publishedAt | date:&apos;mediumDate&apos;)  :&apos;Publish Date known&apos; }}</label></div>
         </div>
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -42,12 +42,24 @@
       </div>
     </div>
     <div fxLayout="row wrap" class="marginzero" fxLayoutAlign="start stretch" [fxShow]="true">
-      <h2>
-        Add comment:</h2>
+      <div *ngFor="let item of page.comments">
+        {{item?.owner}}:{{item?.comment}}
+      </div>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="start end" [fxShow]="true">
-      <div class="displaycontent">
-        <textarea rows="4" cols="50" placeholder="Express yourself here..." #comment></textarea> <button mat-stroked-button (click)="submit(comment.value)">Basic</button>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="column wrap" class="inputContainer" fxFlex="80" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h2 class="marginzero">
+            Add comment:</h2>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;outline&apos;">
+              <textarea matInput #comment placeholder="Express yourself here..." [required]="false"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button class="negativeMarBot" (click)="submit(comment.value)" [disabled]="!page.currentUser">Submit</button></div>
       </div>
     </div>
   </div>

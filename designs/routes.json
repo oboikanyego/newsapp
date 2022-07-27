@@ -19,8 +19,24 @@
                 {
                     "component": "favoritesComponent",
                     "path": "favorites"
+                },
+                {
+                    "path": "dashboard",
+                    "component": "DashbordComponent"
                 }
             ]
+        },
+        {
+            "path": "register",
+            "component": "RegisterComponent"
+        },
+        {
+            "path": "login",
+            "component": "loginComponent"
+        },
+        {
+            "path": "covid",
+            "component": "CovidComponent"
         },
         {
             "path": "''",

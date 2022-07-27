@@ -8,9 +8,11 @@ import {
   Input,
   Output,
   EventEmitter,
-  DoCheck,
+  ViewChild,
+  ViewChildren,
   SimpleChanges,
   OnChanges,
+  DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
