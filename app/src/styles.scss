@@ -383,7 +383,8 @@ bh-covid{
     background-size: cover;
 }
 .bgRegisterSide{
-    background-image: url('https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg');
+    // background-image: url('https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg');
+    background: linear-gradient(TO LEFT, rgba(0, 0, 0, .1), rgb(0, 0, 0, .1)), url(https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -391,4 +392,25 @@ bh-covid{
     .mat-raised-button {
     border-radius: 20px !important;
     }
+}
+.marginRight{
+    margin-right: 5px;
+}
+.overlay{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0000008f;
+}
+.relative{
+    position: relative;
+}
+.width70{
+        width: 64%;
+}
+.equal40{
+    height: 40px;
+    width: 40px;
 }

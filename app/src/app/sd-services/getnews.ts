@@ -66,31 +66,6 @@ export class getnews {
     }
   }
 
-  async getBycountry(...others) {
-    try {
-      var bh: any = {
-        input: {},
-        local: {
-          result: undefined,
-        },
-      };
-      bh = this.sdService.__constructDefault(bh);
-      bh = await this.sd_C1KAn0CsclpRCNtV(bh);
-      //appendnew_next_getBycountry
-      return (
-        // formatting output variables
-        {
-          input: {},
-          local: {
-            result: bh.local.result,
-          },
-        }
-      );
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_kKX5NEGkyoMOe1sl');
-    }
-  }
-
   async checkIfIsFavorite(key = '', ...others) {
     try {
       var bh: any = {
@@ -310,6 +285,58 @@ export class getnews {
     }
   }
 
+  async addToFavorite(body: any = undefined, ...others) {
+    try {
+      var bh: any = {
+        input: {
+          body: body,
+        },
+        local: {
+          result: undefined,
+        },
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_JG8hC6fFFl8TprE1(bh);
+      //appendnew_next_addToFavorite
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            result: bh.local.result,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_lbRohnCY3cskJxVu');
+    }
+  }
+
+  async getBycountry(...others) {
+    try {
+      var bh: any = {
+        input: {},
+        local: {
+          result: undefined,
+        },
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_C1KAn0CsclpRCNtV(bh);
+      //appendnew_next_getBycountry
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            result: bh.local.result,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_kKX5NEGkyoMOe1sl');
+    }
+  }
+
   //appendnew_flow_getnews_start
 
   async sd_upW4opq2b0X5k3Bf(bh) {
@@ -352,51 +379,6 @@ export class getnews {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_8ggeqGrjgmyPQFau');
-    }
-  }
-
-  async sd_C1KAn0CsclpRCNtV(bh) {
-    try {
-      bh.input.country = 'us';
-      bh.url =
-        'https://newsapi.org/v2/top-headlines?country=' +
-        bh.input.country +
-        '&apiKey=7d8065bf726f423fb1ae1f708168e2cd';
-
-      bh = await this.sd_2ywxV9Cope4Iox2k(bh);
-      //appendnew_next_sd_C1KAn0CsclpRCNtV
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_C1KAn0CsclpRCNtV');
-    }
-  }
-
-  async sd_2ywxV9Cope4Iox2k(bh) {
-    try {
-      let requestOptions = {
-        url: bh.url,
-        method: 'get',
-        responseType: 'json',
-        headers: {},
-        params: {},
-        body: undefined,
-      };
-      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      bh = await this.sd_mz3UM4doPl35qJyC(bh);
-      //appendnew_next_sd_2ywxV9Cope4Iox2k
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_2ywxV9Cope4Iox2k');
-    }
-  }
-
-  async sd_mz3UM4doPl35qJyC(bh) {
-    try {
-      this.data = bh.local.result;
-      //appendnew_next_sd_mz3UM4doPl35qJyC
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_mz3UM4doPl35qJyC');
     }
   }
 
@@ -734,6 +716,92 @@ export class getnews {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_BTAAVyGEu7EbQhiB');
+    }
+  }
+
+  async sd_JG8hC6fFFl8TprE1(bh) {
+    try {
+      bh.ssdUrl = bh.system.environment.properties.ssdURL;
+      bh = await this.sd_i9WdrjSfBq2OWB0F(bh);
+      //appendnew_next_sd_JG8hC6fFFl8TprE1
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_JG8hC6fFFl8TprE1');
+    }
+  }
+
+  async sd_i9WdrjSfBq2OWB0F(bh) {
+    try {
+      // bh.input.url = bh.ssdUrl + 'addFavorite';
+      bh.input.url = bh.ssdUrl + 'favorite';
+      bh = await this.sd_k9b9bgyWinOBe1zl(bh);
+      //appendnew_next_sd_i9WdrjSfBq2OWB0F
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_i9WdrjSfBq2OWB0F');
+    }
+  }
+
+  async sd_k9b9bgyWinOBe1zl(bh) {
+    try {
+      let requestOptions = {
+        url: bh.input.url,
+        method: 'put',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.input.body,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_k9b9bgyWinOBe1zl
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_k9b9bgyWinOBe1zl');
+    }
+  }
+
+  async sd_C1KAn0CsclpRCNtV(bh) {
+    try {
+      bh.input.country = 'us';
+      bh.url =
+        'https://newsapi.org/v2/top-headlines?country=' +
+        bh.input.country +
+        '&apiKey=7d8065bf726f423fb1ae1f708168e2cd';
+
+      bh = await this.sd_2ywxV9Cope4Iox2k(bh);
+      //appendnew_next_sd_C1KAn0CsclpRCNtV
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_C1KAn0CsclpRCNtV');
+    }
+  }
+
+  async sd_2ywxV9Cope4Iox2k(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      bh = await this.sd_mz3UM4doPl35qJyC(bh);
+      //appendnew_next_sd_2ywxV9Cope4Iox2k
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_2ywxV9Cope4Iox2k');
+    }
+  }
+
+  async sd_mz3UM4doPl35qJyC(bh) {
+    try {
+      this.data = bh.local.result;
+      //appendnew_next_sd_mz3UM4doPl35qJyC
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_mz3UM4doPl35qJyC');
     }
   }
 

@@ -73,11 +73,9 @@ export class RegisterComponent {
         .get(SDPageCommonService)
         .constructFlowObject(this);
       bh.input = { form: form };
-      bh.local = { result: undefined };
-      this.sd_uKDrVyf9HpHb3IdS(bh);
+      bh.local = {};
       bh = this.sd_N3AeSiDgw4FHMFp1(bh);
       //appendnew_next_registerSubmit
-      return bh.local.result;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_Bddc5vWDnF9hFPgY');
     }
@@ -120,16 +118,6 @@ export class RegisterComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_X2U0NrRPoQ7a9jkA');
-    }
-  }
-
-  sd_uKDrVyf9HpHb3IdS(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.input.form);
-      //appendnew_next_sd_uKDrVyf9HpHb3IdS
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uKDrVyf9HpHb3IdS');
     }
   }
 

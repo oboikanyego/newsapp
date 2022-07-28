@@ -4,7 +4,7 @@
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button (click)="back()">
           <mat-icon>arrow_back</mat-icon>Home
         </button></div>
-      <div fxLayout="column wrap" class="cursorPointer" fxLayoutAlign="start stretch" [fxShow]="true" [class.favoriteContainerUnmarked]="!page.isFav" [class.favoriteContainerMarked]="page.isFav" (click)="markAsFavorite()">
+      <div fxLayout="column wrap" class="cursorPointer" fxLayoutAlign="start stretch" [fxShow]="false" [class.favoriteContainerUnmarked]="!page.isFav" [class.favoriteContainerMarked]="page.isFav" (click)="markAsFavorite()">
         <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end center" [fxShow]="true"><label>
             {{page.isFav ? &apos;Unmark as Favorite&apos; : &apos;Mark as Favorite&apos;}}</label>
           <mat-icon class="cursorPointer" [class.favorite]="page.isFav" (click)="markAsFavorite()">star</mat-icon>
@@ -20,8 +20,8 @@
           </h3>
         </div>
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
-              <span class="authour">Author :</span>{{page.news?.author ? page.news?.author :&apos;Author Unknown&apos; }}</label></div>
+          <div fxLayout="row wrap" class="marginRight" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
+              <span class="authour">Author :</span>{{page.news?.author ? page.news?.author :&apos;Author Unknown&apos; }} </label></div>
           <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label class="span">
               <span class="publish Date">Publish Date : </span>{{page.news?.publishedAt ? (page.news?.publishedAt | date:&apos;mediumDate&apos;)  :&apos;Publish Date known&apos; }}</label></div>
         </div>
@@ -51,15 +51,21 @@
         <mat-card-content class="fullwidth">
           <div fxLayout="row wrap" class="fullwidth" fxLayoutAlign="start stretch" [fxShow]="true">
             <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
-              <mat-card *ngFor="let item of page.comments" style="margin: 10px;">
-                <mat-card-subtitle><span><b>{{item?.owner}}</b></span></mat-card-subtitle>
-
-                <mat-card-content>
-                  <div>
-                    <span class="redColor">{{item?.comment.comment}}</span>
+              <div fxLayout="row wrap" class="marginBottom1em" fxLayoutGap=".5em" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.comments">
+                <div fxLayout="column wrap" class="equal40" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="&apos;https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2013/08/facebook-silhouette_thumb.jpg&apos;" class="fullwidth" artImgSrc></div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <h4 class="marginzero">
+                      <b>{{item?.owner}}</b>
+                    </h4>
                   </div>
-                </mat-card-content>
-              </mat-card>
+                  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <div>
+                      <span class="redColor">{{item?.comment.comment}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </mat-card-content>
@@ -86,8 +92,8 @@
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
             <form #comment="ngForm" (reset)="clearForm()">
-              <mat-form-field [appearance]="&apos;outline&apos;">
-                <textarea matInput [(ngModel)]="page.comment" name="comment" placeholder="Express yourself here..." [required]="false"></textarea>
+              <mat-form-field class="width70" [appearance]="&apos;outline&apos;">
+                <textarea matInput [(ngModel)]="page.comment" rows="10" name="comment" placeholder="Express yourself here..." [required]="false"></textarea>
               </mat-form-field>
             </form>
           </div>

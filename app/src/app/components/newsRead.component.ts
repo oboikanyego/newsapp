@@ -156,7 +156,6 @@ export class newsReadComponent implements AfterViewInit {
         .constructFlowObject(this);
       bh.input = {};
       bh.local = {};
-      bh = this.sd_pPghNCICpzeevScE(bh);
       //appendnew_next_clearForm
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_U5VwOOdiHSOUUQ0U');
@@ -323,7 +322,7 @@ export class newsReadComponent implements AfterViewInit {
           undefined
         )
       ) {
-        bh = this.sd_tVrjaB4tnqKC4JeX(bh);
+        bh = this.sd_MObf4UVfSyV9ydjm(bh);
         otherwiseFlag = false;
       }
       if (
@@ -344,13 +343,30 @@ export class newsReadComponent implements AfterViewInit {
     }
   }
 
+  sd_MObf4UVfSyV9ydjm(bh) {
+    try {
+      const page = this.page;
+      page.isFav = true;
+      bh.favorite = {
+        owner: page.currentUser.email,
+        isFav: page.isFav,
+        url: page.news.url,
+      };
+
+      console.log(page.isFav);
+      bh = this.sd_tVrjaB4tnqKC4JeX(bh);
+      //appendnew_next_sd_MObf4UVfSyV9ydjm
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_MObf4UVfSyV9ydjm');
+    }
+  }
+
   async sd_tVrjaB4tnqKC4JeX(bh) {
     try {
       const getnewsInstance: getnews = this.__page_injector__.get(getnews);
 
-      let outputVariables = await getnewsInstance.addToFavorites(
-        this.page.news
-      );
+      let outputVariables = await getnewsInstance.addToFavorite(bh.favorite);
       bh.response = outputVariables.local.result;
 
       bh = this.sd_uzBsm6dCdJvC6JE4(bh);
@@ -369,7 +385,7 @@ export class newsReadComponent implements AfterViewInit {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
       });
-      bh = this.sd_SzPztQwzmFtJMFSa(bh);
+      bh = this.sd_sa9TC6LWGzZMdNZn(bh);
       //appendnew_next_sd_uzBsm6dCdJvC6JE4
       return bh;
     } catch (e) {
@@ -377,31 +393,17 @@ export class newsReadComponent implements AfterViewInit {
     }
   }
 
-  async sd_SzPztQwzmFtJMFSa(bh) {
+  async sd_sa9TC6LWGzZMdNZn(bh) {
     try {
       const getnewsInstance: getnews = this.__page_injector__.get(getnews);
 
-      let outputVariables = await getnewsInstance.checkIfIsFavorite(
-        this.page.news.url
-      );
-      bh.response = outputVariables.local.response;
+      let outputVariables = await getnewsInstance.addToFavorite(bh.favorite);
+      bh.response = outputVariables.local.result;
 
-      bh = this.sd_P7Nu1ak7wxH7OEsM(bh);
-      //appendnew_next_sd_SzPztQwzmFtJMFSa
+      //appendnew_next_sd_sa9TC6LWGzZMdNZn
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_SzPztQwzmFtJMFSa');
-    }
-  }
-
-  sd_P7Nu1ak7wxH7OEsM(bh) {
-    try {
-      const page = this.page;
-      page.isFav = bh.response.length > 0 ? true : false;
-      //appendnew_next_sd_P7Nu1ak7wxH7OEsM
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_P7Nu1ak7wxH7OEsM');
+      return await this.errorHandler(bh, e, 'sd_sa9TC6LWGzZMdNZn');
     }
   }
 
@@ -438,6 +440,35 @@ export class newsReadComponent implements AfterViewInit {
     }
   }
 
+  async sd_SzPztQwzmFtJMFSa(bh) {
+    try {
+      const getnewsInstance: getnews = this.__page_injector__.get(getnews);
+
+      let outputVariables = await getnewsInstance.checkIfIsFavorite(
+        this.page.news.url
+      );
+      bh.response = outputVariables.local.response;
+
+      bh = this.sd_P7Nu1ak7wxH7OEsM(bh);
+      //appendnew_next_sd_SzPztQwzmFtJMFSa
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_SzPztQwzmFtJMFSa');
+    }
+  }
+
+  sd_P7Nu1ak7wxH7OEsM(bh) {
+    try {
+      const page = this.page;
+      page.isFav = bh.response.length > 0 ? true : false;
+      console.log(page.news, 'news');
+      //appendnew_next_sd_P7Nu1ak7wxH7OEsM
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_P7Nu1ak7wxH7OEsM');
+    }
+  }
+
   sd_wCh9CsgaBSCPl3cF(bh) {
     try {
       this.__page_injector__
@@ -469,28 +500,15 @@ export class newsReadComponent implements AfterViewInit {
   sd_AiD0maikF6Bd84N7(bh) {
     try {
       const page = this.page;
-      console.log('comment', page.currentUser);
-      bh.input.owner = page.currentUser.fullname;
-      bh.input.url = page.news.url;
+      (bh.input.owner = page.currentUser.fullname),
+        (bh.input.url = page.news.url);
       bh.comment = bh.input;
       console.log('comment', bh.comment);
-      bh = this.sd_qkUjDgMg6lHB3TET(bh);
+      bh = this.sd_Kzh2UoFB583pEVee(bh);
       //appendnew_next_sd_AiD0maikF6Bd84N7
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_AiD0maikF6Bd84N7');
-    }
-  }
-
-  sd_qkUjDgMg6lHB3TET(bh) {
-    try {
-      const page = this.page;
-      page.submitted = true;
-      bh = this.sd_Kzh2UoFB583pEVee(bh);
-      //appendnew_next_sd_qkUjDgMg6lHB3TET
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_qkUjDgMg6lHB3TET');
     }
   }
 
@@ -499,7 +517,7 @@ export class newsReadComponent implements AfterViewInit {
       let otherwiseFlag = true;
       if (
         this.sdService.operators['null'](
-          bh.input.comment,
+          bh.input.comment.comment,
           undefined,
           undefined,
           undefined
@@ -509,7 +527,7 @@ export class newsReadComponent implements AfterViewInit {
         otherwiseFlag = false;
       } else if (
         this.sdService.operators['empty'](
-          bh.input.comment,
+          bh.input.comment.comment,
           undefined,
           undefined,
           undefined
@@ -570,7 +588,7 @@ export class newsReadComponent implements AfterViewInit {
     try {
       let outputVariables = this.getComments();
 
-      bh = this.sd_CgbKcpu95pUfNHis(bh);
+      bh = this.sd_oZqyx4g4ppM3WxPP(bh);
       //appendnew_next_sd_5hAEiy81cypYg572
       return bh;
     } catch (e) {
@@ -578,20 +596,10 @@ export class newsReadComponent implements AfterViewInit {
     }
   }
 
-  sd_CgbKcpu95pUfNHis(bh) {
-    try {
-      bh = this.sd_oZqyx4g4ppM3WxPP(bh);
-      //appendnew_next_sd_CgbKcpu95pUfNHis
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_CgbKcpu95pUfNHis');
-    }
-  }
-
   sd_oZqyx4g4ppM3WxPP(bh) {
     try {
       const page = this.page;
-      console.log(page.comment);
+      console.log(bh.comment);
       page.comment = '';
       // page.comment.resetForm()
       //appendnew_next_sd_oZqyx4g4ppM3WxPP
@@ -659,7 +667,7 @@ export class newsReadComponent implements AfterViewInit {
       const twitter = document.querySelector('.fa-twitter');
       const facebook = document.querySelector('.fa-facebook');
       const pageUrl = page.news.url;
-      const message = 'Hi! Please view my News Portal App here:';
+      const message = 'Hi! Please look at this story here';
       const whatsappApi = `https://wa.me/?text=${message}: ${pageUrl}`;
       const twitterApi = `https://twitter.com/intent/tweet?text=${message}: ${pageUrl}`;
       const facebookApi = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
@@ -677,19 +685,6 @@ export class newsReadComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_4tJsT1fLrYMGTkS9');
-    }
-  }
-
-  sd_pPghNCICpzeevScE(bh) {
-    try {
-      const page = this.page;
-      console.log(page.comment);
-      page.comment.value.comment = '';
-      // page.comment.resetForm()
-      //appendnew_next_sd_pPghNCICpzeevScE
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_pPghNCICpzeevScE');
     }
   }
 

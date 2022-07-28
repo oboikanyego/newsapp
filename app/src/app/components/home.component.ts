@@ -27,7 +27,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
     //appendnew_element_providers
   ],
 })
-export class homeComponent implements DoCheck {
+export class homeComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -77,17 +77,6 @@ export class homeComponent implements DoCheck {
       //appendnew_next_sendCategory
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_EBXWXYbK1Uc9wNvD');
-    }
-  }
-
-  ngDoCheck() {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      //appendnew_next_ngDoCheck
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_A6kfTLkrq4s8xI0u');
     }
   }
 
