@@ -8,8 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  ViewChild,
-  ViewChildren,
   DoCheck,
   AfterViewInit,
 } from '@angular/core'; //_splitter_
@@ -19,6 +17,7 @@ import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.ser
 import { NgxPaginationModule } from 'ngx-pagination'; //_splitter_
 import { getnews } from 'app/sd-services/getnews'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -106,6 +105,20 @@ export class homeComponent implements DoCheck {
     }
   }
 
+  logout(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_W7DpqtoiQiD7PCxE(bh);
+      //appendnew_next_logout
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_RhaBwGVtQ3OEeCL9');
+    }
+  }
+
   //appendnew_flow_homeComponent_start
 
   sd_tlThNUO1Bc3p26X8(bh) {
@@ -120,6 +133,7 @@ export class homeComponent implements DoCheck {
       this.page.imageObject = undefined;
       this.page.selectedIndex = 0;
       this.page.covidCases = [];
+      this.page.user = {};
       bh = this.sd_jP92Fh1TgA7O8gXX(bh);
       //appendnew_next_sd_tlThNUO1Bc3p26X8
       return bh;
@@ -215,10 +229,21 @@ export class homeComponent implements DoCheck {
       // console.log('hello',page.data)
       // page.imageObject= page.data.articles.filter( data => data.urlToImage);
       // console.log('hello2',page.imageObject)
+      bh = this.sd_bvOxJfSaWP0hou5J(bh);
       //appendnew_next_sd_nm1GYm6l6cGfGvzy
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_nm1GYm6l6cGfGvzy');
+    }
+  }
+
+  sd_bvOxJfSaWP0hou5J(bh) {
+    try {
+      this.page.user = JSON.parse(sessionStorage.getItem('currentUser'));
+      //appendnew_next_sd_bvOxJfSaWP0hou5J
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_bvOxJfSaWP0hou5J');
     }
   }
 
@@ -287,6 +312,64 @@ export class homeComponent implements DoCheck {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_oY8OiPQ1Grez4JZ6');
+    }
+  }
+
+  sd_W7DpqtoiQiD7PCxE(bh) {
+    try {
+      sessionStorage.removeItem('currentUser');
+      bh = this.sd_B5biswWYehpbat6i(bh);
+      //appendnew_next_sd_W7DpqtoiQiD7PCxE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_W7DpqtoiQiD7PCxE');
+    }
+  }
+
+  sd_B5biswWYehpbat6i(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('LoginOut was a success', 'ok', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      bh = this.sd_H9mRoGHD4w1EY4QQ(bh);
+      //appendnew_next_sd_B5biswWYehpbat6i
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_B5biswWYehpbat6i');
+    }
+  }
+
+  async sd_H9mRoGHD4w1EY4QQ(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/cards');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      bh = this.sd_N7emNn9BQUWpcWKR(bh);
+      //appendnew_next_sd_H9mRoGHD4w1EY4QQ
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_H9mRoGHD4w1EY4QQ');
+    }
+  }
+
+  sd_N7emNn9BQUWpcWKR(bh) {
+    try {
+      const page = this.page;
+      setTimeout(() => {
+        // <<<---using ()=> syntax
+        window.location.reload();
+      }, 1000);
+      //appendnew_next_sd_N7emNn9BQUWpcWKR
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_N7emNn9BQUWpcWKR');
     }
   }
 

@@ -377,3 +377,18 @@ bh-covid{
 .bgBlue , .fa-facebook{
     background-color: $blue;
 }
+.bgRegister{
+    background-image: url('https://cdn.pixabay.com/photo/2016/10/29/09/33/abstract-1780184__340.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bgRegisterSide{
+    background-image: url('https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.registerBut{
+    .mat-raised-button {
+    border-radius: 20px !important;
+    }
+}

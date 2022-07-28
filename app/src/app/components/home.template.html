@@ -7,7 +7,8 @@
       </div>
       <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><label class="label">
           Your Daily News</label></div>
-      <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><label class="label">
+      <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><label *ngIf="page?.user" (click)="logout()" class="label">
+          <a class="boldHover">Logout</a></label><label *ngIf="!page?.user" class="label">
           <a routerLink="../register" class="boldHover">Register</a>/<a routerLink="../login" class="boldHover">Login</a></label></div>
     </div>
   </div>
