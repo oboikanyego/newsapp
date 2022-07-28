@@ -10,6 +10,8 @@ import {
   EventEmitter,
   DoCheck,
   AfterViewInit,
+  ViewChild,
+  ViewChildren,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -319,7 +321,7 @@ export class homeComponent {
     try {
       this.__page_injector__
         .get(MatSnackBar)
-        .open('LoginOut was a success', 'ok', {
+        .open('Successfully  logged out', 'ok', {
           duration: 3000,
           direction: 'ltr',
           horizontalPosition: 'center',

@@ -8,9 +8,10 @@ import {
   Input,
   Output,
   EventEmitter,
+  DoCheck,
+  AfterViewInit,
   ViewChild,
   ViewChildren,
-  DoCheck,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -30,8 +31,6 @@ import { getnews } from 'app/sd-services/getnews'; //_splitter_
 export class dynamicDataComponent implements DoCheck {
   @Input('data')
   public data: any = undefined;
-  @ViewChild('nav')
-  public nav: any = null;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -116,7 +115,6 @@ export class dynamicDataComponent implements DoCheck {
   sd_JwIaOfUoojdvuJuc(bh) {
     try {
       this.page.paginate = this.__page_injector__.get(NgxPaginationModule);
-      bh = this.sd_KH9hvwlT5OI7vB4U(bh);
       //appendnew_next_sd_JwIaOfUoojdvuJuc
       return bh;
     } catch (e) {
@@ -124,19 +122,9 @@ export class dynamicDataComponent implements DoCheck {
     }
   }
 
-  sd_KH9hvwlT5OI7vB4U(bh) {
-    try {
-      bh.pageViews = Object.assign(bh.pageViews || {}, { nav: this.nav });
-      //appendnew_next_sd_KH9hvwlT5OI7vB4U
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_KH9hvwlT5OI7vB4U');
-    }
-  }
-
   sd_HUAcT45XpTTaPeG7(bh) {
     try {
-      const page = this.page; // page.cardArr = bh.changes.data.currentValue.articles;
+      const page = this.page;
       page.value = page?.cardArr[bh.input.news];
       bh = this.sd_Ikd3xfE2DVjhNeuP(bh);
       //appendnew_next_sd_HUAcT45XpTTaPeG7
@@ -192,10 +180,8 @@ export class dynamicDataComponent implements DoCheck {
 
       if (page.cardArr?.length > 0) {
         page.cardArr.forEach((item) => {
-          // console.log('data..............', item.urlToImage);
           item['image'] = item.urlToImage;
           item['thumbImage'] = item.urlToImage;
-          // delete item.urlToImage;
         });
 
         page.fistCard = page.cardArr[1];

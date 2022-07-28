@@ -10,6 +10,8 @@ import {
   EventEmitter,
   DoCheck,
   AfterViewInit,
+  ViewChild,
+  ViewChildren,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -146,19 +148,6 @@ export class newsReadComponent implements AfterViewInit {
       //appendnew_next_socialMedia
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_KvB6I3BWWrYqYcZA');
-    }
-  }
-
-  clearForm(...others) {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.input = {};
-      bh.local = {};
-      //appendnew_next_clearForm
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_U5VwOOdiHSOUUQ0U');
     }
   }
 

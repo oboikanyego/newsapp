@@ -2,10 +2,6 @@
   <div fxLayout="column wrap" fxFlex="90" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
       <div class="fullwidth fullheight">
-        covid section</div>
-    </div>
-    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div class="fullwidth fullheight">
         <ng-image-slider [images]="page.cardArr " [infinite]="true" [autoSlide]="1" (imageClick)="sendDatatNews($event)" [imageSize]="{width: &apos;35%&apos;, height: 200}" slideImage="1" [animationSpeed]="4" #nav>
 
         </ng-image-slider>
@@ -45,6 +41,5 @@
         </mat-card>
       </div>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"></div>
   </div>
 </div>

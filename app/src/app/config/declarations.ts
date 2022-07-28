@@ -17,8 +17,6 @@ window['neutrinos'] = {
 //CORE_REFERENCE_IMPORTS
 //CORE_REFERENCE_IMPORT-CovidComponent
 import { CovidComponent } from '../components/Covid.component';
-//CORE_REFERENCE_IMPORT-loginIdsComponent
-import { loginIdsComponent } from '../components/loginIds.component';
 //CORE_REFERENCE_IMPORT-DashbordComponent
 import { DashbordComponent } from '../components/Dashbord.component';
 //CORE_REFERENCE_IMPORT-RegisterComponent
@@ -69,8 +67,6 @@ export const appDeclarations = [
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-CovidComponent
   CovidComponent,
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginIdsComponent
-  loginIdsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-DashbordComponent
   DashbordComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-RegisterComponent

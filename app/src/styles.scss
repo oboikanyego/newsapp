@@ -414,3 +414,6 @@ bh-covid{
     height: 40px;
     width: 40px;
 }
+input:-internal-autofill-selected {
+        background-color:none !important;
+}
